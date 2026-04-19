@@ -1,12 +1,14 @@
+require('dotenv').config()
 const express = require('express');
-const dotenv = require('dotenv');
 const cors = require('cors');
 const connectDB = require('./config/connectDB');
 const projects = require('./routes/projectRoutes')
 const authUser =  require('./routes/authRoutes');
 const adminRoute = require('./routes/adminRoutes')
-
-dotenv.config();
+const tools = require('./routes/toolRoutes');
+const messageRoutes = require('./routes/messageRoutes')
+const cvRoutes = require('./routes/cvRoutes');
+const statsRoutes = require('./routes/statsRoutes');
 
 connectDB();
 
@@ -15,10 +17,16 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json()); 
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 app.use('/api/projects', projects);
 app.use('/api/auth', authUser);
 app.use('/api/admin', adminRoute)
+app.use('/api/tools', tools);
+app.use('/api/messages', messageRoutes);
+app.use('/api/cv', cvRoutes)
+app.use('/api/stats', statsRoutes);
+
 
 app.get('/', (req, res) => {
     res.send('Portfolio API is running...');

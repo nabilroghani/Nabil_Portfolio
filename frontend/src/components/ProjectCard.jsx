@@ -1,40 +1,68 @@
-import { FaGithub, FaExternalLinkAlt, FaRegFolder } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="group bg-[#112240] p-8 rounded-xl transition-all duration-300 hover:-translate-y-3 border border-transparent hover:border-[#64ffda]/30 shadow-2xl overflow-hidden relative">
-      {/* Background Glow on Hover */}
-      <div className="absolute -right-10 -top-10 w-32 h-32 bg-[#64ffda]/5 rounded-full blur-3xl group-hover:bg-[#64ffda]/10 transition-all"></div>
+    <motion.div 
+      whileHover={{ y: -10 }}
+      className="bg-[#112240] rounded-2xl overflow-hidden border border-white/5 shadow-2xl group flex flex-col h-full"
+    >
+      {/* Project Image Container */}
+      <div className="relative h-52 overflow-hidden">
+        {project.image ? (
+          <img 
+            src={project.image} 
+            alt={project.title} 
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+        ) : (
+          <div className="w-full h-full bg-[#0a192f] flex items-center justify-center text-gray-600 font-mono italic">
+            No Preview Available
+          </div>
+        )}
+        {/* Hover Overlay */}
+        <div className="absolute inset-0 bg-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+           {/* Links displayed on image hover */}
+        </div>
+      </div>
 
-      <div className="relative z-10">
-        <div className="flex justify-between items-center mb-8">
-          <FaRegFolder className="text-[#64ffda] text-4xl" />
-          <div className="flex gap-5 text-gray-400">
+      {/* Content */}
+      <div className="p-6 flex flex-col flex-grow">
+        <div className="flex justify-between items-start mb-4">
+          <h3 className="text-xl font-bold text-white group-hover:text-secondary transition-colors">
+            {project.title}
+          </h3>
+          <div className="flex gap-3 text-gray-400">
             {project.githubLink && (
-              <a href={project.githubLink} target="_blank" rel="noreferrer" className="hover:text-[#64ffda] transition-colors"><FaGithub size={22} /></a>
+              <a href={project.githubLink} target="_blank" rel="noreferrer" className="hover:text-secondary transition-all">
+                <FaGithub size={20} />
+              </a>
             )}
             {project.liveLink && (
-              <a href={project.liveLink} target="_blank" rel="noreferrer" className="hover:text-[#64ffda] transition-colors"><FaExternalLinkAlt size={20} /></a>
+              <a href={project.liveLink} target="_blank" rel="noreferrer" className="hover:text-secondary transition-all">
+                <FaExternalLinkAlt size={18} />
+              </a>
             )}
           </div>
         </div>
 
-        <h3 className="text-[#e6f1ff] text-2xl font-bold mb-3 group-hover:text-[#64ffda] transition-colors">
-          {project.title}
-        </h3>
-        <p className="text-[#8892b0] text-sm leading-relaxed mb-6">
+        <p className="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
           {project.desc}
         </p>
 
-        <div className="flex flex-wrap gap-3">
+        {/* Tech Stack Tags */}
+        <div className="mt-auto flex flex-wrap gap-2">
           {project.stack && project.stack.map((tech, i) => (
-            <span key={i} className="text-[#64ffda] font-mono text-[11px] bg-[#64ffda]/5 px-2 py-1 rounded">
+            <span 
+              key={i} 
+              className="text-[10px] font-mono text-secondary bg-secondary/5 border border-secondary/20 px-2 py-1 rounded-md"
+            >
               {tech}
             </span>
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

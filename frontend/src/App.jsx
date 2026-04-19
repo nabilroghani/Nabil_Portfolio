@@ -4,8 +4,13 @@ import PublicLayout from './layouts/PublicLayout';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard'; // <--- Ye import karein
+import { useState, useEffect } from 'react';
+import API from './api/axios';
 
 function App() {
+  useEffect(() => {
+  API.post('/stats/visit').catch(err => console.log("Stats error"));
+}, []);
   return (
     <Router>
       <Toaster position="top-right" />

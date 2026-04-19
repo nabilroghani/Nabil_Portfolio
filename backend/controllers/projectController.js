@@ -14,14 +14,35 @@ exports.getProjects = async (req, res) => {
 // @desc    Create a new project
 // @route   POST /api/projects
 exports.createProject = async (req, res) => {
+    console.log("--- NEW REQUEST RECEIVED ---");
+    console.log("BODY:", req.body); // Check karein data aa raha hai
+    console.log("FILE:", req.file); // Check karein image aa rahi hai
     try {
-        const newProject = await Project.create(req.body);
+        const { title, desc, stack, liveLink, githubLink } = req.body;
+        const imageUrl = req.file ? req.file.path : ''; 
+
+        // Safe Parsing
+        let stackArray = [];
+        try {
+            stackArray = stack ? JSON.parse(stack) : [];
+        } catch (e) {
+            stackArray = stack ? stack.split(',').map(s => s.trim()) : [];
+        }
+
+        const newProject = await Project.create({
+            title,
+            desc,
+            stack: stackArray,
+            liveLink,
+            githubLink,
+            image: imageUrl
+        });
         res.status(201).json(newProject);
     } catch (error) {
-        res.status(400).json({ message: error.message });
+        console.error("CREATE PROJECT ERROR:", error); // Terminal mein error dekhne ke liye
+        res.status(500).json({ message: error.message });
     }
 };
-
 // @desc    Delete a project
 // @route   DELETE /api/projects/:id
 exports.deleteProject = async (req, res) => {
