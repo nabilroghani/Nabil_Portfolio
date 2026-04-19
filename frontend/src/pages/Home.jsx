@@ -7,6 +7,7 @@ import GithubCard from '../components/GithubCard';
 import * as FaIcons from 'react-icons/fa';
 import * as SiIcons from 'react-icons/si';
 import { motion } from 'framer-motion';
+import About from '../components/About';
 
 const Home = () => {
   const [projects, setProjects] = useState([]);
@@ -30,7 +31,6 @@ const Home = () => {
   }, []);
 
   return (
-    // Theme classes added here
     <div className="min-h-screen bg-white dark:bg-[#0a192f] transition-colors duration-500">
       <div className="max-w-6xl mx-auto px-6 font-sans">
         <Hero />
@@ -79,6 +79,10 @@ const Home = () => {
               );
             })}
           </div>
+        </section>
+
+        <section>
+          <About/>
         </section>
 
         <Contact />

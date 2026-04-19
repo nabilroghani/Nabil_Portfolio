@@ -1,45 +1,26 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 
 const ThemeContext = createContext();
+const THEME_STORAGE_KEY = 'theme';
 
 export const ThemeProvider = ({ children }) => {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window === 'undefined') {
+      return true;
+    }
 
-// src/context/ThemeContext.jsx update logic
+    return localStorage.getItem(THEME_STORAGE_KEY) !== 'light';
+  });
 
-// src/context/ThemeContext.jsx
+  useEffect(() => {
+    const root = document.documentElement;
 
-useEffect(() => {
-  const savedTheme = localStorage.getItem('theme');
-  
-  // Agar pehle se kuch saved NAHI hai (null hai), toh dark set karo
-  if (!savedTheme) {
-    setIsDark(true);
-    document.documentElement.classList.add('dark');
-    localStorage.setItem('theme', 'dark');
-  } 
-  // Agar "light" saved hai, toh light mode
-  else if (savedTheme === 'light') {
-    setIsDark(false);
-    document.documentElement.classList.remove('dark');
-  } 
-  // Agar "dark" saved hai, toh dark mode
-  else {
-    setIsDark(true);
-    document.documentElement.classList.add('dark');
-  }
-}, []);
+    root.classList.toggle('dark', isDark);
+    localStorage.setItem(THEME_STORAGE_KEY, isDark ? 'dark' : 'light');
+  }, [isDark]);
 
   const toggleTheme = () => {
-    if (isDark) {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-      setIsDark(false);
-    } else {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-      setIsDark(true);
-    }
+    setIsDark((prevIsDark) => !prevIsDark);
   };
 
   return (

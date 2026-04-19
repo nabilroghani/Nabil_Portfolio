@@ -1,13 +1,9 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
+  html,
   body {
-    /* DEFAULT (Light Mode): White background, Dark text */
-    @apply bg-slate-50 text-slate-900 transition-colors duration-300;
-  }
-
-  /* DARK MODE: Navy background, Light text */
-  .dark body {
-    @apply bg-[#0a192f] text-slate-300;
+    @apply min-h-screen text-slate-900 transition-colors duration-300;
   }
 }

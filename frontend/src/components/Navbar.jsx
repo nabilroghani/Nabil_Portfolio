@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Code2, Download, Sun, Moon } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext'; // Ensure this path is correct
-import API from '../api/axios';
+import { useTheme } from '../context/ThemeContext';
+import { downloadCv } from '../utils/cvDownload';
 import toast from 'react-hot-toast';
 
 const Navbar = () => {
@@ -25,17 +25,8 @@ const Navbar = () => {
   const handleDownload = async () => {
     const toastId = toast.loading("Connecting to Drive...");
     try {
-      const res = await API.get('/cv');
-      if (!res.data || !res.data.driveId) throw new Error("ID not found");
-      const downloadLink = `https://drive.google.com/uc?export=download&id=${res.data.driveId}`;
-      const link = document.createElement('a');
-      link.href = downloadLink;
-      link.setAttribute('target', '_blank');
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      await downloadCv();
       toast.success("Download started!", { id: toastId });
-      await API.post('/stats/download');
     } catch (err) {
       toast.error("Resume link unavailable", { id: toastId });
     }
