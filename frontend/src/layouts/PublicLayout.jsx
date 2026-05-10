@@ -3,10 +3,10 @@ import Navbar from '../components/Navbar';
 
 const PublicLayout = () => {
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0a192f] transition-colors duration-500">
+    <div className="min-h-screen bg-[#f8fafc] dark:bg-[#060d1a] transition-colors duration-500">
       <Navbar />
-      <main className="max-w-7xl mx-auto min-h-screen px-4 bg-white dark:bg-[#0a192f] transition-colors duration-500">
-        <Outlet /> 
+      <main className="min-h-screen">
+        <Outlet />
       </main>
     </div>
   );

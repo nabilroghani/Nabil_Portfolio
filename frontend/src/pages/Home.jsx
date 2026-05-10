@@ -8,6 +8,7 @@ import * as FaIcons from 'react-icons/fa';
 import * as SiIcons from 'react-icons/si';
 import { motion } from 'framer-motion';
 import About from '../components/About';
+import Experience from '../components/Experience';
 
 const Home = () => {
   const [projects, setProjects] = useState([]);
@@ -79,6 +80,11 @@ const Home = () => {
               );
             })}
           </div>
+        </section>
+        <section id="experience">
+          
+            {<Experience/>}
+          
         </section>
 
         <section>
