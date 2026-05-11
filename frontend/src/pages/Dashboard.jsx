@@ -6,8 +6,8 @@ import { Plus, Mail, Calendar, Trash2, Eye, Download, BarChart3, MessageSquare }
 // Sub-Components Imports
 import AdminSidebar from '../components/Admin/AdminSidebar';
 import CvManager from '../components/Admin/CvManager';
-import ProjectModal from '../components/admin/ProjectModal';
-import ToolModal from '../components/admin/ToolModal';
+import ProjectModal from '../components/Admin/ProjectModal';
+import ToolModal from '../components/Admin/ToolModal';
 
 const Dashboard = () => {
   const [projects, setProjects] = useState([]);
