@@ -22,6 +22,7 @@ const Home = () => {
           API.get('/projects'),
           API.get('/tools')
         ]);
+        console.log("Projects Data:", resProj.data);
         setProjects(resProj.data);
         setTools(resTools.data);
       } catch (err) {
@@ -43,7 +44,7 @@ const Home = () => {
             <div className="h-[1px] bg-slate-200 dark:bg-gray-800 flex-grow ml-6"></div>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((p) => <ProjectCard key={p._id} project={p} />)}
+            {Array.isArray(projects) && projects.map((p) => <ProjectCard key={p._id} project={p} />)}
           </div>
         </section>
 
