@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import API from '../api/axios';
-import Hero from '../components/Home';
+import Hero from '../components/Hero';
 import ProjectCard from '../components/ProjectCard';
 import Contact from '../components/Contact';
 import GithubCard from '../components/GithubCard';
