@@ -50,18 +50,18 @@ const Dashboard = () => {
 
   return (
     // Background color changed from #020617 (too dark) to a richer Slate-950
-    <div className="min-h-screen bg-slate-950 text-slate-300 font-sans selection:bg-indigo-500/30">
+    <div className="min-h-screen bg-ink text-[#c3bde0] font-sans selection:bg-gold/30">
       
       {/* --- PREMIUM NAVBAR --- */}
-      <nav className="bg-slate-900/80 backdrop-blur-xl border-b border-white/10 p-4 sticky top-0 z-50">
+      <nav className="bg-[#151228]/80 backdrop-blur-xl border-b border-gold/10 p-4 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
             {/* Logo Section */}
-            <div className="w-11 h-11 bg-gradient-to-tr from-indigo-600 to-violet-500 rounded-xl flex items-center justify-center text-white font-black shadow-lg shadow-indigo-500/20 text-xl">
+            <div className="w-11 h-11 bg-gradient-to-tr from-gold to-[#c98f6f] rounded-xl flex items-center justify-center text-white font-black shadow-lg shadow-gold/20 text-xl">
               NA
             </div>
             <div>
-              <h1 className="text-lg font-bold text-white leading-tight">Admin Control</h1>
+              <h1 className="font-display text-lg text-[#f3efe4] leading-tight">Admin Control</h1>
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 <p className="text-[10px] text-slate-400 font-medium uppercase tracking-wider">System Online</p>
@@ -72,7 +72,7 @@ const Dashboard = () => {
           {['projects', 'tools'].includes(activeTab) && (
             <button 
               onClick={() => activeTab === 'projects' ? setIsProjModalOpen(true) : setIsToolModalOpen(true)}
-              className="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 transition-all shadow-lg shadow-indigo-900/20 active:scale-95"
+              className="bg-gold hover:bg-gold-soft text-ink px-6 py-2.5 rounded-full font-semibold text-sm flex items-center gap-2 transition-all shadow-lg shadow-gold/20 active:scale-95"
             >
               <Plus size={18} strokeWidth={2.5} /> Add {activeTab === 'projects' ? 'Project' : 'Tool'}
             </button>
@@ -98,38 +98,38 @@ const Dashboard = () => {
           {activeTab !== 'messages' && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Stat Card 1 */}
-              <div className="bg-slate-900 p-6 rounded-3xl border border-white/5 relative overflow-hidden group hover:border-indigo-500/50 transition-all">
+              <div className="bg-[#151228] p-6 rounded-3xl border border-white/5 relative overflow-hidden group hover:border-gold/50 transition-all">
                 <div className="relative z-10">
-                  <div className="bg-indigo-500/10 w-10 h-10 rounded-lg flex items-center justify-center text-indigo-400 mb-4">
+                  <div className="bg-gold/10 w-10 h-10 rounded-full flex items-center justify-center text-gold mb-4">
                     <Eye size={20} />
                   </div>
                   <p className="text-slate-400 text-xs font-semibold uppercase tracking-wider">Total Visits</p>
-                  <h2 className="text-4xl font-bold text-white mt-1">{stats.pageVisits.toLocaleString()}</h2>
+                  <h2 className="font-display text-4xl text-[#f3efe4] mt-1">{stats.pageVisits.toLocaleString()}</h2>
                 </div>
               </div>
 
               {/* Stat Card 2 */}
-              <div className="bg-slate-900 p-6 rounded-3xl border border-white/5 relative overflow-hidden group hover:border-violet-500/50 transition-all">
+              <div className="bg-[#151228] p-6 rounded-3xl border border-white/5 relative overflow-hidden group hover:border-violet/50 transition-all">
                 <div className="relative z-10">
-                  <div className="bg-violet-500/10 w-10 h-10 rounded-lg flex items-center justify-center text-violet-400 mb-4">
+                  <div className="bg-violet/10 w-10 h-10 rounded-full flex items-center justify-center text-violet mb-4">
                     <Download size={20} />
                   </div>
                   <p className="text-slate-400 text-xs font-semibold uppercase tracking-wider">Resume Downloads</p>
-                  <h2 className="text-4xl font-bold text-white mt-1">{stats.resumeDownloads.toLocaleString()}</h2>
+                  <h2 className="font-display text-4xl text-[#f3efe4] mt-1">{stats.resumeDownloads.toLocaleString()}</h2>
                 </div>
               </div>
             </div>
           )}
 
           {/* CONTENT AREA */}
-          <div className="bg-slate-900 rounded-[2rem] border border-white/5 shadow-sm overflow-hidden min-h-[500px]">
+          <div className="bg-[#151228] rounded-[2rem] border border-white/5 shadow-sm overflow-hidden min-h-[500px]">
             
             {activeTab === 'cv' && <div className="p-6"><CvManager /></div>}
 
             {activeTab === 'messages' && (
               <div className="p-8">
-                <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-                  Inbox <span className="text-xs font-mono bg-indigo-500/20 text-indigo-400 px-3 py-1 rounded-full">{messages.length}</span>
+                <h2 className="font-display text-2xl text-[#f3efe4] mb-8 flex items-center gap-3">
+                  Inbox <span className="text-xs bg-gold/20 text-gold px-3 py-1 rounded-full">{messages.length}</span>
                 </h2>
                 <div className="space-y-4">
                   {messages.length === 0 ? (
@@ -139,18 +139,18 @@ const Dashboard = () => {
                     </div>
                   ) : (
                     messages.map(m => (
-                      <div key={m._id} className="bg-slate-950/40 p-6 rounded-2xl border border-white/5 hover:border-indigo-500/30 transition-all group relative">
+                      <div key={m._id} className="bg-black/20 p-6 rounded-2xl border border-white/5 hover:border-gold/30 transition-all group relative">
                         <button 
                           onClick={() => handleDelete('messages', m._id)}
                           className="absolute top-6 right-6 p-2 rounded-lg bg-red-500/10 text-red-500 opacity-0 group-hover:opacity-100 transition-all"
                         >
                           <Trash2 size={16} />
                         </button>
-                        <div className="flex gap-4 mb-4 text-[11px] font-bold text-indigo-400 uppercase tracking-tighter">
+                        <div className="flex gap-4 mb-4 text-[11px] font-bold text-gold uppercase tracking-tighter">
                             <span className="flex items-center gap-1"><Mail size={12}/> {m.email}</span>
                             <span className="flex items-center gap-1 text-slate-500"><Calendar size={12}/> {new Date(m.createdAt).toLocaleDateString()}</span>
                         </div>
-                        <h3 className="text-lg font-bold text-white mb-2">{m.name}</h3>
+                        <h3 className="font-display text-lg text-[#f3efe4] mb-2">{m.name}</h3>
                         <p className="text-slate-400 text-sm leading-relaxed">{m.message}</p>
                       </div>
                     ))
@@ -174,7 +174,7 @@ const Dashboard = () => {
                       projects.map(p => (
                         <tr key={p._id} className="hover:bg-white/[0.01] transition-colors group">
                           <td className="p-6">
-                            <div className="font-bold text-white mb-1 group-hover:text-indigo-400 transition-colors">{p.title}</div>
+                            <div className="font-semibold text-[#f3efe4] mb-1 group-hover:text-gold transition-colors">{p.title}</div>
                             <div className="text-xs text-slate-500 line-clamp-1 italic">{p.desc}</div>
                           </td>
                           <td className="p-6">
@@ -194,10 +194,10 @@ const Dashboard = () => {
                         <tr key={t._id} className="hover:bg-white/[0.01] transition-colors">
                           <td className="p-6 flex items-center gap-3">
                             <div className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center text-xl">{t.icon}</div>
-                            <span className="font-bold text-white">{t.name}</span>
+                            <span className="font-semibold text-[#f3efe4]">{t.name}</span>
                           </td>
                           <td className="p-6">
-                            <span className="text-[10px] bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full uppercase font-black">{t.category}</span>
+                            <span className="text-[10px] bg-gold/10 text-gold px-3 py-1 rounded-full uppercase font-bold">{t.category}</span>
                           </td>
                           <td className="p-6 text-right">
                             <button onClick={() => handleDelete('tools', t._id)} className="text-slate-600 hover:text-red-500 transition-colors p-2"><Trash2 size={18}/></button>

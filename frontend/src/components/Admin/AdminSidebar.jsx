@@ -22,10 +22,10 @@ const AdminSidebar = ({ activeTab, setActiveTab, messageCount }) => {
         <button
           key={item.id}
           onClick={() => setActiveTab(item.id)}
-          className={`flex-1 md:flex-none flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-medium ${
-            activeTab === item.id 
-              ? 'bg-secondary text-primary shadow-[0_0_15px_rgba(100,255,218,0.3)]' 
-              : 'text-gray-400 hover:bg-white/5 hover:text-white'
+          className={`flex-1 md:flex-none flex items-center gap-3 px-4 py-3 rounded-full transition-all font-medium ${
+            activeTab === item.id
+              ? 'bg-gold text-ink shadow-[0_0_15px_rgba(201,161,95,0.3)]'
+              : 'text-gray-400 hover:bg-white/5 hover:text-[#f3efe4]'
           }`}
         >
           {item.icon}
@@ -40,7 +40,7 @@ const AdminSidebar = ({ activeTab, setActiveTab, messageCount }) => {
 
       <button 
         onClick={handleLogout}
-        className="hidden md:flex items-center gap-3 px-4 py-3 rounded-xl text-gray-500 hover:text-red-500 hover:bg-red-500/5 mt-10 transition-all"
+        className="hidden md:flex items-center gap-3 px-4 py-3 rounded-full text-gray-500 hover:text-red-500 hover:bg-red-500/5 mt-10 transition-all"
       >
         <LogOut size={20} /> Logout
       </button>
