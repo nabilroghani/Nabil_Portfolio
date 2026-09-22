@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import {
   Layers, Server, Cloud, Briefcase, CheckCircle2,
 } from 'lucide-react';
+import { useParallax } from '../hooks/useParallax';
 
 /* ─── Data ─────────────────────────────────────────────── */
 const role = {
@@ -124,15 +125,20 @@ const Experience = () => {
     transition: { duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] },
   });
 
+  const blob1Ref = useRef(null);
+  const blob2Ref = useRef(null);
+  const blob1Y = useParallax(blob1Ref, 70);
+  const blob2Y = useParallax(blob2Ref, 50);
+
   return (
     <section
       id="experience"
       className="relative py-28 px-6 sm:px-8 bg-[#faf7f0] dark:bg-ink overflow-hidden transition-colors duration-300"
     >
-      {/* Background blobs */}
+      {/* Background blobs — drift with scroll */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 left-[-100px] w-[400px] h-[400px] rounded-full bg-gold/[0.05] dark:bg-gold/[0.07] blur-[100px]" />
-        <div className="absolute bottom-0 right-0 w-[350px] h-[350px] rounded-full bg-violet/[0.05] dark:bg-violet/[0.08] blur-[90px]" />
+        <motion.div ref={blob1Ref} style={{ y: blob1Y }} className="absolute top-1/3 left-[-100px] w-[400px] h-[400px] rounded-full bg-gold/[0.05] dark:bg-gold/[0.07] blur-[100px]" />
+        <motion.div ref={blob2Ref} style={{ y: blob2Y }} className="absolute bottom-0 right-0 w-[350px] h-[350px] rounded-full bg-violet/[0.05] dark:bg-violet/[0.08] blur-[90px]" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">

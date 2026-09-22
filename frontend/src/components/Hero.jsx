@@ -1,10 +1,25 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 import { Download, Eye, Mail, ArrowRight } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { downloadCv } from '../utils/cvDownload';
 import my from '../assets/my.webp';
 
 const Hero = () => {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  });
+
+  // Parallax: background blobs and the portrait drift at different speeds
+  // than the page scroll, and the content gently fades/lifts as it leaves view.
+  const blob1Y = useTransform(scrollYProgress, [0, 1], [0, 140]);
+  const blob2Y = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, 90]);
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, 60]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+
   const handleDownload = async () => {
     const toastId = toast.loading('Preparing your resume...');
     try {
@@ -26,18 +41,27 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden
+    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden
      bg-[#faf7f0] dark:bg-ink">
 
-      {/* Ambient glow blobs */}
+      {/* Ambient glow blobs — parallax on scroll */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[-160px] right-[-120px] w-[560px] h-[560px]
-         rounded-full bg-gold/10 dark:bg-gold/[0.08] blur-[120px]" />
-        <div className="absolute bottom-[-120px] left-[-100px] w-[420px] h-[420px]
-         rounded-full bg-violet/10 dark:bg-violet/[0.12] blur-[110px]" />
+        <motion.div
+          style={{ y: blob1Y }}
+          className="absolute top-[-160px] right-[-120px] w-[560px] h-[560px]
+         rounded-full bg-gold/10 dark:bg-gold/[0.08] blur-[120px]"
+        />
+        <motion.div
+          style={{ y: blob2Y }}
+          className="absolute bottom-[-120px] left-[-100px] w-[420px] h-[420px]
+         rounded-full bg-violet/10 dark:bg-violet/[0.12] blur-[110px]"
+        />
       </div>
 
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-24">
+      <motion.div
+        style={{ y: contentY, opacity: contentOpacity }}
+        className="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-24"
+      >
         <div className="flex flex-col-reverse lg:flex-row items-center gap-14 lg:gap-20">
 
           {/* ── LEFT: Text content ─────────────────────────── */}
@@ -143,6 +167,7 @@ const Hero = () => {
 
           {/* ── RIGHT: Image ───────────────────────────────── */}
           <motion.div
+            style={{ y: imageY }}
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -187,7 +212,7 @@ const Hero = () => {
           </motion.div>
 
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

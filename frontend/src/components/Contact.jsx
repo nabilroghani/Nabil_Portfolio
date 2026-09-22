@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Send, Clock, ArrowRight } from 'lucide-react';
 import API from '../api/axios';
 import toast from 'react-hot-toast';
+import { useParallax } from '../hooks/useParallax';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
@@ -59,15 +60,20 @@ const Contact = () => {
   const inputBase =
     'w-full bg-slate-50 dark:bg-[#1a1730]/60 border rounded-xl px-4 py-3.5 text-slate-800 dark:text-[#f3efe4] placeholder:text-slate-400 dark:placeholder:text-[#6f6890] outline-none transition-all duration-200 text-sm';
 
+  const blob1Ref = useRef(null);
+  const blob2Ref = useRef(null);
+  const blob1Y = useParallax(blob1Ref, 60);
+  const blob2Y = useParallax(blob2Ref, 80);
+
   return (
     <section
       id="contact"
       className="relative py-28 px-6 sm:px-8 bg-[#faf7f0] dark:bg-ink overflow-hidden transition-colors duration-300"
     >
-      {/* Background blobs */}
+      {/* Background blobs — drift with scroll */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-gold/[0.06] dark:bg-gold/[0.07] blur-[120px]" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-violet/[0.05] dark:bg-violet/[0.06] blur-[100px]" />
+        <motion.div ref={blob1Ref} style={{ y: blob1Y }} className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-gold/[0.06] dark:bg-gold/[0.07] blur-[120px]" />
+        <motion.div ref={blob2Ref} style={{ y: blob2Y }} className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-violet/[0.05] dark:bg-violet/[0.06] blur-[100px]" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">

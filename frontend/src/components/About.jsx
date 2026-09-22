@@ -1,5 +1,7 @@
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap, Briefcase, BookOpen, Cloud, Users } from 'lucide-react';
+import { useParallax } from '../hooks/useParallax';
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
@@ -70,15 +72,20 @@ const colorMap = {
 };
 
 const About = () => {
+  const blob1Ref = useRef(null);
+  const blob2Ref = useRef(null);
+  const blob1Y = useParallax(blob1Ref, 60);
+  const blob2Y = useParallax(blob2Ref, 80);
+
   return (
     <section
       id="about"
       className="relative py-28 px-6 sm:px-8 bg-[#faf7f0] dark:bg-ink overflow-hidden transition-colors duration-300"
     >
-      {/* Background blobs */}
+      {/* Background blobs — drift with scroll */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[500px] h-[400px] rounded-full bg-violet/[0.05] dark:bg-violet/[0.08] blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-gold/[0.05] dark:bg-gold/[0.06] blur-[100px]" />
+        <motion.div ref={blob1Ref} style={{ y: blob1Y }} className="absolute top-0 right-0 w-[500px] h-[400px] rounded-full bg-violet/[0.05] dark:bg-violet/[0.08] blur-[120px]" />
+        <motion.div ref={blob2Ref} style={{ y: blob2Y }} className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-gold/[0.05] dark:bg-gold/[0.06] blur-[100px]" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
