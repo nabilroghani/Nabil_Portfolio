@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const helmet = require('helmet');
 const connectDB = require('./config/connectDB');
 const projects = require('./routes/projectRoutes');
 const authUser = require('./routes/authRoutes');
@@ -33,6 +34,9 @@ const corsOptions = {
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"]
 };
+
+// Security headers
+app.use(helmet({ crossOriginResourcePolicy: false }));
 
 // 1. Sabse pehle CORS apply karein
 app.use(cors(corsOptions));

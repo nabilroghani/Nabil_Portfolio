@@ -28,7 +28,8 @@ const Contact = () => {
       toast.success('Message sent successfully!', { id: tid });
       setFormData({ name: '', email: '', message: '' });
     } catch (err) {
-      toast.error('Something went wrong. Please try again.', { id: tid });
+      const msg = err.response?.data?.message || 'Something went wrong. Please try again.';
+      toast.error(msg, { id: tid });
     } finally {
       setLoading(false);
     }
@@ -83,12 +84,12 @@ const Contact = () => {
             — Contact —
           </span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
-            Let's Build Something
+            Let&apos;s Build Something
             <br />
             <span className="text-emerald-500">Together</span>
           </h2>
           <p className="mt-5 text-slate-500 dark:text-slate-400 max-w-lg mx-auto text-base leading-relaxed">
-            Have a project in mind or just want to say hello? I'm always open to
+            Have a project in mind or just want to say hello? I&apos;m always open to
             discussing new opportunities and ideas.
           </p>
         </motion.div>
@@ -152,7 +153,7 @@ const Contact = () => {
               Send a Message
             </h3>
             <p className="text-slate-400 dark:text-slate-500 text-sm mb-7">
-              Fill out the form and I'll get back to you shortly.
+              Fill out the form and I&apos;ll get back to you shortly.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-5">

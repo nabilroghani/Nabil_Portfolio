@@ -10,7 +10,7 @@ const Hero = () => {
     try {
       await downloadCv();
       toast.success('Resume download started!', { id: toastId });
-    } catch (error) {
+    } catch {
       toast.error('Resume link unavailable', { id: toastId });
     }
   };
@@ -179,6 +179,11 @@ const Hero = () => {
                 <img
                   src={my}
                   alt="Nabil Ahmad"
+                  width={340}
+                  height={400}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
                   className="w-full h-full object-cover object-top transition-transform duration-700
                    hover:scale-105"
                 />

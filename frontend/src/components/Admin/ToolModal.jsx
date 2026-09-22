@@ -19,7 +19,7 @@ const ToolModal = ({ isOpen, onClose, refreshTools }) => {
       refreshTools();
       onClose();
       setFormData({ name: '', category: '', icon: '' });
-    } catch (err) {
+    } catch {
       toast.error('Failed to add tool');
     } finally {
       setLoading(false);

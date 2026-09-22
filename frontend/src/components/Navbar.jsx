@@ -23,6 +23,14 @@ const Navbar = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Close mobile drawer on Escape
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKey = (e) => { if (e.key === 'Escape') setIsOpen(false); };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [isOpen]);
+
   const navLinks = [
     { name: 'Home',     href: '/'         },
     { name: 'about', href: '#about'},
@@ -36,7 +44,7 @@ const Navbar = () => {
     try {
       await downloadCv();
       toast.success('Download started!', { id: toastId });
-    } catch (err) {
+    } catch {
       toast.error('Resume link unavailable', { id: toastId });
     }
   };
@@ -161,6 +169,9 @@ const Navbar = () => {
 
             {/* Drawer */}
             <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-label="Mobile navigation menu"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}

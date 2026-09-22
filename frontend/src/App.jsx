@@ -1,40 +1,53 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import PublicLayout from './layouts/PublicLayout';
 import Home from './pages/Home';
-import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
+import NotFound from './pages/NotFound';
 import ProtectedRoute from './ProtectedRoute';
+import ErrorBoundary from './components/ErrorBoundary';
 import API from './api/axios';
+
+const Login = lazy(() => import('./pages/Login'));
+const Dashboard = lazy(() => import('./pages/Dashboard'));
+
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-[#f8fafc] dark:bg-[#060d1a]">
+    <div className="w-10 h-10 border-2 border-emerald-500/30 border-t-emerald-500 rounded-full animate-spin" />
+  </div>
+);
 
 function App() {
   useEffect(() => {
-    API.post('/stats/visit').catch(err => console.log("Stats error"));
+    API.post('/stats/visit').catch(() => console.log("Stats error"));
   }, []);
 
   return (
-    <Router>
-      <Toaster position="top-right" />
-      <Routes>
-        {/* --- Public Routes --- */}
-        <Route path="/" element={<PublicLayout />}>
-          <Route index element={<Home />} />
-        </Route>
+    <ErrorBoundary>
+      <Router>
+        <Toaster position="top-right" />
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            {/* --- Public Routes --- */}
+            <Route path="/" element={<PublicLayout />}>
+              <Route index element={<Home />} />
+            </Route>
 
-        {/* --- Authentication --- */}
-        <Route path="/login" element={<Login />} />
+            {/* --- Authentication --- */}
+            <Route path="/login" element={<Login />} />
 
-        {/* --- Protected Admin Routes (Yahan security hai) --- */}
-        <Route element={<ProtectedRoute />}>
-          <Route path="/admin/dashboard" element={<Dashboard />} />
-          {/* Kal ko admin ke mazeed pages yahan add ho saktay hain */}
-        </Route>
+            {/* --- Protected Admin Routes (Yahan security hai) --- */}
+            <Route element={<ProtectedRoute />}>
+              <Route path="/admin/dashboard" element={<Dashboard />} />
+              {/* Kal ko admin ke mazeed pages yahan add ho saktay hain */}
+            </Route>
 
-        {/* --- 404 Fallback --- */}
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-    </Router>
+            {/* --- 404 Fallback --- */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      </Router>
+    </ErrorBoundary>
   );
 }
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaBook, FaUsers, FaCodeBranch } from 'react-icons/fa';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, BookOpen, Users, GitFork } from 'lucide-react';
+import GithubMark from './icons/GithubMark';
 
 const GithubCard = ({ username = "nabilahmad" }) => {
   const [data, setData] = useState(null);
@@ -33,9 +33,9 @@ const GithubCard = ({ username = "nabilahmad" }) => {
   if (error || !data || data.message === "Not Found") return null;
 
   const stats = [
-    { icon: FaBook,       value: data.public_repos,  label: 'Repos',     color: 'text-emerald-500',  hover: 'hover:border-emerald-500/30 dark:hover:border-emerald-500/30' },
-    { icon: FaUsers,      value: data.followers,      label: 'Followers', color: 'text-sky-400',      hover: 'hover:border-sky-400/30 dark:hover:border-sky-400/30' },
-    { icon: FaCodeBranch, value: data.public_gists,   label: 'Gists',     color: 'text-violet-400',   hover: 'hover:border-violet-400/30 dark:hover:border-violet-400/30' },
+    { icon: BookOpen, value: data.public_repos,  label: 'Repos',     color: 'text-emerald-500',  hover: 'hover:border-emerald-500/30 dark:hover:border-emerald-500/30' },
+    { icon: Users,     value: data.followers,     label: 'Followers', color: 'text-sky-400',      hover: 'hover:border-sky-400/30 dark:hover:border-sky-400/30' },
+    { icon: GitFork,   value: data.public_gists,  label: 'Gists',     color: 'text-violet-400',   hover: 'hover:border-violet-400/30 dark:hover:border-violet-400/30' },
   ];
 
   return (
@@ -67,6 +67,10 @@ const GithubCard = ({ username = "nabilahmad" }) => {
           <img
             src={data.avatar_url}
             alt={data.login}
+            width={96}
+            height={96}
+            loading="lazy"
+            decoding="async"
             className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl
               border-2 border-slate-200 dark:border-slate-700
               group-hover:border-emerald-500/40 dark:group-hover:border-emerald-500/40
@@ -82,7 +86,7 @@ const GithubCard = ({ username = "nabilahmad" }) => {
             <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight">
               {data.name || data.login}
             </h3>
-            <FaGithub className="text-slate-400 dark:text-slate-500" size={18} />
+            <GithubMark className="text-slate-400 dark:text-slate-500" size={18} />
           </div>
 
           <p className="text-emerald-600 dark:text-emerald-400 font-mono text-xs mb-1 tracking-wide">

@@ -43,7 +43,7 @@ const Dashboard = () => {
       await API.delete(`/${type}/${id}`);
       toast.success("Removed successfully");
       fetchData(); 
-    } catch (err) {
+    } catch {
       toast.error("Failed to remove item");
     }
   };

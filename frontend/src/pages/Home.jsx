@@ -4,8 +4,6 @@ import Hero from '../components/Hero';
 import ProjectCard from '../components/ProjectCard';
 import Contact from '../components/Contact';
 import GithubCard from '../components/GithubCard';
-import * as FaIcons from 'react-icons/fa';
-import * as SiIcons from 'react-icons/si';
 import { motion } from 'framer-motion';
 import About from '../components/About';
 import Experience from '../components/Experience';
@@ -13,7 +11,8 @@ import Experience from '../components/Experience';
 const Home = () => {
   const [projects, setProjects] = useState([]);
   const [tools, setTools] = useState([]);
-  const AllIcons = { ...FaIcons, ...SiIcons };
+  const [loading, setLoading] = useState(true);
+  const [icons, setIcons] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,18 +21,25 @@ const Home = () => {
           API.get('/projects'),
           API.get('/tools')
         ]);
-        console.log("Projects Data:", resProj.data);
         setProjects(resProj.data);
         setTools(resTools.data);
       } catch (err) {
         console.error("Data fetch error", err);
+      } finally {
+        setLoading(false);
       }
     };
     fetchData();
+
+    // react-icons' fa/si sets are huge — only needed to resolve a tool's icon
+    // by name, so load them in a separate chunk instead of the main bundle.
+    Promise.all([import('react-icons/fa'), import('react-icons/si')]).then(
+      ([fa, si]) => setIcons({ ...fa, ...si, _fallback: fa.FaCode })
+    );
   }, []);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0a192f] transition-colors duration-500">
+    <div className="min-h-screen bg-white dark:bg-[#060d1a] transition-colors duration-500">
       <div className="max-w-6xl mx-auto px-6 font-sans">
         <Hero />
 
@@ -44,7 +50,11 @@ const Home = () => {
             <div className="h-[1px] bg-slate-200 dark:bg-gray-800 flex-grow ml-6"></div>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {Array.isArray(projects) && projects.map((p) => <ProjectCard key={p._id} project={p} />)}
+            {loading
+              ? Array.from({ length: 3 }).map((_, i) => (
+                  <div key={i} className="h-80 rounded-2xl bg-slate-100 dark:bg-slate-800/60 animate-pulse" />
+                ))
+              : Array.isArray(projects) && projects.map((p) => <ProjectCard key={p._id} project={p} />)}
           </div>
         </section>
 
@@ -64,8 +74,11 @@ const Home = () => {
             <div className="h-[1px] bg-slate-200 dark:bg-gray-800 flex-grow ml-6"></div>
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-            {tools.map((tool) => {
-              const Icon = AllIcons[tool.icon] || FaIcons.FaCode;
+            {(loading || !icons) && Array.from({ length: 6 }).map((_, i) => (
+              <div key={i} className="h-32 rounded-2xl bg-slate-100 dark:bg-slate-800/60 animate-pulse" />
+            ))}
+            {!loading && icons && tools.map((tool) => {
+              const Icon = icons[tool.icon] || icons._fallback;
               return (
                 <motion.div 
                   whileHover={{ y: -8, scale: 1.02 }}

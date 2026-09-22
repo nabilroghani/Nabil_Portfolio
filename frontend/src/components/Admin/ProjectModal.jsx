@@ -28,6 +28,7 @@ const handleSubmit = async (e) => {
   const stackArray = formData.stack.split(',').map(s => s.trim());
   data.append('stack', JSON.stringify(stackArray));
 
+  setLoading(true);
   try {
     await API.post('/projects', data, {
       headers: { 'Content-Type': 'multipart/form-data' }
@@ -38,6 +39,8 @@ const handleSubmit = async (e) => {
   } catch (err) {
     console.log(err.response?.data); // Isse browser console mein real error dikhega
     toast.error("Server Error: Check Console");
+  } finally {
+    setLoading(false);
   }
 };
 

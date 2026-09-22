@@ -19,7 +19,7 @@ const CvManager = () => {
       try {
         const res = await API.get('/cv');
         if (res.data?.driveId) setDriveId(res.data.driveId);
-      } catch (err) {
+      } catch {
         console.log('No CV found');
       }
     };
@@ -36,7 +36,7 @@ const CvManager = () => {
     try {
       await API.post('/cv/upload', { driveId: driveId.trim() });
       toast.success('CV Link Updated!');
-    } catch (err) {
+    } catch {
       toast.error('Failed to update');
     } finally {
       setLoading(false);
@@ -145,7 +145,7 @@ const CvManager = () => {
         <div className="bg-secondary/10 dark:bg-secondary/5 border-2 border-secondary/20 rounded-3xl p-6">
           <h4 className="font-black text-xs text-secondary uppercase tracking-widest mb-2">Important!</h4>
           <p className="text-[13px] leading-relaxed text-slate-600 dark:text-slate-400">
-            Make sure your Google Drive file share settings are set to <b>"Anyone with the link"</b>. If it's private, the download button on your portfolio won't work for visitors.
+            Make sure your Google Drive file share settings are set to <b>&quot;Anyone with the link&quot;</b>. If it&apos;s private, the download button on your portfolio won&apos;t work for visitors.
           </p>
         </div>
       </div>

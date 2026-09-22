@@ -98,9 +98,9 @@ const About = () => {
         {/* ── Intro block ── */}
         <motion.div {...fadeUp(0.1)} className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
-            I'm <span className="text-slate-900 dark:text-white font-bold">Nabil Ahmad</span> a MERN Stack Web developer who
+            I&apos;m <span className="text-slate-900 dark:text-white font-bold">Nabil Ahmad</span> a MERN Stack Web developer who
             genuinely enjoys building things on the web. I turn ideas into fast, clean, and scalable
-            applications. Outside of code, I'm always reading, learning something new, or exploring what's
+            applications. Outside of code, I&apos;m always reading, learning something new, or exploring what&apos;s
             coming next in tech.
           </p>
         </motion.div>
@@ -148,7 +148,7 @@ const About = () => {
             border border-emerald-500/20 dark:border-emerald-500/15"
           >
             <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base font-medium italic">
-              "I don't just write code I build experiences that solve real problems."
+              &quot;I don&apos;t just write code I build experiences that solve real problems.&quot;
             </p>
           </div>
         </motion.div>
