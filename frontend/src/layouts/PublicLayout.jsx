@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 
 const PublicLayout = () => {
   return (
-    <div className="min-h-screen bg-[#f8fafc] dark:bg-[#060d1a] transition-colors duration-500">
+    <div className="min-h-screen bg-[#faf7f0] dark:bg-ink transition-colors duration-500">
       <Navbar />
       <main className="min-h-screen">
         <Outlet />

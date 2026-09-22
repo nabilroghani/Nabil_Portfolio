@@ -16,7 +16,7 @@ const skillGroups = [
     id: 'frontend',
     icon: Layers,
     label: 'Frontend',
-    color: 'emerald',
+    color: 'gold',
     skills: [
       { name: 'HTML',      level: 97 },
       { name: 'CSS/Tailwind CSS',       level: 90 },
@@ -30,7 +30,7 @@ const skillGroups = [
     id: 'backend',
     icon: Server,
     label: 'Backend',
-    color: 'sky',
+    color: 'violet',
     skills: [
       { name: 'Node.js',    level: 80 },
       { name: 'Express.js', level: 80 },
@@ -44,7 +44,7 @@ const skillGroups = [
     id: 'deployment',
     icon: Cloud,
     label: 'Deployment & Tools',
-    color: 'violet',
+    color: 'terracotta',
     skills: [
       { name: 'Vercel',       level: 88 },
       { name: 'Hostinger VPS', level: 74 },
@@ -66,26 +66,26 @@ const highlights = [
 
 /* ─── Color maps ────────────────────────────────────────── */
 const colorMap = {
-  emerald: {
-    bar:     'bg-emerald-500',
-    badge:   'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20',
-    icon:    'bg-emerald-500/10 text-emerald-500',
-    heading: 'text-emerald-500',
-    track:   'bg-emerald-500/10',
-  },
-  sky: {
-    bar:     'bg-sky-500',
-    badge:   'bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/20',
-    icon:    'bg-sky-500/10 text-sky-500',
-    heading: 'text-sky-500',
-    track:   'bg-sky-500/10',
+  gold: {
+    bar:     'bg-gold',
+    badge:   'bg-gold/10 text-gold border-gold/20',
+    icon:    'bg-gold/10 text-gold',
+    heading: 'text-gold',
+    track:   'bg-gold/10',
   },
   violet: {
-    bar:     'bg-violet-500',
-    badge:   'bg-violet-500/10 text-violet-600 dark:text-violet-400 border-violet-500/20',
-    icon:    'bg-violet-500/10 text-violet-500',
-    heading: 'text-violet-500',
-    track:   'bg-violet-500/10',
+    bar:     'bg-violet',
+    badge:   'bg-violet/10 text-violet border-violet/20',
+    icon:    'bg-violet/10 text-violet',
+    heading: 'text-violet',
+    track:   'bg-violet/10',
+  },
+  terracotta: {
+    bar:     'bg-[#c98f6f]',
+    badge:   'bg-[#c98f6f]/10 text-[#c98f6f] border-[#c98f6f]/20',
+    icon:    'bg-[#c98f6f]/10 text-[#c98f6f]',
+    heading: 'text-[#c98f6f]',
+    track:   'bg-[#c98f6f]/10',
   },
 };
 
@@ -98,8 +98,8 @@ const SkillBar = ({ name, level, color, index }) => {
   return (
     <div ref={ref} className="space-y-1.5">
       <div className="flex justify-between items-center">
-        <span className="text-sm font-semibold text-slate-700 dark:text-slate-200">{name}</span>
-        <span className={`text-xs font-bold font-mono px-2 py-0.5 rounded-md border ${c.badge}`}>
+        <span className="text-sm font-semibold text-slate-700 dark:text-[#e5e1f2]">{name}</span>
+        <span className={`text-xs font-bold px-2 py-0.5 rounded-full border ${c.badge}`}>
           {level}%
         </span>
       </div>
@@ -127,25 +127,25 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="relative py-28 px-6 sm:px-8 bg-[#f8fafc] dark:bg-[#060d1a] overflow-hidden transition-colors duration-300"
+      className="relative py-28 px-6 sm:px-8 bg-[#faf7f0] dark:bg-ink overflow-hidden transition-colors duration-300"
     >
       {/* Background blobs */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 left-[-100px] w-[400px] h-[400px] rounded-full bg-emerald-400/[0.05] dark:bg-emerald-500/[0.07] blur-[100px]" />
-        <div className="absolute bottom-0 right-0 w-[350px] h-[350px] rounded-full bg-violet-400/[0.05] dark:bg-violet-500/[0.06] blur-[90px]" />
+        <div className="absolute top-1/3 left-[-100px] w-[400px] h-[400px] rounded-full bg-gold/[0.05] dark:bg-gold/[0.07] blur-[100px]" />
+        <div className="absolute bottom-0 right-0 w-[350px] h-[350px] rounded-full bg-violet/[0.05] dark:bg-violet/[0.08] blur-[90px]" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
 
         {/* ── Heading ── */}
         <motion.div {...fadeUp()} className="text-center mb-16">
-          <span className="inline-block text-emerald-500 font-mono text-xs tracking-[0.2em] uppercase mb-4">
+          <span className="inline-block text-gold text-xs font-medium tracking-[0.25em] uppercase mb-4">
             — Experience & Skills —
           </span>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
-            What I <span className="text-emerald-500">Bring</span> to the Table
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-ink dark:text-[#f3efe4] leading-tight">
+            What I <span className="italic text-gold">Bring</span> to the Table
           </h2>
-          <p className="mt-4 text-slate-500 dark:text-slate-400 max-w-lg mx-auto text-base leading-relaxed">
+          <p className="mt-4 text-slate-500 dark:text-[#a79fc9] max-w-lg mx-auto text-base leading-relaxed">
             Hands on experience building and shipping real world web applications from idea to deployment.
           </p>
         </motion.div>
@@ -153,41 +153,41 @@ const Experience = () => {
         {/* ── Role card ── */}
         <motion.div {...fadeUp(0.1)} className="mb-12">
           <div className="relative overflow-hidden
-            bg-white dark:bg-slate-900/60
-            border border-slate-200 dark:border-slate-700/50
-            hover:border-emerald-500/30 dark:hover:border-emerald-500/20
+            bg-white dark:bg-[#151228]/70
+            border border-slate-200 dark:border-[#2a2450]
+            hover:border-gold/30 dark:hover:border-gold/20
             rounded-2xl p-6 sm:p-8
-            shadow-md shadow-slate-200/50 dark:shadow-slate-900/30
+            shadow-md shadow-slate-200/50 dark:shadow-black/30
             transition-all duration-300"
           >
             {/* Corner glow */}
-            <div className="absolute top-0 right-0 w-48 h-48 rounded-full bg-emerald-400/10 dark:bg-emerald-500/10 blur-[60px] pointer-events-none" />
+            <div className="absolute top-0 right-0 w-48 h-48 rounded-full bg-gold/10 dark:bg-gold/10 blur-[60px] pointer-events-none" />
 
             <div className="relative flex flex-col sm:flex-row sm:items-center gap-5">
-              <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center">
-                <Briefcase size={24} className="text-emerald-500" strokeWidth={2} />
+              <div className="flex-shrink-0 w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center">
+                <Briefcase size={24} className="text-gold" strokeWidth={2} />
               </div>
 
               <div className="flex-1">
                 <div className="flex flex-wrap items-center gap-3 mb-1">
-                  <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
+                  <h3 className="font-display text-xl sm:text-2xl text-ink dark:text-[#f3efe4]">
                     {role.title}
                   </h3>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold
-                    bg-emerald-500/10 text-emerald-600 dark:text-emerald-400
-                    border border-emerald-500/20">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    bg-gold/10 text-gold
+                    border border-gold/20">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
                     {role.status}
                   </span>
                 </div>
-                <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed max-w-2xl">
+                <p className="text-slate-500 dark:text-[#a79fc9] text-sm leading-relaxed max-w-2xl">
                   {role.desc}
                 </p>
               </div>
             </div>
 
             {/* Highlights grid */}
-            <div className="relative mt-6 pt-6 border-t border-slate-100 dark:border-slate-800 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <div className="relative mt-6 pt-6 border-t border-slate-100 dark:border-[#241f42] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {highlights.map((item, i) => (
                 <motion.div
                   key={i}
@@ -197,8 +197,8 @@ const Experience = () => {
                   transition={{ delay: i * 0.06, duration: 0.4 }}
                   className="flex items-start gap-2.5"
                 >
-                  <CheckCircle2 size={15} className="text-emerald-500 flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-slate-600 dark:text-slate-300 text-sm">{item}</span>
+                  <CheckCircle2 size={15} className="text-gold flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                  <span className="text-slate-600 dark:text-[#c3bde0] text-sm">{item}</span>
                 </motion.div>
               ))}
             </div>
@@ -214,21 +214,21 @@ const Experience = () => {
               <motion.div
                 key={group.id}
                 {...fadeUp(0.1 + gi * 0.1)}
-                className="bg-white dark:bg-slate-900/60
-                  border border-slate-200 dark:border-slate-700/50
-                  hover:border-slate-300 dark:hover:border-slate-600
+                className="bg-white dark:bg-[#151228]/70
+                  border border-slate-200 dark:border-[#2a2450]
+                  hover:border-slate-300 dark:hover:border-[#3a3560]
                   rounded-2xl p-6
-                  shadow-sm shadow-slate-200/50 dark:shadow-slate-900/20
+                  shadow-sm shadow-slate-200/50 dark:shadow-black/20
                   transition-all duration-300 hover:shadow-md"
               >
                 {/* Card header */}
                 <div className="flex items-center gap-3 mb-6">
-                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${c.icon}`}>
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center ${c.icon}`}>
                     <Icon size={18} strokeWidth={2} />
                   </div>
                   <div>
-                    <h4 className={`font-black text-base ${c.heading}`}>{group.label}</h4>
-                    <p className="text-xs text-slate-400 dark:text-slate-500">{group.skills.length} skills</p>
+                    <h4 className={`font-display text-base ${c.heading}`}>{group.label}</h4>
+                    <p className="text-xs text-slate-400 dark:text-[#8a83ab]">{group.skills.length} skills</p>
                   </div>
                 </div>
 

@@ -12,8 +12,8 @@ const Login = lazy(() => import('./pages/Login'));
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 
 const PageLoader = () => (
-  <div className="min-h-screen flex items-center justify-center bg-[#f8fafc] dark:bg-[#060d1a]">
-    <div className="w-10 h-10 border-2 border-emerald-500/30 border-t-emerald-500 rounded-full animate-spin" />
+  <div className="min-h-screen flex items-center justify-center bg-[#faf7f0] dark:bg-ink">
+    <div className="w-10 h-10 border-2 border-gold/30 border-t-gold rounded-full animate-spin" />
   </div>
 );
 

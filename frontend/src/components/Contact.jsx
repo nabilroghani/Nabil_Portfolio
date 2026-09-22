@@ -57,17 +57,17 @@ const Contact = () => {
   ];
 
   const inputBase =
-    'w-full bg-slate-50 dark:bg-slate-800/50 border rounded-xl px-4 py-3.5 text-slate-800 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none transition-all duration-200 text-sm';
+    'w-full bg-slate-50 dark:bg-[#1a1730]/60 border rounded-xl px-4 py-3.5 text-slate-800 dark:text-[#f3efe4] placeholder:text-slate-400 dark:placeholder:text-[#6f6890] outline-none transition-all duration-200 text-sm';
 
   return (
     <section
       id="contact"
-      className="relative py-28 px-6 sm:px-8 bg-[#f8fafc] dark:bg-[#060d1a] overflow-hidden transition-colors duration-300"
+      className="relative py-28 px-6 sm:px-8 bg-[#faf7f0] dark:bg-ink overflow-hidden transition-colors duration-300"
     >
       {/* Background blobs */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-emerald-400/[0.06] dark:bg-emerald-500/[0.07] blur-[120px]" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-sky-400/[0.05] dark:bg-sky-500/[0.05] blur-[100px]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-gold/[0.06] dark:bg-gold/[0.07] blur-[120px]" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-violet/[0.05] dark:bg-violet/[0.06] blur-[100px]" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
@@ -80,15 +80,15 @@ const Contact = () => {
           variants={fadeUp}
           className="text-center mb-20"
         >
-          <span className="inline-block text-emerald-500 font-mono text-xs tracking-[0.2em] uppercase mb-4">
+          <span className="inline-block text-gold text-xs font-medium tracking-[0.25em] uppercase mb-4">
             — Contact —
           </span>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-ink dark:text-[#f3efe4] leading-tight">
             Let&apos;s Build Something
             <br />
-            <span className="text-emerald-500">Together</span>
+            <span className="italic text-gold">Together</span>
           </h2>
-          <p className="mt-5 text-slate-500 dark:text-slate-400 max-w-lg mx-auto text-base leading-relaxed">
+          <p className="mt-5 text-slate-500 dark:text-[#a79fc9] max-w-lg mx-auto text-base leading-relaxed">
             Have a project in mind or just want to say hello? I&apos;m always open to
             discussing new opportunities and ideas.
           </p>
@@ -107,15 +107,15 @@ const Contact = () => {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className="group flex items-start gap-4 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-emerald-500/40 dark:hover:border-emerald-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/5"
+                className="group flex items-start gap-4 p-5 rounded-2xl border border-slate-200 dark:border-[#241f42] bg-white dark:bg-[#151228]/70 hover:border-gold/40 dark:hover:border-gold/30 transition-all duration-300 hover:shadow-lg hover:shadow-gold/5"
               >
-                <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-emerald-500/10 flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors duration-300">
-                  <Icon size={18} className="text-emerald-500" strokeWidth={2} />
+                <div className="flex-shrink-0 w-11 h-11 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors duration-300">
+                  <Icon size={18} className="text-gold" strokeWidth={2} />
                 </div>
                 <div>
-                  <p className="text-xs text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-0.5">{label}</p>
-                  <p className="text-slate-800 dark:text-white font-semibold text-sm">{value}</p>
-                  <p className="text-slate-400 dark:text-slate-500 text-xs mt-0.5">{sub}</p>
+                  <p className="text-xs text-slate-400 dark:text-[#8a83ab] uppercase tracking-widest mb-0.5">{label}</p>
+                  <p className="text-slate-800 dark:text-[#f3efe4] font-semibold text-sm">{value}</p>
+                  <p className="text-slate-400 dark:text-[#8a83ab] text-xs mt-0.5">{sub}</p>
                 </div>
               </motion.div>
             ))}
@@ -127,15 +127,15 @@ const Contact = () => {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeUp}
-              className="mt-2 p-5 rounded-2xl border border-dashed border-emerald-500/30 bg-emerald-500/[0.03] dark:bg-emerald-500/[0.05]"
+              className="mt-2 p-5 rounded-2xl border border-dashed border-gold/30 bg-gold/[0.03] dark:bg-gold/[0.05]"
             >
               <div className="flex items-center gap-2 mb-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-widest">
+                <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
+                <span className="text-gold text-xs font-bold uppercase tracking-widest">
                   Currently Available
                 </span>
               </div>
-              <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+              <p className="text-slate-500 dark:text-[#a79fc9] text-sm leading-relaxed">
                 Open to freelance projects, collaborations, and full-time opportunities.
               </p>
             </motion.div>
@@ -147,12 +147,12 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-3xl p-7 sm:p-9 shadow-xl shadow-slate-900/5 dark:shadow-slate-900/30"
+            className="bg-white dark:bg-[#151228]/70 border border-slate-200 dark:border-[#241f42] rounded-3xl p-7 sm:p-9 shadow-xl shadow-slate-900/5 dark:shadow-black/30"
           >
-            <h3 className="text-xl font-black text-slate-900 dark:text-white mb-1">
+            <h3 className="font-display text-xl text-ink dark:text-[#f3efe4] mb-1">
               Send a Message
             </h3>
-            <p className="text-slate-400 dark:text-slate-500 text-sm mb-7">
+            <p className="text-slate-400 dark:text-[#8a83ab] text-sm mb-7">
               Fill out the form and I&apos;ll get back to you shortly.
             </p>
 
@@ -171,8 +171,8 @@ const Contact = () => {
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className={`${inputBase} ${
                       focused === 'name'
-                        ? 'border-emerald-500 ring-2 ring-emerald-500/15 bg-white dark:bg-slate-800'
-                        : 'border-slate-200 dark:border-slate-700'
+                        ? 'border-gold ring-2 ring-gold/15 bg-white dark:bg-[#1a1730]'
+                        : 'border-slate-200 dark:border-[#3a3560]'
                     }`}
                   />
                 </div>
@@ -188,8 +188,8 @@ const Contact = () => {
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className={`${inputBase} ${
                       focused === 'email'
-                        ? 'border-emerald-500 ring-2 ring-emerald-500/15 bg-white dark:bg-slate-800'
-                        : 'border-slate-200 dark:border-slate-700'
+                        ? 'border-gold ring-2 ring-gold/15 bg-white dark:bg-[#1a1730]'
+                        : 'border-slate-200 dark:border-[#3a3560]'
                     }`}
                   />
                 </div>
@@ -206,8 +206,8 @@ const Contact = () => {
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className={`${inputBase} resize-none ${
                   focused === 'message'
-                    ? 'border-emerald-500 ring-2 ring-emerald-500/15 bg-white dark:bg-slate-800'
-                    : 'border-slate-200 dark:border-slate-700'
+                    ? 'border-gold ring-2 ring-gold/15 bg-white dark:bg-[#1a1730]'
+                    : 'border-slate-200 dark:border-[#3a3560]'
                 }`}
               />
 
@@ -217,10 +217,10 @@ const Contact = () => {
                 disabled={loading}
                 whileHover={!loading ? { scale: 1.01 } : {}}
                 whileTap={!loading ? { scale: 0.98 } : {}}
-                className={`group w-full flex items-center justify-center gap-2.5 py-3.5 rounded-xl font-bold text-sm transition-all duration-300
+                className={`group w-full flex items-center justify-center gap-2.5 py-3.5 rounded-full font-semibold text-sm transition-all duration-300
                   ${loading
-                    ? 'bg-emerald-400 cursor-not-allowed text-white'
-                    : 'bg-emerald-500 hover:bg-emerald-400 text-white shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40'
+                    ? 'bg-gold-soft cursor-not-allowed text-ink'
+                    : 'bg-gold hover:bg-gold-soft text-ink shadow-lg shadow-gold/25 hover:shadow-gold/40'
                   }`}
               >
                 {loading ? (

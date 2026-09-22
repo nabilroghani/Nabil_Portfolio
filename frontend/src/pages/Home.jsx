@@ -7,6 +7,25 @@ import GithubCard from '../components/GithubCard';
 import { motion } from 'framer-motion';
 import About from '../components/About';
 import Experience from '../components/Experience';
+import WavyDivider from '../components/WavyDivider';
+
+const fadeUp = {
+  initial: { opacity: 0, y: 28 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+};
+
+const SectionHeading = ({ eyebrow, title, accent }) => (
+  <motion.div {...fadeUp} className="text-center mb-16">
+    <span className="inline-block text-gold text-xs font-medium tracking-[0.25em] uppercase mb-4">
+      — {eyebrow} —
+    </span>
+    <h2 className="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-ink dark:text-[#f3efe4] leading-tight">
+      {title} <span className="italic text-gold">{accent}</span>
+    </h2>
+  </motion.div>
+);
 
 const Home = () => {
   const [projects, setProjects] = useState([]);
@@ -39,70 +58,68 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#060d1a] transition-colors duration-500">
+    <div className="min-h-screen bg-white dark:bg-ink transition-colors duration-500">
       <div className="max-w-6xl mx-auto px-6 font-sans">
         <Hero />
 
-        {/* --- Section 01: Projects --- */}
-        <section id="projects" className="py-24">
-          <h2 className="text-3xl font-bold text-slate-800 dark:text-white mb-12 flex items-center">
-            <span className="text-secondary font-mono text-xl mr-2">01.</span> Built Projects
-            <div className="h-[1px] bg-slate-200 dark:bg-gray-800 flex-grow ml-6"></div>
-          </h2>
+        <WavyDivider className="text-slate-200 dark:text-[#241f42]" />
+
+        {/* --- Projects --- */}
+        <section id="projects" className="py-16">
+          <SectionHeading eyebrow="Selected Work" title="Built" accent="Projects" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {loading
               ? Array.from({ length: 3 }).map((_, i) => (
-                  <div key={i} className="h-80 rounded-2xl bg-slate-100 dark:bg-slate-800/60 animate-pulse" />
+                  <div key={i} className="h-80 rounded-2xl bg-slate-100 dark:bg-[#151228]/60 animate-pulse" />
                 ))
               : Array.isArray(projects) && projects.map((p) => <ProjectCard key={p._id} project={p} />)}
           </div>
         </section>
 
-        {/* --- Section 02: GitHub Stats --- */}
-        <section className="py-24">
-          <h2 className="text-3xl font-bold text-slate-800 dark:text-white mb-12 flex items-center">
-            <span className="text-secondary font-mono text-xl mr-2">02.</span> Live Activity
-            <div className="h-[1px] bg-slate-200 dark:bg-gray-800 flex-grow ml-6"></div>
-          </h2>
-          <GithubCard username="nabilroghani" /> 
+        <WavyDivider flip className="text-slate-200 dark:text-[#241f42]" />
+
+        {/* --- GitHub Stats --- */}
+        <section className="py-16">
+          <SectionHeading eyebrow="On GitHub" title="Live" accent="Activity" />
+          <GithubCard username="nabilroghani" />
         </section>
 
-        {/* --- Section 03: Tech Stack --- */}
-        <section className="py-24 text-center sm:text-left">
-          <h2 className="text-3xl font-bold text-slate-800 dark:text-white mb-12 flex items-center">
-            <span className="text-secondary font-mono text-xl mr-2">03.</span> Tech Stack
-            <div className="h-[1px] bg-slate-200 dark:bg-gray-800 flex-grow ml-6"></div>
-          </h2>
+        <WavyDivider className="text-slate-200 dark:text-[#241f42]" />
+
+        {/* --- Tech Stack --- */}
+        <section className="py-16 text-center">
+          <SectionHeading eyebrow="Toolbox" title="Tech" accent="Stack" />
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {(loading || !icons) && Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className="h-32 rounded-2xl bg-slate-100 dark:bg-slate-800/60 animate-pulse" />
+              <div key={i} className="h-32 rounded-2xl bg-slate-100 dark:bg-[#151228]/60 animate-pulse" />
             ))}
             {!loading && icons && tools.map((tool) => {
               const Icon = icons[tool.icon] || icons._fallback;
               return (
-                <motion.div 
+                <motion.div
                   whileHover={{ y: -8, scale: 1.02 }}
-                  key={tool._id} 
-                  className="bg-white dark:bg-[#112240]/50 p-6 rounded-2xl flex flex-col items-center border border-slate-200 dark:border-white/5 hover:border-secondary/20 hover:bg-slate-100 dark:hover:bg-[#112240] transition-all duration-300 group shadow-sm dark:shadow-none"
+                  key={tool._id}
+                  className="bg-white dark:bg-[#151228]/50 p-6 rounded-2xl flex flex-col items-center border border-slate-200 dark:border-[#2a2450] hover:border-gold/30 hover:bg-slate-50 dark:hover:bg-[#1a1730] transition-all duration-300 group shadow-sm dark:shadow-none"
                 >
-                  <div className="w-12 h-12 bg-slate-50 dark:bg-[#0a192f] rounded-xl flex items-center justify-center mb-4 shadow-inner group-hover:text-secondary transition-colors">
-                    <Icon size={24} className="text-gray-500 dark:text-gray-400 group-hover:text-secondary" />
+                  <div className="w-12 h-12 bg-slate-50 dark:bg-[#0f0e22] rounded-full flex items-center justify-center mb-4 shadow-inner group-hover:text-gold transition-colors">
+                    <Icon size={24} className="text-gray-500 dark:text-[#a79fc9] group-hover:text-gold" />
                   </div>
-                  <span className="text-slate-700 dark:text-gray-200 font-bold text-[13px] text-center mb-1">{tool.name}</span>
-                  <span className="text-[9px] text-slate-400 dark:text-gray-500 uppercase font-mono tracking-widest">{tool.category}</span>
+                  <span className="text-slate-700 dark:text-[#e5e1f2] font-semibold text-[13px] text-center mb-1">{tool.name}</span>
+                  <span className="text-[9px] text-slate-400 dark:text-[#8a83ab] uppercase tracking-widest">{tool.category}</span>
                 </motion.div>
               );
             })}
           </div>
         </section>
+
+        <WavyDivider flip className="text-slate-200 dark:text-[#241f42]" />
+
         <section id="experience">
-          
-            {<Experience/>}
-          
+          <Experience />
         </section>
 
         <section>
-          <About/>
+          <About />
         </section>
 
         <Contact />

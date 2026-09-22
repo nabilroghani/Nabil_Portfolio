@@ -73,32 +73,32 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative py-28 px-6 sm:px-8 bg-[#f8fafc] dark:bg-[#060d1a] overflow-hidden transition-colors duration-300"
+      className="relative py-28 px-6 sm:px-8 bg-[#faf7f0] dark:bg-ink overflow-hidden transition-colors duration-300"
     >
       {/* Background blobs */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[500px] h-[400px] rounded-full bg-sky-400/[0.05] dark:bg-sky-500/[0.06] blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-emerald-400/[0.05] dark:bg-emerald-500/[0.06] blur-[100px]" />
+        <div className="absolute top-0 right-0 w-[500px] h-[400px] rounded-full bg-violet/[0.05] dark:bg-violet/[0.08] blur-[120px]" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-gold/[0.05] dark:bg-gold/[0.06] blur-[100px]" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
 
         {/* ── Heading ── */}
         <motion.div {...fadeUp()} className="text-center mb-16">
-          <span className="inline-block text-emerald-500 font-mono text-xs tracking-[0.2em] uppercase mb-4">
+          <span className="inline-block text-gold text-xs font-medium tracking-[0.25em] uppercase mb-4">
             — About Me —
           </span>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-ink dark:text-[#f3efe4] leading-tight">
             The Person Behind
             <br />
-            <span className="text-emerald-500">the Code</span>
+            <span className="italic text-gold">the Code</span>
           </h2>
         </motion.div>
 
         {/* ── Intro block ── */}
         <motion.div {...fadeUp(0.1)} className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
-            I&apos;m <span className="text-slate-900 dark:text-white font-bold">Nabil Ahmad</span> a MERN Stack Web developer who
+          <p className="text-lg sm:text-xl text-slate-600 dark:text-[#c3bde0] leading-relaxed">
+            I&apos;m <span className="text-ink dark:text-[#f3efe4] font-bold">Nabil Ahmad</span> a MERN Stack Web developer who
             genuinely enjoys building things on the web. I turn ideas into fast, clean, and scalable
             applications. Outside of code, I&apos;m always reading, learning something new, or exploring what&apos;s
             coming next in tech.
@@ -113,27 +113,27 @@ const About = () => {
               <motion.div
                 key={title}
                 {...fadeUp(0.05 * i)}
-                className={`group relative bg-white dark:bg-slate-900/60
-                  border border-slate-200 dark:border-slate-700/50
+                className={`group relative bg-white dark:bg-[#151228]/70
+                  border border-slate-200 dark:border-[#2a2450]
                   ${c.border}
                   rounded-2xl p-6
-                  shadow-sm shadow-slate-200/50 dark:shadow-slate-900/20
-                  hover:shadow-lg dark:hover:shadow-slate-900/40
+                  shadow-sm shadow-slate-200/50 dark:shadow-black/20
+                  hover:shadow-lg dark:hover:shadow-black/40
                   transition-all duration-300
                   ${i === 4 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
               >
                 {/* Icon */}
-                <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${c.icon}`}>
+                <div className={`w-11 h-11 rounded-full flex items-center justify-center mb-4 ${c.icon}`}>
                   <Icon size={20} strokeWidth={2} />
                 </div>
 
                 {/* Title */}
-                <h4 className="text-slate-900 dark:text-white font-black text-base mb-2 leading-snug">
+                <h4 className="font-display text-ink dark:text-[#f3efe4] text-base mb-2 leading-snug">
                   {title}
                 </h4>
 
                 {/* Body */}
-                <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                <p className="text-slate-500 dark:text-[#a79fc9] text-sm leading-relaxed">
                   {body}
                 </p>
               </motion.div>
@@ -144,10 +144,10 @@ const About = () => {
         {/* ── Bottom quote strip ── */}
         <motion.div {...fadeUp(0.3)} className="mt-14 text-center">
           <div className="inline-block px-6 py-4 rounded-2xl
-            bg-emerald-500/[0.06] dark:bg-emerald-500/[0.08]
-            border border-emerald-500/20 dark:border-emerald-500/15"
+            bg-gold/[0.06] dark:bg-gold/[0.08]
+            border border-gold/20 dark:border-gold/15"
           >
-            <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base font-medium italic">
+            <p className="font-display text-ink dark:text-[#e5e1f2] text-base sm:text-lg italic">
               &quot;I don&apos;t just write code I build experiences that solve real problems.&quot;
             </p>
           </div>

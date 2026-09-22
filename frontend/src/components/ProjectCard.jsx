@@ -12,16 +12,16 @@ const ProjectCard = ({ project }) => {
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       whileHover={{ y: -6 }}
       className="group flex flex-col h-full
-        bg-white dark:bg-slate-900/70
-        border border-slate-200 dark:border-slate-700/50
-        hover:border-emerald-500/40 dark:hover:border-emerald-500/30
+        bg-white dark:bg-[#151228]/70
+        border border-slate-200 dark:border-[#2a2450]
+        hover:border-gold/40 dark:hover:border-gold/30
         rounded-2xl overflow-hidden
-        shadow-md shadow-slate-200/60 dark:shadow-slate-900/30
-        hover:shadow-xl hover:shadow-emerald-500/5 dark:hover:shadow-emerald-500/10
+        shadow-md shadow-slate-200/60 dark:shadow-black/30
+        hover:shadow-xl hover:shadow-gold/5 dark:hover:shadow-gold/10
         transition-all duration-300"
     >
       {/* ── Image ── */}
-      <div className="relative h-48 overflow-hidden bg-slate-100 dark:bg-slate-800 flex-shrink-0">
+      <div className="relative h-48 overflow-hidden bg-slate-100 dark:bg-[#1a1730] flex-shrink-0">
         {project.image ? (
           <>
             <img
@@ -51,7 +51,7 @@ const ProjectCard = ({ project }) => {
                   href={project.liveLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-1.5 bg-emerald-500/90 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-2 rounded-lg transition-all duration-200"
+                  className="flex items-center gap-1.5 bg-gold/90 hover:bg-gold text-white text-xs font-bold px-4 py-2 rounded-lg transition-all duration-200"
                 >
                   <ExternalLink size={12} strokeWidth={2.5} />
                   Live
@@ -73,7 +73,7 @@ const ProjectCard = ({ project }) => {
 
         {/* Title + icon links */}
         <div className="flex justify-between items-start gap-3 mb-3">
-          <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors duration-200 leading-snug">
+          <h3 className="text-base sm:text-lg font-display text-ink dark:text-[#f3efe4] font-semibold group-hover:text-gold dark:group-hover:text-gold transition-colors duration-200 leading-snug">
             {project.title}
           </h3>
           <div className="flex gap-2.5 text-slate-400 dark:text-slate-500 flex-shrink-0 mt-0.5">
@@ -93,7 +93,7 @@ const ProjectCard = ({ project }) => {
                 href={project.liveLink}
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors duration-200"
+                className="hover:text-gold dark:hover:text-gold transition-colors duration-200"
                 aria-label="Live Demo"
               >
                 <ExternalLink size={16} strokeWidth={2} />
@@ -103,7 +103,7 @@ const ProjectCard = ({ project }) => {
         </div>
 
         {/* Description */}
-        <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed line-clamp-3 mb-5">
+        <p className="text-slate-500 dark:text-[#a79fc9] text-sm leading-relaxed line-clamp-3 mb-5">
           {project.desc}
         </p>
 
@@ -112,11 +112,11 @@ const ProjectCard = ({ project }) => {
           {project.stack && project.stack.map((tech, i) => (
             <span
               key={i}
-              className="text-[11px] font-mono font-semibold
-                text-emerald-700 dark:text-emerald-400
-                bg-emerald-50 dark:bg-emerald-500/10
-                border border-emerald-200 dark:border-emerald-500/20
-                px-2.5 py-1 rounded-md
+              className="text-[11px] font-semibold
+                text-[#9c7a3a] dark:text-gold-soft
+                bg-gold/5 dark:bg-gold/10
+                border border-gold/20 dark:border-gold/20
+                px-2.5 py-1 rounded-full
                 transition-colors duration-200"
             >
               {tech}
