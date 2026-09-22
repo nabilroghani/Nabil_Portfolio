@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
 import { useRef } from 'react';
 import { Download, Eye, Mail, ArrowRight, Code2, Sparkles } from 'lucide-react';
 import toast from 'react-hot-toast';
@@ -19,6 +19,19 @@ const Hero = () => {
   const imageY = useTransform(scrollYProgress, [0, 1], [0, 90]);
   const contentY = useTransform(scrollYProgress, [0, 1], [0, 60]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+
+  // A soft glow that follows the cursor, lagging behind with a spring so
+  // it feels alive rather than glued to the pointer.
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const spotlightX = useSpring(mouseX, { damping: 28, stiffness: 150 });
+  const spotlightY = useSpring(mouseY, { damping: 28, stiffness: 150 });
+
+  const handleMouseMove = (e) => {
+    const rect = sectionRef.current.getBoundingClientRect();
+    mouseX.set(e.clientX - rect.left);
+    mouseY.set(e.clientY - rect.top);
+  };
 
   const handleDownload = async () => {
     const toastId = toast.loading('Preparing your resume...');
@@ -41,8 +54,12 @@ const Hero = () => {
   };
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden
-     bg-[#faf7f0] dark:bg-ink">
+    <section
+      ref={sectionRef}
+      onMouseMove={handleMouseMove}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden
+     bg-[#faf7f0] dark:bg-ink"
+    >
 
       {/* Ambient glow blobs — parallax on scroll */}
       <div className="absolute inset-0 pointer-events-none">
@@ -55,6 +72,13 @@ const Hero = () => {
           style={{ y: blob2Y }}
           className="absolute bottom-[-120px] left-[-100px] w-[420px] h-[420px]
          rounded-full bg-violet/10 dark:bg-violet/[0.12] blur-[110px]"
+        />
+        {/* Cursor-tracking spotlight */}
+        <motion.div
+          style={{ left: spotlightX, top: spotlightY, x: '-50%', y: '-50%' }}
+          className="hidden lg:block absolute w-[480px] h-[480px] rounded-full
+            bg-[radial-gradient(circle,rgba(201,161,95,0.14),transparent_70%)]
+            dark:bg-[radial-gradient(circle,rgba(201,161,95,0.10),transparent_70%)]"
         />
       </div>
 

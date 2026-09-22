@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import About from '../components/About';
 import Experience from '../components/Experience';
 import WavyDivider from '../components/WavyDivider';
+import ScrollRevealText from '../components/ScrollRevealText';
 
 const fadeUp = {
   initial: { opacity: 0, y: 28 },
@@ -58,12 +59,13 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-ink transition-colors duration-500">
-      <div className="max-w-6xl mx-auto px-6 font-sans">
-        <Hero />
+    <div className="min-h-screen bg-white dark:bg-ink transition-colors duration-500 font-sans">
+      {/* Full-bleed sections — each manages its own inner max-width */}
+      <Hero />
 
-        <WavyDivider className="text-slate-200 dark:text-[#241f42]" />
+      <ScrollRevealText lines={['Built With', 'Obsessive Craft']} />
 
+      <div className="max-w-6xl mx-auto px-6">
         {/* --- Projects --- */}
         <section id="projects" className="py-16">
           <SectionHeading eyebrow="Selected Work" title="Built" accent="Projects" />
@@ -114,19 +116,13 @@ const Home = () => {
             })}
           </div>
         </section>
-
-        <WavyDivider flip className="text-slate-200 dark:text-[#241f42]" />
-
-        <section id="experience">
-          <Experience />
-        </section>
-
-        <section>
-          <About />
-        </section>
-
-        <Contact />
       </div>
+
+      <WavyDivider flip className="text-slate-200 dark:text-[#241f42]" />
+
+      <Experience />
+      <About />
+      <Contact />
     </div>
   );
 };
