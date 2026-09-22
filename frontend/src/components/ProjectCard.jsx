@@ -6,11 +6,12 @@ import GithubMark from './icons/GithubMark';
 const ProjectCard = ({ project }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 24, rotate: 0 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={{ y: -6 }}
+      whileHover={{ y: -8, rotate: -1.5, scale: 1.015 }}
+      style={{ transformPerspective: 800 }}
       className="group flex flex-col h-full
         bg-white dark:bg-[#151228]/70
         border border-slate-200 dark:border-[#2a2450]

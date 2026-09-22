@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import { Download, Eye, Mail, ArrowRight } from 'lucide-react';
+import { Download, Eye, Mail, ArrowRight, Code2, Sparkles } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { downloadCv } from '../utils/cvDownload';
 import my from '../assets/my.webp';
@@ -185,6 +185,50 @@ const Hero = () => {
               {/* Small dot bottom-left */}
               <div className="absolute -bottom-2 -left-2 w-4 h-4 rounded-full bg-violet z-20 border-2
                border-[#faf7f0] dark:border-ink" />
+
+              {/* Floating tilted card — MERN Stack */}
+              <motion.div
+                initial={{ opacity: 0, y: -10, rotate: -8 }}
+                animate={{ opacity: 1, y: [0, -14, 0], rotate: -8 }}
+                transition={{
+                  opacity: { duration: 0.6, delay: 0.9 },
+                  y: { duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 1 },
+                }}
+                className="hidden sm:flex absolute -top-6 -left-10 z-30 items-center gap-2.5
+                  bg-white/90 dark:bg-[#151228]/90 backdrop-blur-md
+                  border border-gold/25 rounded-2xl px-4 py-3
+                  shadow-xl shadow-gold/10 dark:shadow-black/40"
+              >
+                <div className="w-8 h-8 rounded-full bg-gold/15 flex items-center justify-center flex-shrink-0">
+                  <Code2 size={15} className="text-gold" strokeWidth={2.5} />
+                </div>
+                <div className="leading-tight">
+                  <p className="text-ink dark:text-[#f3efe4] font-display text-sm">MERN Stack</p>
+                  <p className="text-slate-400 dark:text-[#8a83ab] text-[10px] tracking-wide">Core expertise</p>
+                </div>
+              </motion.div>
+
+              {/* Floating tilted card — availability */}
+              <motion.div
+                initial={{ opacity: 0, y: 10, rotate: 6 }}
+                animate={{ opacity: 1, y: [0, 12, 0], rotate: 6 }}
+                transition={{
+                  opacity: { duration: 0.6, delay: 1.1 },
+                  y: { duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1.2 },
+                }}
+                className="hidden sm:flex absolute -bottom-8 -right-8 z-30 items-center gap-2.5
+                  bg-white/90 dark:bg-[#151228]/90 backdrop-blur-md
+                  border border-violet/25 rounded-2xl px-4 py-3
+                  shadow-xl shadow-violet/10 dark:shadow-black/40"
+              >
+                <div className="w-8 h-8 rounded-full bg-violet/15 flex items-center justify-center flex-shrink-0">
+                  <Sparkles size={15} className="text-violet" strokeWidth={2.5} />
+                </div>
+                <div className="leading-tight">
+                  <p className="text-ink dark:text-[#f3efe4] font-display text-sm">2+ Years</p>
+                  <p className="text-slate-400 dark:text-[#8a83ab] text-[10px] tracking-wide">Building products</p>
+                </div>
+              </motion.div>
 
               {/* Main image box */}
               <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-[340px] lg:h-[400px] rounded-[2rem]

@@ -120,6 +120,7 @@ const About = () => {
               <motion.div
                 key={title}
                 {...fadeUp(0.05 * i)}
+                whileHover={{ y: -6, rotate: i % 2 === 0 ? -1.5 : 1.5, scale: 1.015 }}
                 className={`group relative bg-white dark:bg-[#151228]/70
                   border border-slate-200 dark:border-[#2a2450]
                   ${c.border}

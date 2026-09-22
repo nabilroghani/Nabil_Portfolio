@@ -97,7 +97,10 @@ const Home = () => {
               const Icon = icons[tool.icon] || icons._fallback;
               return (
                 <motion.div
-                  whileHover={{ y: -8, scale: 1.02 }}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -8, scale: 1.03, rotate: -2 }}
                   key={tool._id}
                   className="bg-white dark:bg-[#151228]/50 p-6 rounded-2xl flex flex-col items-center border border-slate-200 dark:border-[#2a2450] hover:border-gold/30 hover:bg-slate-50 dark:hover:bg-[#1a1730] transition-all duration-300 group shadow-sm dark:shadow-none"
                 >

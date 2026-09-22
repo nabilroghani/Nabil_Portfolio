@@ -41,9 +41,12 @@ const GithubCard = ({ username = "nabilahmad" }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: [20, 0, -6, 0] }}
       viewport={{ once: true }}
-      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      transition={{
+        opacity: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+        y: { duration: 4.5, times: [0, 0.25, 0.65, 1], repeat: Infinity, ease: 'easeInOut' },
+      }}
       className="relative overflow-hidden group
         bg-white dark:bg-[#151228]/70
         border border-slate-200 dark:border-[#2a2450]
