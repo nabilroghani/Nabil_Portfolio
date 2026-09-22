@@ -9,6 +9,8 @@ import About from '../components/About';
 import Experience from '../components/Experience';
 import WavyDivider from '../components/WavyDivider';
 import ScrollRevealText from '../components/ScrollRevealText';
+import ScrollSplitReveal from '../components/ScrollSplitReveal';
+import ScrollMaskReveal from '../components/ScrollMaskReveal';
 
 const fadeUp = {
   initial: { opacity: 0, y: 28 },
@@ -118,9 +120,12 @@ const Home = () => {
         </section>
       </div>
 
-      <WavyDivider flip className="text-slate-200 dark:text-[#241f42]" />
+      <ScrollSplitReveal left="Skills" right="that ship" />
 
       <Experience />
+
+      <ScrollMaskReveal text="Always Learning" />
+
       <About />
       <Contact />
     </div>
