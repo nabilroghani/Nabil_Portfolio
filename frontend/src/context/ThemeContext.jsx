@@ -9,7 +9,7 @@ export const ThemeProvider = ({ children }) => {
       return true;
     }
 
-    return localStorage.getItem(THEME_STORAGE_KEY) !== 'light';
+    return localStorage.getItem(THEME_STORAGE_KEY) === 'dark';
   });
 
   useEffect(() => {

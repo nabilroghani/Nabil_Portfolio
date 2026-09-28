@@ -7,7 +7,7 @@
     <title>Nabil Ahmad | Full Stack Developer</title>
     <meta name="description" content="Nabil Ahmad is a Full Stack Developer specializing in the MERN stack, building modern web apps, dashboards, and full-scale SaaS products." />
     <meta name="author" content="Nabil Ahmad" />
-    <meta name="theme-color" content="#0b0a1a" />
+    <meta name="theme-color" content="#faf7f0" />
     <link rel="canonical" href="https://nabil-omega.vercel.app/" />
 
     <!-- Favicon -->
@@ -51,10 +51,10 @@
     <script>
       const savedTheme = localStorage.getItem('theme');
 
-      if (savedTheme === 'light') {
-        document.documentElement.classList.remove('dark');
-      } else {
+      if (savedTheme === 'dark') {
         document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
       }
     </script>
   </head>
