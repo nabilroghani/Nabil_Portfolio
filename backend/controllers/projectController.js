@@ -18,8 +18,8 @@ exports.createProject = async (req, res) => {
     console.log("BODY:", req.body); // Check karein data aa raha hai
     console.log("FILE:", req.file); // Check karein image aa rahi hai
     try {
-        const { title, desc, stack, liveLink, githubLink } = req.body;
-        const imageUrl = req.file ? req.file.path : ''; 
+        const { title, desc, stack, liveLink, githubLink, category } = req.body;
+        const imageUrl = req.file ? req.file.path : '';
 
         // Safe Parsing
         let stackArray = [];
@@ -35,7 +35,8 @@ exports.createProject = async (req, res) => {
             stack: stackArray,
             liveLink,
             githubLink,
-            image: imageUrl
+            image: imageUrl,
+            category: category || 'Personal'
         });
         res.status(201).json(newProject);
     } catch (error) {

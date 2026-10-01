@@ -124,7 +124,7 @@ const CvManager = () => {
             <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${driveId ? 'bg-gold text-ink shadow-xl shadow-gold/20' : 'bg-amber-500 text-white'}`}>
               {driveId ? <FileText size={32} /> : <ShieldAlert size={32} />}
             </div>
-            <p className={`text-lg font-black ${driveId ? 'text-emerald-500' : 'text-amber-500'}`}>
+            <p className={`text-lg font-black ${driveId ? 'text-gold' : 'text-amber-500'}`}>
               {driveId ? 'CV CONNECTED' : 'ID MISSING'}
             </p>
           </div>

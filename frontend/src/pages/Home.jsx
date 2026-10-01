@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import API from '../api/axios';
 import Hero from '../components/Hero';
-import ProjectCard from '../components/ProjectCard';
+import ProjectsGrid from '../components/ProjectsGrid';
 import Contact from '../components/Contact';
 import GithubCard from '../components/GithubCard';
 import { motion } from 'framer-motion';
@@ -71,13 +71,7 @@ const Home = () => {
         {/* --- Projects --- */}
         <section id="projects" className="py-16">
           <SectionHeading eyebrow="Selected Work" title="Built" accent="Projects" />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {loading
-              ? Array.from({ length: 3 }).map((_, i) => (
-                  <div key={i} className="h-80 rounded-2xl bg-slate-100 dark:bg-[#151228]/60 animate-pulse" />
-                ))
-              : Array.isArray(projects) && projects.map((p) => <ProjectCard key={p._id} project={p} />)}
-          </div>
+          <ProjectsGrid projects={Array.isArray(projects) ? projects : []} loading={loading} />
         </section>
 
         <WavyDivider flip className="text-slate-200 dark:text-[#241f42]" />
