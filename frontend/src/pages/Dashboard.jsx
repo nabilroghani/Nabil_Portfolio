@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import API from '../api/axios';
 import toast from 'react-hot-toast';
-import { Plus, Mail, Calendar, Trash2, Eye, Download, MessageSquare, Sun, Moon } from 'lucide-react';
+import { Plus, Mail, Calendar, Trash2, Pencil, Eye, Download, MessageSquare, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
 // Sub-Components Imports
@@ -18,7 +18,14 @@ const Dashboard = () => {
   const [activeTab, setActiveTab] = useState('projects');
   const [isProjModalOpen, setIsProjModalOpen] = useState(false);
   const [isToolModalOpen, setIsToolModalOpen] = useState(false);
+  const [editingProject, setEditingProject] = useState(null);
+  const [editingTool, setEditingTool] = useState(null);
   const { isDark, toggleTheme } = useTheme();
+
+  const openAddProject = () => { setEditingProject(null); setIsProjModalOpen(true); };
+  const openEditProject = (p) => { setEditingProject(p); setIsProjModalOpen(true); };
+  const openAddTool = () => { setEditingTool(null); setIsToolModalOpen(true); };
+  const openEditTool = (t) => { setEditingTool(t); setIsToolModalOpen(true); };
 
   const fetchData = async () => {
     // Each section loads independently — one failing endpoint (e.g. an
@@ -96,7 +103,7 @@ const Dashboard = () => {
 
             {['projects', 'tools'].includes(activeTab) && (
               <button
-                onClick={() => activeTab === 'projects' ? setIsProjModalOpen(true) : setIsToolModalOpen(true)}
+                onClick={() => activeTab === 'projects' ? openAddProject() : openAddTool()}
                 className="bg-gold hover:bg-gold-soft text-ink px-6 py-2.5 rounded-full font-semibold text-sm flex items-center gap-2 transition-all shadow-lg shadow-gold/20 active:scale-95"
               >
                 <Plus size={18} strokeWidth={2.5} /> Add {activeTab === 'projects' ? 'Project' : 'Tool'}
@@ -211,7 +218,8 @@ const Dashboard = () => {
                               ))}
                             </div>
                           </td>
-                          <td className="p-6 text-right">
+                          <td className="p-6 text-right whitespace-nowrap">
+                            <button onClick={() => openEditProject(p)} className="text-slate-400 dark:text-slate-600 hover:text-gold transition-colors p-2"><Pencil size={17}/></button>
                             <button onClick={() => handleDelete('projects', p._id)} className="text-slate-400 dark:text-slate-600 hover:text-red-500 transition-colors p-2"><Trash2 size={18}/></button>
                           </td>
                         </tr>
@@ -226,7 +234,8 @@ const Dashboard = () => {
                           <td className="p-6">
                             <span className="text-[10px] bg-gold/10 text-gold px-3 py-1 rounded-full uppercase font-bold">{t.category}</span>
                           </td>
-                          <td className="p-6 text-right">
+                          <td className="p-6 text-right whitespace-nowrap">
+                            <button onClick={() => openEditTool(t)} className="text-slate-400 dark:text-slate-600 hover:text-gold transition-colors p-2"><Pencil size={17}/></button>
                             <button onClick={() => handleDelete('tools', t._id)} className="text-slate-400 dark:text-slate-600 hover:text-red-500 transition-colors p-2"><Trash2 size={18}/></button>
                           </td>
                         </tr>
@@ -240,8 +249,18 @@ const Dashboard = () => {
         </main>
       </div>
 
-      <ProjectModal isOpen={isProjModalOpen} onClose={() => setIsProjModalOpen(false)} refreshProjects={fetchData} />
-      <ToolModal isOpen={isToolModalOpen} onClose={() => setIsToolModalOpen(false)} refreshTools={fetchData} />
+      <ProjectModal
+        isOpen={isProjModalOpen}
+        onClose={() => setIsProjModalOpen(false)}
+        refreshProjects={fetchData}
+        editingProject={editingProject}
+      />
+      <ToolModal
+        isOpen={isToolModalOpen}
+        onClose={() => setIsToolModalOpen(false)}
+        refreshTools={fetchData}
+        editingTool={editingTool}
+      />
     </div>
   );
 };

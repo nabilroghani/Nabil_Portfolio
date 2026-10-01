@@ -2,12 +2,22 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import API from '../../api/axios';
 import toast from 'react-hot-toast';
-import { X, Loader2, Cpu, Tag, Smile, Plus } from 'lucide-react';
+import { X, Loader2, Cpu, Tag, Smile, Plus, Save } from 'lucide-react';
 
-const ToolModal = ({ isOpen, onClose, refreshTools }) => {
+const EMPTY_FORM = { name: '', category: '', icon: '' };
+
+const ToolModal = ({ isOpen, onClose, refreshTools, editingTool = null }) => {
+  const isEditing = Boolean(editingTool);
   const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({ name: '', category: '', icon: '' });
+  const [formData, setFormData] = useState(EMPTY_FORM);
   const [focused, setFocused] = useState(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    setFormData(editingTool
+      ? { name: editingTool.name || '', category: editingTool.category || '', icon: editingTool.icon || '' }
+      : EMPTY_FORM);
+  }, [isOpen, editingTool]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -21,13 +31,17 @@ const ToolModal = ({ isOpen, onClose, refreshTools }) => {
     if (!formData.category) return toast.error('Please select a category');
     setLoading(true);
     try {
-      await API.post('/tools', formData);
-      toast.success('Tool Added to Stack!');
+      if (isEditing) {
+        await API.put(`/tools/${editingTool._id}`, formData);
+        toast.success('Tool Updated!');
+      } else {
+        await API.post('/tools', formData);
+        toast.success('Tool Added to Stack!');
+      }
       refreshTools();
       onClose();
-      setFormData({ name: '', category: '', icon: '' });
     } catch {
-      toast.error('Failed to add tool');
+      toast.error(isEditing ? 'Failed to update tool' : 'Failed to add tool');
     } finally {
       setLoading(false);
     }
@@ -80,8 +94,8 @@ const ToolModal = ({ isOpen, onClose, refreshTools }) => {
                   <Cpu size={18} className="text-gold" strokeWidth={2} />
                 </div>
                 <div>
-                  <h2 className="font-display text-ink dark:text-[#f3efe4] text-base">Add Tech Tool</h2>
-                  <p className="text-slate-400 dark:text-[#8a83ab] text-xs">Add a new skill to your stack</p>
+                  <h2 className="font-display text-ink dark:text-[#f3efe4] text-base">{isEditing ? 'Edit Tech Tool' : 'Add Tech Tool'}</h2>
+                  <p className="text-slate-400 dark:text-[#8a83ab] text-xs">{isEditing ? 'Update this skill' : 'Add a new skill to your stack'}</p>
                 </div>
               </div>
               <button
@@ -188,7 +202,12 @@ const ToolModal = ({ isOpen, onClose, refreshTools }) => {
                   {loading ? (
                     <>
                       <Loader2 size={15} className="animate-spin" />
-                      Adding...
+                      {isEditing ? 'Saving...' : 'Adding...'}
+                    </>
+                  ) : isEditing ? (
+                    <>
+                      <Save size={15} strokeWidth={2.5} />
+                      Save Changes
                     </>
                   ) : (
                     <>

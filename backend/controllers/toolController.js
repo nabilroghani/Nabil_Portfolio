@@ -18,6 +18,16 @@ exports.addTool = async (req, res) => {
     }
 };
 
+exports.updateTool = async (req, res) => {
+    try {
+        const updated = await Tool.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+        if (!updated) return res.status(404).json({ message: "Tool not found" });
+        res.status(200).json(updated);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+};
+
 exports.deleteTool = async (req, res) => {
     try {
         await Tool.findByIdAndDelete(req.params.id);

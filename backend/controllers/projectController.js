@@ -44,6 +44,40 @@ exports.createProject = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+// @desc    Update a project
+// @route   PUT /api/projects/:id
+exports.updateProject = async (req, res) => {
+    try {
+        const { title, desc, stack, liveLink, githubLink, category } = req.body;
+
+        let stackArray;
+        if (stack !== undefined) {
+            try {
+                stackArray = JSON.parse(stack);
+            } catch (e) {
+                stackArray = stack.split(',').map(s => s.trim());
+            }
+        }
+
+        const update = {
+            ...(title !== undefined && { title }),
+            ...(desc !== undefined && { desc }),
+            ...(stackArray !== undefined && { stack: stackArray }),
+            ...(liveLink !== undefined && { liveLink }),
+            ...(githubLink !== undefined && { githubLink }),
+            ...(category !== undefined && { category }),
+        };
+        if (req.file) update.image = req.file.path;
+
+        const updated = await Project.findByIdAndUpdate(req.params.id, update, { new: true, runValidators: true });
+        if (!updated) return res.status(404).json({ message: "Project not found" });
+
+        res.status(200).json(updated);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
 // @desc    Delete a project
 // @route   DELETE /api/projects/:id
 exports.deleteProject = async (req, res) => {
