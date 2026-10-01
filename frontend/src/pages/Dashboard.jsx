@@ -21,19 +21,30 @@ const Dashboard = () => {
   const { isDark, toggleTheme } = useTheme();
 
   const fetchData = async () => {
-    try {
-      const [resP, resT, resM, resS] = await Promise.all([
-        API.get('/projects'),
-        API.get('/tools'),
-        API.get('/messages'),
-        API.get('/stats')
-      ]);
-      setProjects(resP.data);
-      setTools(resT.data);
-      setMessages(resM.data);
-      setStats(resS.data || { pageVisits: 0, resumeDownloads: 0 });
-    } catch (err) {
-      console.error("Dashboard error:", err);
+    // Each section loads independently — one failing endpoint (e.g. an
+    // expired token on /stats) should not blank out the others.
+    const [resP, resT, resM, resS] = await Promise.allSettled([
+      API.get('/projects'),
+      API.get('/tools'),
+      API.get('/messages'),
+      API.get('/stats')
+    ]);
+
+    if (resP.status === 'fulfilled') setProjects(resP.value.data);
+    else console.error('Failed to load projects:', resP.reason);
+
+    if (resT.status === 'fulfilled') setTools(resT.value.data);
+    else console.error('Failed to load tools:', resT.reason);
+
+    if (resM.status === 'fulfilled') setMessages(resM.value.data);
+    else console.error('Failed to load messages:', resM.reason);
+
+    if (resS.status === 'fulfilled') setStats(resS.value.data || { pageVisits: 0, resumeDownloads: 0 });
+    else console.error('Failed to load stats:', resS.reason);
+
+    const failed = [resP, resT, resM, resS].filter((r) => r.status === 'rejected');
+    if (failed.length > 0) {
+      toast.error(`Some dashboard data failed to load (${failed.length}/4). Check console for details.`);
     }
   };
 
