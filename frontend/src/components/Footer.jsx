@@ -7,7 +7,7 @@ const SOCIALS = [
   { href: 'https://github.com/nabilroghani', label: 'GitHub', Icon: GithubMark },
   { href: 'https://www.linkedin.com/in/nabil-ahmad-0750002b1', label: 'LinkedIn', Icon: LinkedinMark },
   { href: 'https://www.facebook.com/nabilroghani', label: 'Facebook', Icon: FacebookMark },
-  { href: 'mailto:nabilroghani95@gmail.com', label: 'Email', Icon: Mail },
+  { href: 'mailto:nabiltechlogic.dev@gmail.com', label: 'Email', Icon: Mail },
 ];
 
 const Footer = () => (

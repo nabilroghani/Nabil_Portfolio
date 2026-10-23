@@ -40,7 +40,7 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'nabilroghani95@gmail.com',
+      value: 'nabiltechlogic.dev@gmail.com',
       sub: 'Best way to reach me',
     },
     {
