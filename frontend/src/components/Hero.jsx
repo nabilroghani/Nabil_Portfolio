@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { Download, Eye, Mail, ArrowRight, Code2, Sparkles } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { downloadCv } from '../utils/cvDownload';
-import my from '../assets/my.webp';
+import my from '../assets/nabil.webp';
 
 const Hero = () => {
   const sectionRef = useRef(null);

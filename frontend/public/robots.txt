@@ -3,4 +3,4 @@ Allow: /
 Disallow: /login
 Disallow: /admin
 
-Sitemap: https://nabil-omega.vercel.app/sitemap.xml
+Sitemap: https://nabil-tech.vercel.app/sitemap.xml
