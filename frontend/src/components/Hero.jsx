@@ -71,18 +71,21 @@ const Hero = () => {
   return (
     <section className="relative w-full bg-white dark:bg-[#151228] transition-colors duration-300">
       {/* ── Custom Designed Banner (Coded Native Banner with AWS & Next.js) ── */}
-      <div className="relative w-full min-h-[190px] sm:min-h-[210px] md:h-56 bg-gradient-to-r from-[#030712] via-[#07132a] to-[#030a16] overflow-hidden select-none px-4 sm:px-8 md:px-10 flex flex-col justify-between pt-3.5 sm:pt-6 pb-2.5 sm:pb-3">
+      <div className="relative w-full min-h-[190px] sm:min-h-[210px] md:h-56 bg-gradient-to-r from-[#030712] via-[#07132a] to-[#030a16] dark:from-[#0d1e38] dark:via-[#172c54] dark:to-[#0d2b42] border-b border-black/10 dark:border-cyan-500/30 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)] overflow-hidden select-none px-4 sm:px-8 md:px-10 flex flex-col justify-between pt-3.5 sm:pt-6 pb-2.5 sm:pb-3">
+        {/* Subtle top-down overlay for depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/[0.05] via-transparent to-black/20 pointer-events-none" />
+
         {/* Background cyber code watermark */}
-        <div className="absolute inset-0 pointer-events-none opacity-20 font-mono text-[9px] sm:text-xs text-cyan-400/70 p-3 sm:p-4 leading-relaxed overflow-hidden select-none">
+        <div className="absolute inset-0 pointer-events-none opacity-20 dark:opacity-30 font-mono text-[9px] sm:text-xs text-cyan-400/70 dark:text-cyan-300/80 p-3 sm:p-4 leading-relaxed overflow-hidden select-none">
           <p>const app = express(); app.use(cors());</p>
           <p>import &#123; S3Client, PutObjectCommand &#125; from &apos;@aws-sdk/client-s3&apos;;</p>
           <p>const db = await mongoose.connect(process.env.MONGO_URI);</p>
           <p>export default async function Page() &#123; return &lt;App /&gt;; &#125;</p>
         </div>
 
-        {/* Ambient radial glows */}
-        <div className="absolute -right-16 -top-16 w-80 h-80 rounded-full bg-cyan-500/20 blur-3xl pointer-events-none" />
-        <div className="absolute -left-16 -bottom-16 w-60 h-60 rounded-full bg-emerald-500/15 blur-3xl pointer-events-none" />
+        {/* Ambient radial glows (illuminated in dark mode to distinctively stand out from BG) */}
+        <div className="absolute -right-16 -top-16 w-80 h-80 rounded-full bg-cyan-500/20 dark:bg-cyan-400/30 blur-3xl pointer-events-none" />
+        <div className="absolute -left-16 -bottom-16 w-60 h-60 rounded-full bg-emerald-500/15 dark:bg-emerald-400/25 blur-3xl pointer-events-none" />
 
         {/* ── TOP OF BANNER: MERN STACK & AWS DEVELOPER (Positioned High to clear head) ── */}
         <div className="relative z-10 flex items-start justify-between">

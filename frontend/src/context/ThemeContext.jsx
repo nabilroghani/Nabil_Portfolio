@@ -6,7 +6,8 @@ const ThemeContext = createContext();
 const THEME_STORAGE_KEY = 'theme';
 
 export const ThemeProvider = ({ children }) => {
-  const [isDark, setIsDark] = useState(true);
+  // Default to light theme
+  const [isDark, setIsDark] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -17,7 +18,9 @@ export const ThemeProvider = ({ children }) => {
       setIsDark(dark);
       document.documentElement.classList.toggle('dark', dark);
     } else {
-      document.documentElement.classList.add('dark');
+      // Default: light mode (remove dark class)
+      setIsDark(false);
+      document.documentElement.classList.remove('dark');
     }
   }, []);
 
