@@ -1,20 +1,29 @@
 import nodemailer from 'nodemailer';
 
 export async function sendContactNotification({ name, email, service, budget, timeline, subject, message }) {
-  const emailUser = process.env.EMAIL_USER || process.env.SMTP_USER;
-  const emailPass = process.env.EMAIL_PASS || process.env.SMTP_PASS;
+  // Support both UPPERCASE and lowercase variable names (Vercel Linux is case-sensitive)
+  const emailUser = (process.env.EMAIL_USER || process.env.email_user || process.env.SMTP_USER || process.env.smtp_user || '').trim();
+  const rawPass = (process.env.EMAIL_PASS || process.env.email_pass || process.env.SMTP_PASS || process.env.smtp_pass || '').trim();
+  // Strip any accidental spaces from Google 16-character App Password (e.g. "abcd efgh ijkl mnop" -> "abcdefghijklmnop")
+  const emailPass = rawPass.replace(/\s+/g, '');
 
   if (!emailUser || !emailPass) {
-    console.warn('EMAIL_USER or EMAIL_PASS not configured. Skipping email dispatch.');
+    console.warn('[Nodemailer] EMAIL_USER or EMAIL_PASS not found in environment variables. Email skipped.');
     return { skipped: true, reason: 'Email credentials not set' };
   }
 
+  // Direct SSL connection to smtp.gmail.com:465 is the most reliable in cloud serverless (Vercel / AWS Lambda)
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
     auth: {
       user: emailUser,
       pass: emailPass,
     },
+    connectionTimeout: 10000,
+    greetingTimeout: 10000,
+    socketTimeout: 15000,
   });
 
   const mailOptions = {

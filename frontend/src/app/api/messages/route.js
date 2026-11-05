@@ -40,12 +40,22 @@ export async function POST(request) {
       message,
     });
 
-    // Send email notification to Nabil asynchronously
-    sendContactNotification({ name, email, service, budget, timeline, subject, message }).catch((err) => {
-      console.warn('Email notification skipped or failed:', err.message);
-    });
+    // In Serverless (Vercel), we MUST await the email promise.
+    // If not awaited, Vercel immediately freezes and terminates the Lambda execution
+    // before the SMTP network socket finishes sending the email!
+    let emailStatus = null;
+    try {
+      emailStatus = await sendContactNotification({ name, email, service, budget, timeline, subject, message });
+      console.log('[Messages API] Email dispatched:', emailStatus?.messageId || emailStatus);
+    } catch (err) {
+      console.error('[Messages API] Email dispatch error:', err.message || err);
+    }
 
-    return NextResponse.json({ success: true, data: newMessage }, { status: 201 });
+    return NextResponse.json({
+      success: true,
+      data: newMessage,
+      emailDispatched: !emailStatus?.skipped,
+    }, { status: 201 });
   } catch (error) {
     console.error('Send message error:', error);
     return NextResponse.json({ message: 'Could not send message' }, { status: 500 });
