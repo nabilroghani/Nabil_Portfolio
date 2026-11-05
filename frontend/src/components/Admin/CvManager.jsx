@@ -1,3 +1,4 @@
+﻿'use client';
 import { useEffect, useMemo, useState } from 'react';
 import API from '../../api/axios';
 import toast from 'react-hot-toast';

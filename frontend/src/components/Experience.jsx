@@ -1,9 +1,11 @@
+'use client';
+
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import {
   Layers, Server, Cloud, Briefcase, CheckCircle2,
 } from 'lucide-react';
-import { useParallax } from '../hooks/useParallax';
+
 
 /* ─── Data ─────────────────────────────────────────────── */
 const role = {
@@ -126,10 +128,6 @@ const Experience = () => {
     transition: { duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] },
   });
 
-  const blob1Ref = useRef(null);
-  const blob2Ref = useRef(null);
-  const blob1Y = useParallax(blob1Ref, 70);
-  const blob2Y = useParallax(blob2Ref, 50);
 
   return (
     <section

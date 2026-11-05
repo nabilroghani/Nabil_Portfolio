@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Send, Clock, ArrowRight, MessageCircle, DollarSign, Calendar, CheckCircle2 } from 'lucide-react';

@@ -1,8 +1,9 @@
+﻿'use client';
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 // Two words glide in from opposite edges and converge at center as the
-// section scrolls into view — a different feel from ScrollRevealText's
+// section scrolls into view â€” a different feel from ScrollRevealText's
 // pinned zoom: this one tracks scroll position directly, no sticky pin.
 const ScrollSplitReveal = ({ left, right }) => {
   const ref = useRef(null);

@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, BookOpen, Users, GitFork } from 'lucide-react';

@@ -1,7 +1,8 @@
+'use client';
+
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap, Briefcase, BookOpen, Cloud, Users } from 'lucide-react';
-import { useParallax } from '../hooks/useParallax';
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
@@ -72,10 +73,6 @@ const colorMap = {
 };
 
 const About = () => {
-  const blob1Ref = useRef(null);
-  const blob2Ref = useRef(null);
-  const blob1Y = useParallax(blob1Ref, 60);
-  const blob2Y = useParallax(blob2Ref, 80);
 
   return (
     <section

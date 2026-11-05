@@ -1,8 +1,9 @@
+﻿'use client';
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 // A single statement that starts tiny and explodes to fill the screen as
-// the user scrolls through it — the "how did they do that" scroll moment,
+// the user scrolls through it â€” the "how did they do that" scroll moment,
 // not just another fade-in-on-view card.
 const ScrollRevealText = ({ lines }) => {
   const ref = useRef(null);

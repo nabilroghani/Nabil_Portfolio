@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Feather, Download, Sun, Moon } from 'lucide-react';
@@ -8,7 +10,7 @@ import toast from 'react-hot-toast';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { isDark, toggleTheme } = useTheme();
+  const { isDark, toggleTheme, mounted } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -101,7 +103,7 @@ const Navbar = () => {
                   hover:border-gold hover:text-gold
                   transition-all duration-200"
               >
-                {isDark ? <Sun size={16} strokeWidth={2} /> : <Moon size={16} strokeWidth={2} />}
+                {!mounted ? <span className="w-4 h-4 inline-block" /> : isDark ? <Sun size={16} strokeWidth={2} /> : <Moon size={16} strokeWidth={2} />}
               </button>
 
               {/* Resume button */}
@@ -133,7 +135,7 @@ const Navbar = () => {
                 hover:border-gold
                 transition-all duration-200"
             >
-              {isDark ? <Sun size={16} strokeWidth={2} /> : <Moon size={16} strokeWidth={2} />}
+              {!mounted ? <span className="w-4 h-4 inline-block" /> : isDark ? <Sun size={16} strokeWidth={2} /> : <Moon size={16} strokeWidth={2} />}
             </button>
 
             <button

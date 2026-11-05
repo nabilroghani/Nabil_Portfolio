@@ -1,8 +1,10 @@
+'use client';
+
 import { LayoutGrid, Wrench, MessageSquare, FileText, LogOut } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 
 const AdminSidebar = ({ activeTab, setActiveTab, messageCount }) => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const menuItems = [
     { id: 'projects', label: 'Projects', icon: <LayoutGrid size={20} /> },
@@ -12,8 +14,10 @@ const AdminSidebar = ({ activeTab, setActiveTab, messageCount }) => {
   ];
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
-    navigate('/login');
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('token');
+    }
+    router.push('/login');
   };
 
   return (

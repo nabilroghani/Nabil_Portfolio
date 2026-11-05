@@ -1,8 +1,9 @@
+﻿'use client';
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 // A statement wiped into view left-to-right by a moving gold "blade" as
-// the section scrolls through — a curtain-opening feel, distinct from
+// the section scrolls through â€” a curtain-opening feel, distinct from
 // the pinned zoom (ScrollRevealText) and the converging words
 // (ScrollSplitReveal).
 const ScrollMaskReveal = ({ text }) => {

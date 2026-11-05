@@ -1,3 +1,5 @@
+'use client';
+
 import { Mail } from 'lucide-react';
 import GithubMark from './icons/GithubMark';
 import LinkedinMark from './icons/LinkedinMark';

@@ -1,3 +1,4 @@
+﻿'use client';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import API from '../../api/axios';
@@ -85,7 +86,7 @@ const ToolModal = ({ isOpen, onClose, refreshTools, editingTool = null }) => {
               rounded-3xl shadow-2xl shadow-slate-900/10 dark:shadow-black/60
               overflow-hidden"
           >
-            {/* ── Header ── */}
+            {/* â”€â”€ Header â”€â”€ */}
             <div className="flex items-center justify-between px-6 py-5
               border-b border-slate-100 dark:border-[#241f42]"
             >
@@ -111,7 +112,7 @@ const ToolModal = ({ isOpen, onClose, refreshTools, editingTool = null }) => {
               </button>
             </div>
 
-            {/* ── Form ── */}
+            {/* â”€â”€ Form â”€â”€ */}
             <form onSubmit={handleSubmit} className="px-6 py-6 space-y-5">
 
               {/* Tool Name */}
@@ -159,7 +160,7 @@ const ToolModal = ({ isOpen, onClose, refreshTools, editingTool = null }) => {
                 </label>
                 <input
                   type="text"
-                  placeholder="e.g. SiReact, FaNodeJs or 🚀"
+                  placeholder="e.g. SiReact, FaNodeJs or ðŸš€"
                   required
                   value={formData.icon}
                   onFocus={() => setFocused('icon')}
