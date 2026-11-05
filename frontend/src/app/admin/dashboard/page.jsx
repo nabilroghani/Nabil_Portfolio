@@ -11,7 +11,7 @@ import { useTheme } from '@/context/ThemeContext';
 import AdminSidebar from '@/components/Admin/AdminSidebar';
 import CvManager from '@/components/Admin/CvManager';
 import ProjectModal from '@/components/Admin/ProjectModal';
-import ToolModal from '@/components/Admin/ToolModal';
+import ToolModal from '@/components/Admin/ToolModal'
 
 export default function AdminDashboardPage() {
   const router = useRouter();
@@ -193,8 +193,8 @@ export default function AdminDashboardPage() {
                 <div className="space-y-4">
                   {messages.length === 0 ? (
                     <div className="text-center py-20">
-                        <MessageSquare size={40} className="mx-auto text-slate-300 dark:text-slate-700 mb-3" />
-                        <p className="text-slate-500">No messages found.</p>
+                      <MessageSquare size={40} className="mx-auto text-slate-300 dark:text-slate-700 mb-3" />
+                      <p className="text-slate-500">No messages found.</p>
                     </div>
                   ) : (
                     messages.map(m => (
@@ -206,8 +206,8 @@ export default function AdminDashboardPage() {
                           <Trash2 size={16} />
                         </button>
                         <div className="flex gap-4 mb-4 text-[11px] font-bold text-gold uppercase tracking-tighter">
-                            <span className="flex items-center gap-1"><Mail size={12}/> {m.email}</span>
-                            <span className="flex items-center gap-1 text-slate-400 dark:text-slate-500"><Calendar size={12}/> {new Date(m.createdAt).toLocaleDateString()}</span>
+                          <span className="flex items-center gap-1"><Mail size={12} /> {m.email}</span>
+                          <span className="flex items-center gap-1 text-slate-400 dark:text-slate-500"><Calendar size={12} /> {new Date(m.createdAt).toLocaleDateString()}</span>
                         </div>
                         <h3 className="font-display text-lg text-ink dark:text-[#f3efe4] mb-2">{m.name}</h3>
                         {m.service && (
@@ -252,8 +252,8 @@ export default function AdminDashboardPage() {
                             </div>
                           </td>
                           <td className="p-6 text-right whitespace-nowrap">
-                            <button onClick={() => openEditProject(p)} className="text-slate-400 dark:text-slate-600 hover:text-gold transition-colors p-2"><Pencil size={17}/></button>
-                            <button onClick={() => handleDelete('projects', p._id)} className="text-slate-400 dark:text-slate-600 hover:text-red-500 transition-colors p-2"><Trash2 size={18}/></button>
+                            <button onClick={() => openEditProject(p)} className="text-slate-400 dark:text-slate-600 hover:text-gold transition-colors p-2"><Pencil size={17} /></button>
+                            <button onClick={() => handleDelete('projects', p._id)} className="text-slate-400 dark:text-slate-600 hover:text-red-500 transition-colors p-2"><Trash2 size={18} /></button>
                           </td>
                         </tr>
                       ))
@@ -268,8 +268,8 @@ export default function AdminDashboardPage() {
                             <span className="text-[10px] bg-gold/10 text-gold px-3 py-1 rounded-full uppercase font-bold">{t.category}</span>
                           </td>
                           <td className="p-6 text-right whitespace-nowrap">
-                            <button onClick={() => openEditTool(t)} className="text-slate-400 dark:text-slate-600 hover:text-gold transition-colors p-2"><Pencil size={17}/></button>
-                            <button onClick={() => handleDelete('tools', t._id)} className="text-slate-400 dark:text-slate-600 hover:text-red-500 transition-colors p-2"><Trash2 size={18}/></button>
+                            <button onClick={() => openEditTool(t)} className="text-slate-400 dark:text-slate-600 hover:text-gold transition-colors p-2"><Pencil size={17} /></button>
+                            <button onClick={() => handleDelete('tools', t._id)} className="text-slate-400 dark:text-slate-600 hover:text-red-500 transition-colors p-2"><Trash2 size={18} /></button>
                           </td>
                         </tr>
                       ))
