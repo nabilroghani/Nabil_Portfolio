@@ -13,50 +13,40 @@ const ProjectCard = ({ project }) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24, rotate: 0 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={{ y: -8, rotate: -1.5, scale: 1.015 }}
-      style={{ transformPerspective: 800 }}
-      className="group flex flex-col h-full
-        bg-white dark:bg-[#151228]/70
-        border border-slate-200 dark:border-[#2a2450]
-        hover:border-gold/40 dark:hover:border-gold/30
-        rounded-2xl overflow-hidden
-        shadow-md shadow-slate-200/60 dark:shadow-black/30
-        hover:shadow-xl hover:shadow-gold/5 dark:hover:shadow-gold/10
-        transition-all duration-300"
+      viewport={{ once: true, margin: '-20px' }}
+      transition={{ duration: 0.35, ease: 'easeOut' }}
+      className="group flex flex-col h-full bg-white dark:bg-[#151228]/80 border border-slate-200 dark:border-[#2a2450] hover:border-gold/40 dark:hover:border-gold/30 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 transform-gpu hover:-translate-y-1"
     >
       {/* ── Image ── */}
-      <div className="relative h-36 sm:h-40 overflow-hidden bg-slate-100 dark:bg-[#1a1730] flex-shrink-0">
+      <div className="relative h-44 sm:h-48 overflow-hidden bg-slate-100 dark:bg-[#1a1730] flex-shrink-0">
         {project.category && (
-          <span className="absolute top-2.5 left-2.5 z-10 text-[10px] font-bold uppercase tracking-wide
-            text-white bg-black/50 backdrop-blur-sm px-2.5 py-1 rounded-full">
+          <span className="absolute top-2.5 left-2.5 z-10 text-[10px] font-bold uppercase tracking-wide text-white bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded-full">
             {project.category}
           </span>
         )}
         {project.image ? (
           <>
             <img
-              src={optimizedImage(project.image)}
+              src={optimizedImage(project.image, 600)}
               alt={project.title}
-              width={400}
-              height={160}
+              width={600}
+              height={300}
               loading="lazy"
               decoding="async"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              className="w-full h-full object-cover transform-gpu transition-transform duration-300 ease-out group-hover:scale-105"
             />
             {/* Hover overlay with links */}
-            <div className="absolute inset-0 bg-slate-900/60 dark:bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+            <div className="absolute inset-0 bg-slate-900/60 dark:bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-3">
               {project.githubLink && (
                 <a
                   href={project.githubLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-1.5 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white text-xs font-bold px-4 py-2 rounded-lg transition-all duration-200"
+                  className="flex items-center gap-1.5 bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/30 text-white text-xs font-bold px-3.5 py-1.5 rounded-lg transition-all duration-150"
                 >
-                  <GithubMark size={13} />
+                  <GithubMark size={14} />
                   Code
                 </a>
               )}
@@ -65,9 +55,9 @@ const ProjectCard = ({ project }) => {
                   href={project.liveLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-1.5 bg-gold/90 hover:bg-gold text-white text-xs font-bold px-4 py-2 rounded-lg transition-all duration-200"
+                  className="flex items-center gap-1.5 bg-gold hover:bg-gold-soft text-ink text-xs font-bold px-3.5 py-1.5 rounded-lg transition-all duration-150 shadow-sm"
                 >
-                  <ExternalLink size={12} strokeWidth={2.5} />
+                  <ExternalLink size={13} strokeWidth={2.5} />
                   Live
                 </a>
               )}
@@ -84,8 +74,6 @@ const ProjectCard = ({ project }) => {
 
       {/* ── Content ── */}
       <div className="flex flex-col flex-grow p-4 sm:p-5">
-
-        {/* Title + icon links */}
         <div className="flex justify-between items-start gap-3 mb-2">
           <h3 className="text-base font-display text-ink dark:text-[#f3efe4] font-semibold group-hover:text-gold dark:group-hover:text-gold transition-colors duration-200 leading-snug">
             {project.title}
@@ -116,39 +104,30 @@ const ProjectCard = ({ project }) => {
           </div>
         </div>
 
-        {/* Description */}
-        <p className={`text-slate-500 dark:text-[#a79fc9] text-sm leading-relaxed mb-1.5 ${expanded ? '' : 'line-clamp-2'}`}>
+        <p className={`text-slate-500 dark:text-[#a79fc9] text-sm leading-relaxed mb-2 ${expanded ? '' : 'line-clamp-2'}`}>
           {desc}
         </p>
         {isLong && (
           <button
             type="button"
             onClick={() => setExpanded((v) => !v)}
-            className="self-start flex items-center gap-1 text-xs font-semibold text-gold hover:text-gold-soft transition-colors mb-3"
+            className="self-start flex items-center gap-1 text-xs font-semibold text-gold hover:text-gold-soft transition-colors mb-3 cursor-pointer"
           >
             {expanded ? 'Show less' : 'Read more'}
             {expanded ? <ChevronUp size={13} /> : <ChevronDown size={13} />}
           </button>
         )}
-        {!isLong && <div className="mb-3" />}
 
-        {/* Tech stack */}
-        <div className="mt-auto flex flex-wrap gap-1.5">
+        <div className="mt-auto flex flex-wrap gap-1.5 pt-2">
           {project.stack && project.stack.map((tech, i) => (
             <span
               key={i}
-              className="text-[11px] font-semibold
-                text-[#9c7a3a] dark:text-gold-soft
-                bg-gold/5 dark:bg-gold/10
-                border border-gold/20 dark:border-gold/20
-                px-2.5 py-1 rounded-full
-                transition-colors duration-200"
+              className="text-[11px] font-semibold text-[#9c7a3a] dark:text-gold-soft bg-gold/5 dark:bg-gold/10 border border-gold/20 px-2.5 py-0.5 rounded-full"
             >
               {tech}
             </span>
           ))}
         </div>
-
       </div>
     </motion.div>
   );

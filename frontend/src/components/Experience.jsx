@@ -138,8 +138,8 @@ const Experience = () => {
     >
       {/* Background blobs — drift with scroll */}
       <div className="absolute inset-0 pointer-events-none">
-        <motion.div ref={blob1Ref} style={{ y: blob1Y }} className="absolute top-1/3 left-[-100px] w-[400px] h-[400px] rounded-full bg-gold/[0.05] dark:bg-gold/[0.07] blur-[100px]" />
-        <motion.div ref={blob2Ref} style={{ y: blob2Y }} className="absolute bottom-0 right-0 w-[350px] h-[350px] rounded-full bg-violet/[0.05] dark:bg-violet/[0.08] blur-[90px]" />
+        <div className="absolute top-1/3 left-[-100px] w-[400px] h-[400px] rounded-full bg-gold/[0.05] dark:bg-gold/[0.07] blur-[100px]" />
+        <div className="absolute bottom-0 right-0 w-[350px] h-[350px] rounded-full bg-violet/[0.05] dark:bg-violet/[0.08] blur-[90px]" />
       </div>
 
       <div className="relative z-10 w-full mx-auto">

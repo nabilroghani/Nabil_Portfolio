@@ -32,11 +32,12 @@ const Navbar = () => {
   }, [isOpen]);
 
   const navLinks = [
-    { name: 'Home',     href: '/'         },
-    { name: 'About', href: '#about'},
+    { name: 'Home', href: '/' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience'},
-    { name: 'Contact',  href: '#contact'  },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Services', href: '#services' },
+    { name: 'About', href: '#about' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   const handleDownload = async () => {

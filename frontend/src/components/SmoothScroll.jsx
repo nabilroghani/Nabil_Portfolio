@@ -1,32 +1,39 @@
 import { useEffect } from 'react';
 import Lenis from 'lenis';
 
-// Wraps the public site in buttery inertia scrolling (Lenis) and makes
-// in-page anchor links (Navbar -> #about, #projects, ...) glide there
-// instead of jumping, offset for the fixed navbar height.
+let globalLenis = null;
+export const getLenis = () => globalLenis;
+
 const SmoothScroll = ({ children }) => {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.1,
+      duration: 0.85,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
       smoothWheel: true,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.5,
     });
+    globalLenis = lenis;
 
     let rafId;
-    const raf = (time) => {
+    function raf(time) {
       lenis.raf(time);
       rafId = requestAnimationFrame(raf);
-    };
+    }
     rafId = requestAnimationFrame(raf);
 
+    // Global smooth anchor click handler using Lenis directly
     const handleClick = (e) => {
       const anchor = e.target.closest('a[href^="#"]');
       if (!anchor) return;
-      const id = anchor.getAttribute('href').slice(1);
-      const el = id ? document.getElementById(id) : null;
-      if (el) {
+      const href = anchor.getAttribute('href');
+      if (!href || href === '#' || href.length < 2) return;
+      const target = document.querySelector(href);
+      if (target) {
         e.preventDefault();
-        lenis.scrollTo(el, { offset: -84 });
+        lenis.scrollTo(target, { offset: -80, duration: 0.9 });
       }
     };
     document.addEventListener('click', handleClick);
@@ -35,6 +42,7 @@ const SmoothScroll = ({ children }) => {
       document.removeEventListener('click', handleClick);
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      globalLenis = null;
     };
   }, []);
 

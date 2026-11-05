@@ -66,13 +66,6 @@ const Hero = () => {
     }
   };
 
-  const scrollToSection = (id) => {
-    const el = document.querySelector(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section className="relative w-full bg-white dark:bg-[#151228] transition-colors duration-300">
       {/* ── Custom Designed Banner (Coded Native Banner with AWS & Next.js) ── */}
@@ -220,7 +213,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-start mt-1">
           {/* Left Column: Name + Blue Verified Tick, Headline, Location & Contact */}
           <div className="md:col-span-8 space-y-2">
-            {/* 1. Name & Blue Verified Tick ONLY (Verify in 2 minutes removed) */}
+            {/* 1. Name & Blue Verified Tick ONLY */}
             <div className="flex items-center gap-2">
               <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-[#f3efe4]">
                 Nabil Ahmad
@@ -247,7 +240,7 @@ const Hero = () => {
               Helping Businesses scale with <span className="font-semibold text-slate-900 dark:text-[#f3efe4]">Custom MERN Web Apps</span> | Cloud Deployment (AWS) | AI-Powered Solutions | 3+ Years Experience
             </p>
 
-            {/* 3. Location & Contact info Link (500+ connections removed) */}
+            {/* 3. Location & Contact info Link */}
             <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-slate-500 dark:text-[#a79fc9] pt-0.5">
               <span className="inline-flex items-center gap-1">
                 <MapPin size={14} className="text-slate-400 dark:text-slate-500 shrink-0" />
@@ -256,10 +249,6 @@ const Hero = () => {
               <span>·</span>
               <a
                 href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('#contact');
-                }}
                 className="text-[#0a66c2] dark:text-[#70b5f9] font-bold hover:underline cursor-pointer"
               >
                 Contact info
@@ -304,10 +293,6 @@ const Hero = () => {
           {/* Button 1: View My Work */}
           <a
             href="#projects"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('#projects');
-            }}
             className="inline-flex items-center justify-center gap-1.5 px-4 sm:px-5 py-2 rounded-full font-semibold text-xs sm:text-sm bg-[#0a66c2] hover:bg-[#004182] active:scale-95 text-white transition-all duration-200 shadow-sm"
           >
             <Eye size={15} strokeWidth={2.4} />
@@ -317,10 +302,6 @@ const Hero = () => {
           {/* Button 2: Contact Me */}
           <a
             href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('#contact');
-            }}
             className="inline-flex items-center justify-center gap-1.5 px-4 sm:px-5 py-2 rounded-full font-semibold text-xs sm:text-sm border-2 border-[#0a66c2] text-[#0a66c2] dark:text-[#70b5f9] dark:border-[#70b5f9] hover:bg-[#0a66c2]/10 active:scale-95 transition-all duration-200"
           >
             <Mail size={15} strokeWidth={2.2} />
@@ -339,10 +320,6 @@ const Hero = () => {
           {/* Button 4: Experience */}
           <a
             href="#experience"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('#experience');
-            }}
             className="inline-flex items-center justify-center gap-1.5 px-4 sm:px-5 py-2 rounded-full font-semibold text-xs sm:text-sm border border-slate-400 dark:border-slate-500 hover:border-slate-700 dark:hover:border-slate-300 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/80 active:scale-95 transition-all duration-200"
           >
             <Briefcase size={15} strokeWidth={2.2} />

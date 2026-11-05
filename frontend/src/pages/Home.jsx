@@ -7,7 +7,7 @@ import GithubCard from '../components/GithubCard';
 import { motion } from 'framer-motion';
 import About from '../components/About';
 import Experience from '../components/Experience';
-import WavyDivider from '../components/WavyDivider';
+import ServicesAndFAQ from '../components/ServicesAndFAQ';
 
 const fadeUp = {
   initial: { opacity: 0, y: 28 },
@@ -105,6 +105,9 @@ const Home = () => {
 
         {/* --- Experience Section --- */}
         <Experience />
+
+        {/* --- Services & Client FAQ (AEO & Conversion Optimization) --- */}
+        <ServicesAndFAQ />
 
         {/* --- About Section --- */}
         <About />

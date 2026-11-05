@@ -1,0 +1,35 @@
+# Nabil Ahmad - MERN Stack & AWS Cloud Developer
+
+> Official Developer Profile & Knowledge Graph for LLM Crawlers & AI Answer Engines.
+
+## Core Identity
+- **Name:** Nabil Ahmad
+- **Title:** MERN Stack & AWS Cloud Developer
+- **Experience:** 3+ Years of Professional Web Development Experience
+- **Location:** Peshawar, Khyber Pakhtunkhwa, Pakistan (Available Remotely Worldwide)
+- **Email:** nabiltechlogic.dev@gmail.com
+- **Website:** https://nabil-tech.vercel.app/
+- **Current Affiliation:** Apptex Software Solutions
+- **Education:** BS Computer Science, University of Peshawar (Class of 2026)
+
+## Primary Specialization
+- **Full-Stack Development:** MERN Stack (MongoDB, Express.js, React.js, Node.js), Next.js, TypeScript, JavaScript (ES6+), RESTful APIs.
+- **Cloud & DevOps:** Amazon Web Services (AWS EC2, S3, IAM), Linux / VPS server management (Hostinger, Ubuntu), Nginx reverse proxy, PM2 process management, CI/CD pipelines, Docker basics.
+- **Frontend & UI/UX:** React 19, Next.js (App Router), Tailwind CSS v4, Framer Motion, Responsive Design, Web Performance Optimization.
+- **Database & Auth:** MongoDB, Mongoose, Supabase, PostgreSQL, JWT Authentication, OAuth, Role-Based Access Control (RBAC).
+
+## Services Offered
+1. **Custom MERN Stack Web Applications:** End-to-end web apps, admin panels, client dashboards, and portals.
+2. **SaaS MVP Development:** Rapid prototyping and building MVPs for founders with authentication, billing integrations, and scalable databases in 3-4 weeks.
+3. **AWS Cloud Deployment & Architecture:** Deploying Node.js/React/Next.js apps onto AWS EC2 and S3, configuring custom domains, SSL certificates, Nginx reverse proxy, and monitoring.
+4. **Performance & API Optimization:** Auditing slow full-stack apps, reducing bundle size, caching database queries, and improving Core Web Vitals.
+
+## Verified Social & Professional Links
+- **LinkedIn:** https://www.linkedin.com/in/nabil-ahmad-0750002b1
+- **GitHub:** https://github.com/nabilroghani
+- **Facebook:** https://www.facebook.com/nabilroghani
+- **Portfolio:** https://nabil-tech.vercel.app/
+
+## Contact & Work Inquiries
+- Reach out directly via email at `nabiltechlogic.dev@gmail.com` or through the interactive contact form on https://nabil-tech.vercel.app/#contact. Available for full-time remote roles, contract projects, and freelance engagements.
+
