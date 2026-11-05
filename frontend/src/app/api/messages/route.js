@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import connectDB from '@/lib/db';
 import Message from '@/lib/models/Message';
 import { verifyAdminToken } from '@/lib/auth';
+import { sendContactNotification } from '@/lib/email';
 
 // GET /api/messages - Protected (Admin only)
 export async function GET(request) {
@@ -37,6 +38,11 @@ export async function POST(request) {
       timeline: timeline || 'Flexible',
       subject: subject || `Inquiry from ${name}`,
       message,
+    });
+
+    // Send email notification to Nabil asynchronously
+    sendContactNotification({ name, email, service, budget, timeline, subject, message }).catch((err) => {
+      console.warn('Email notification skipped or failed:', err.message);
     });
 
     return NextResponse.json({ success: true, data: newMessage }, { status: 201 });
