@@ -172,30 +172,37 @@ const Hero = () => {
                 />
               </div>
 
-              {/* LinkedIn #OPENTOWORK Green Ribbon Curved Badge */}
+              {/* LinkedIn #OPENTOWORK Green Ribbon Curved Badge (bottom-left arc matching reference) */}
               <svg
                 viewBox="0 0 200 200"
                 className="absolute inset-0 w-full h-full pointer-events-none select-none drop-shadow-sm"
               >
                 <defs>
+                  {/* Subtle emerald gradient matching reference picture */}
+                  <linearGradient id="openToWorkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#1e8e45" />
+                    <stop offset="50%" stopColor="#0d7838" />
+                    <stop offset="100%" stopColor="#075e29" />
+                  </linearGradient>
                   <path
                     id="openToWorkPath"
-                    d="M 34,136 A 84,84 0 0,0 166,136"
+                    d="M 14,100 A 86,86 0 0,0 177.9,136.3"
                     fill="none"
                   />
                 </defs>
                 <path
-                  d="M 32,134 A 86,86 0 0,0 168,134"
+                  d="M 14,100 A 86,86 0 0,0 177.9,136.3"
                   fill="none"
-                  stroke="#057642"
-                  strokeWidth="17"
+                  stroke="url(#openToWorkGrad)"
+                  strokeWidth="22"
                   strokeLinecap="round"
                 />
                 <text
                   fill="#ffffff"
-                  fontSize="11.5"
+                  fontSize="10.5"
                   fontWeight="800"
-                  letterSpacing="2.8px"
+                  letterSpacing="2px"
+                  dominantBaseline="central"
                   fontFamily="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
                 >
                   <textPath
