@@ -7,9 +7,9 @@ import { useParallax } from '../hooks/useParallax';
 
 /* ─── Data ─────────────────────────────────────────────── */
 const role = {
-  title: 'Junior MERN Stack Developer',
+  title: 'MERN Stack Developer',
   status: 'Actively Working',
-  desc: 'Building full-stack web applications using MongoDB, Express.js, React, and Node.js. Focused on clean UI, scalable APIs, and real-world deployments.',
+  desc: '3+ years of experience building full-stack web applications using MongoDB, Express.js, React, and Node.js. Focused on clean UI, scalable APIs, and AWS cloud deployments.',
 };
 
 const skillGroups = [
@@ -48,6 +48,7 @@ const skillGroups = [
     color: 'terracotta',
     skills: [
       { name: 'Vercel',       level: 88 },
+      { name: 'AWS (EC2 / S3)', level: 80 },
       { name: 'Hostinger VPS', level: 74 },
       { name: 'PM2',          level: 70 },
       { name: 'Git / GitHub', level: 85 },
@@ -57,10 +58,10 @@ const skillGroups = [
 ];
 
 const highlights = [
-  'Built & deployed 10+ full-stack projects',
+  '3+ years building & shipping full-stack products',
   'RESTful API design & JWT authentication',
   'Responsive UI with React & Tailwind CSS',
-  'VPS deployment with Nginx & PM2',
+  'Cloud Deployment with AWS & Hostinger VPS',
   'Database design with MongoDB & Supabase',
   'Clean code, Git workflow & collaboration',
 ];
@@ -133,7 +134,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="relative py-28 px-6 sm:px-8 bg-[#faf7f0] dark:bg-ink overflow-hidden transition-colors duration-300"
+      className="relative py-16 px-6 sm:px-8 bg-transparent overflow-hidden transition-colors duration-300"
     >
       {/* Background blobs — drift with scroll */}
       <div className="absolute inset-0 pointer-events-none">
@@ -141,7 +142,7 @@ const Experience = () => {
         <motion.div ref={blob2Ref} style={{ y: blob2Y }} className="absolute bottom-0 right-0 w-[350px] h-[350px] rounded-full bg-violet/[0.05] dark:bg-violet/[0.08] blur-[90px]" />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative z-10 w-full mx-auto">
 
         {/* ── Heading ── */}
         <motion.div {...fadeUp()} className="text-center mb-16">

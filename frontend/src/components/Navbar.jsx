@@ -53,10 +53,10 @@ const Navbar = () => {
     <>
       <nav className={`fixed w-full z-[100] transition-all duration-500 ${
         scrolled
-          ? 'py-3 bg-[#faf7f0]/80 dark:bg-ink/80 backdrop-blur-xl border-b border-slate-200 dark:border-[#241f42] shadow-sm shadow-slate-200/50 dark:shadow-black/30'
+          ? 'py-3 bg-[#f3f2ef]/85 dark:bg-[#0b0a1a]/85 backdrop-blur-xl border-b border-slate-200 dark:border-[#241f42] shadow-sm shadow-slate-200/50 dark:shadow-black/30'
           : 'py-5 bg-transparent'
       }`}>
-        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
 
           {/* ── Logo ── */}
           <motion.a

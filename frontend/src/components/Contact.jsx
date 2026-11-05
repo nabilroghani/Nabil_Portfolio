@@ -68,7 +68,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative py-28 px-6 sm:px-8 bg-[#faf7f0] dark:bg-ink overflow-hidden transition-colors duration-300"
+      className="relative py-16 px-6 sm:px-8 bg-transparent overflow-hidden transition-colors duration-300"
     >
       {/* Background blobs — drift with scroll */}
       <div className="absolute inset-0 pointer-events-none">
@@ -76,7 +76,7 @@ const Contact = () => {
         <motion.div ref={blob2Ref} style={{ y: blob2Y }} className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-violet/[0.05] dark:bg-violet/[0.06] blur-[100px]" />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative z-10 w-full mx-auto">
 
         {/* ── Section heading ─────────────────────────────── */}
         <motion.div

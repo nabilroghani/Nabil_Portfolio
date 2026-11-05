@@ -21,7 +21,7 @@ const cards = [
     icon: Briefcase,
     color: 'sky',
     title: 'Working as a Developer',
-    body: 'Actively working as a Junior MERN Stack Developer building real-world dashboards, auth systems, admin panels, and full-stack web apps.',
+    body: 'Actively working as a MERN Stack Developer with 3+ years of experience building real-world dashboards, auth systems, admin panels, and full-stack web apps.',
   },
   {
     icon: Users,
@@ -32,8 +32,8 @@ const cards = [
   {
     icon: Cloud,
     color: 'amber',
-    title: 'Learning Cloud & DevOps',
-    body: 'Currently exploring Cloud Computing and DevOps digging into CI/CD pipelines, containerization, and scalable infrastructure.',
+    title: 'Cloud & AWS Deployment',
+    body: 'Deploying scalable applications with AWS, containerization, CI/CD pipelines, and robust cloud infrastructure.',
   },
   {
     icon: BookOpen,
@@ -80,7 +80,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative py-28 px-6 sm:px-8 bg-[#faf7f0] dark:bg-ink overflow-hidden transition-colors duration-300"
+      className="relative py-16 px-6 sm:px-8 bg-transparent overflow-hidden transition-colors duration-300"
     >
       {/* Background blobs — drift with scroll */}
       <div className="absolute inset-0 pointer-events-none">
@@ -88,7 +88,7 @@ const About = () => {
         <motion.div ref={blob2Ref} style={{ y: blob2Y }} className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-gold/[0.05] dark:bg-gold/[0.06] blur-[100px]" />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative z-10 w-full mx-auto">
 
         {/* ── Heading ── */}
         <motion.div {...fadeUp()} className="text-center mb-16">
@@ -105,7 +105,7 @@ const About = () => {
         {/* ── Intro block ── */}
         <motion.div {...fadeUp(0.1)} className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-lg sm:text-xl text-slate-600 dark:text-[#c3bde0] leading-relaxed">
-            I&apos;m <span className="text-ink dark:text-[#f3efe4] font-bold">Nabil Ahmad</span> a MERN Stack Web developer who
+            I&apos;m <span className="text-ink dark:text-[#f3efe4] font-bold">Nabil Ahmad</span> a MERN Stack Web Developer with 3+ years of experience who
             genuinely enjoys building things on the web. I turn ideas into fast, clean, and scalable
             applications. Outside of code, I&apos;m always reading, learning something new, or exploring what&apos;s
             coming next in tech.
