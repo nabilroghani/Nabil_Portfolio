@@ -12,9 +12,9 @@ import {
 import toast from 'react-hot-toast';
 import { downloadCv } from '../utils/cvDownload';
 
-import nabilAvatar from '../assets/nabil.webp';
-import apptexLogo from '../assets/apptex_logo.png';
-import uopLogo from '../assets/uop_logo.png';
+const nabilAvatar = '/images/nabil.webp';
+const apptexLogo = '/images/apptex_logo.png';
+const uopLogo = '/images/uop_logo.png';
 
 // ── Lightweight Tech SVGs for Banner ──
 const NextIcon = () => (

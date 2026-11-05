@@ -10,6 +10,7 @@ import { motion } from 'framer-motion';
 import About from '@/components/About';
 import Experience from '@/components/Experience';
 import ServicesAndFAQ from '@/components/ServicesAndFAQ';
+import { getToolIcon } from '@/utils/toolIcons';
 
 const fadeUp = {
   initial: { opacity: 0, y: 28 },
@@ -33,7 +34,6 @@ export default function HomePage() {
   const [projects, setProjects] = useState([]);
   const [tools, setTools] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [icons, setIcons] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -42,8 +42,8 @@ export default function HomePage() {
           API.get('/projects'),
           API.get('/tools')
         ]);
-        setProjects(resProj.data);
-        setTools(resTools.data);
+        setProjects(resProj.data || []);
+        setTools(resTools.data || []);
       } catch (err) {
         console.error("Data fetch error", err);
       } finally {
@@ -52,10 +52,6 @@ export default function HomePage() {
     };
     fetchData();
     API.post('/stats/visit').catch(() => {});
-
-    Promise.all([import('react-icons/fa'), import('react-icons/si')]).then(
-      ([fa, si]) => setIcons({ ...fa, ...si, _fallback: fa.FaCode })
-    );
   }, []);
 
   return (
@@ -81,11 +77,11 @@ export default function HomePage() {
         <section className="py-16 px-6 sm:px-10 text-center">
           <SectionHeading eyebrow="Toolbox" title="Tech" accent="Stack" />
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
-            {(loading || !icons) && Array.from({ length: 6 }).map((_, i) => (
+            {loading && Array.from({ length: 6 }).map((_, i) => (
               <div key={i} className="h-32 rounded-2xl bg-slate-100 dark:bg-[#151228]/60 animate-pulse" />
             ))}
-            {!loading && icons && tools.map((tool) => {
-              const Icon = icons[tool.icon] || icons._fallback;
+            {!loading && tools.map((tool) => {
+              const Icon = getToolIcon(tool.icon, tool.name);
               return (
                 <motion.div
                   initial={{ opacity: 0, y: 16 }}
