@@ -41,3 +41,4 @@ Experience the live portfolio at: **[https://nabil-tech.vercel.app](https://nabi
 - 💼 **LinkedIn:** [linkedin.com/in/nabilroghani](https://www.linkedin.com/in/nabilroghani)
 - 🐙 **GitHub:** [github.com/nabilroghani](https://github.com/nabilroghani)
 - ✉️ **Email:** [nabiltechlogic.dev@gmail.com](mailto:nabiltechlogic.dev@gmail.com)
+
