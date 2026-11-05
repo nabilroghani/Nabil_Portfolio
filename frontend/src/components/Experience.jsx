@@ -132,7 +132,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="relative py-16 px-6 sm:px-8 bg-transparent overflow-hidden transition-colors duration-300"
+      className="relative py-12 sm:py-16 px-4 sm:px-8 md:px-10 bg-transparent overflow-hidden transition-colors duration-300"
     >
       {/* Background blobs — drift with scroll */}
       <div className="absolute inset-0 pointer-events-none">

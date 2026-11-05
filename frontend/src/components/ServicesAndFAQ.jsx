@@ -73,7 +73,7 @@ const ServicesAndFAQ = () => {
   const [openFaq, setOpenFaq] = useState(0);
 
   return (
-    <section id="services" className="py-16 px-6 sm:px-10 bg-transparent">
+    <section id="services" className="py-12 sm:py-16 px-4 sm:px-8 md:px-10 bg-transparent">
       {/* ── Services Heading ── */}
       <div className="text-center mb-14">
         <span className="inline-block text-gold text-xs font-medium tracking-[0.25em] uppercase mb-3">

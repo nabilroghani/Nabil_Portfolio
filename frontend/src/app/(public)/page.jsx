@@ -55,28 +55,28 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="w-full pt-20 pb-16 px-3 sm:px-6 lg:px-8">
+    <div className="w-full pt-16 sm:pt-20 pb-16 px-2 sm:px-6 lg:px-8">
       {/* ── Continuous Central White Column (Matches Hero Left & Right Borders) ── */}
-      <div className="max-w-5xl mx-auto bg-white dark:bg-[#151228] border border-slate-200 dark:border-[#2a2450] rounded-2xl md:rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-black/50 overflow-hidden divide-y divide-slate-200/70 dark:divide-[#241f42]">
+      <div className="max-w-5xl mx-auto bg-white dark:bg-[#151228] border border-slate-200 dark:border-[#2a2450] rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-black/50 overflow-hidden divide-y divide-slate-200/70 dark:divide-[#241f42]">
         {/* --- Hero Section at top of the card --- */}
         <Hero />
 
         {/* --- Projects Section --- */}
-        <section id="projects" className="py-16 px-6 sm:px-10">
+        <section id="projects" className="py-12 sm:py-16 px-4 sm:px-8 md:px-10">
           <SectionHeading eyebrow="Selected Work" title="Built" accent="Projects" />
           <ProjectsGrid projects={Array.isArray(projects) ? projects : []} loading={loading} />
         </section>
 
         {/* --- GitHub Stats Section --- */}
-        <section className="py-16 px-6 sm:px-10">
+        <section className="py-12 sm:py-16 px-4 sm:px-8 md:px-10">
           <SectionHeading eyebrow="On GitHub" title="Live" accent="Activity" />
           <GithubCard username="nabilroghani" />
         </section>
 
         {/* --- Tech Stack Section --- */}
-        <section className="py-16 px-6 sm:px-10 text-center">
+        <section className="py-12 sm:py-16 px-4 sm:px-8 md:px-10 text-center">
           <SectionHeading eyebrow="Toolbox" title="Tech" accent="Stack" />
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-5">
             {loading && Array.from({ length: 6 }).map((_, i) => (
               <div key={i} className="h-32 rounded-2xl bg-slate-100 dark:bg-[#151228]/60 animate-pulse" />
             ))}

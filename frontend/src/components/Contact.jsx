@@ -121,7 +121,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative py-16 px-6 sm:px-10 bg-transparent overflow-hidden transition-colors duration-300"
+      className="relative py-12 sm:py-16 px-4 sm:px-8 md:px-10 bg-transparent overflow-hidden transition-colors duration-300"
     >
       <div className="relative z-10 w-full mx-auto">
         {/* ── Section heading ─────────────────────────────── */}
