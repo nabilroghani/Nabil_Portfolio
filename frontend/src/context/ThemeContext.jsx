@@ -3,7 +3,10 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 
 const ThemeContext = createContext();
-const THEME_STORAGE_KEY = 'theme';
+// New key so a "dark" value saved under the old 'theme' key no longer
+// overrides the light default; a visitor's own toggle is still remembered.
+const THEME_STORAGE_KEY = 'theme-preference';
+const LEGACY_THEME_KEY = 'theme';
 
 export const ThemeProvider = ({ children }) => {
   // Default to light theme
@@ -12,6 +15,7 @@ export const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     setMounted(true);
+    localStorage.removeItem(LEGACY_THEME_KEY);
     const saved = localStorage.getItem(THEME_STORAGE_KEY);
     if (saved) {
       const dark = saved === 'dark';

@@ -31,14 +31,23 @@ const CvManager = () => {
     driveId ? `https://drive.google.com/file/d/${driveId}/view` : '',
     [driveId]);
 
+  // Accept either a bare Drive file ID or a full Drive share link
+  const extractDriveId = (value) => {
+    const input = value.trim();
+    const match = input.match(/\/d\/([\w-]+)/) || input.match(/[?&]id=([\w-]+)/);
+    return match ? match[1] : input;
+  };
+
   const handleSave = async () => {
-    if (!driveId.trim()) return toast.error('Please enter a Drive ID');
+    const id = extractDriveId(driveId);
+    if (!id) return toast.error('Please enter a Drive ID');
     setLoading(true);
     try {
-      await API.post('/cv/upload', { driveId: driveId.trim() });
+      await API.post('/cv', { driveId: id });
+      setDriveId(id);
       toast.success('CV Link Updated!');
-    } catch {
-      toast.error('Failed to update');
+    } catch (err) {
+      toast.error(err.response?.data?.message || 'Failed to update');
     } finally {
       setLoading(false);
     }
@@ -76,7 +85,7 @@ const CvManager = () => {
                   type="text"
                   value={driveId}
                   onChange={(e) => setDriveId(e.target.value)}
-                  placeholder="Paste ID here..."
+                  placeholder="Paste Drive link or ID..."
                   className="w-full 
     /* Light Mode */
     bg-slate-50 border-slate-300 text-slate-900 
