@@ -10,6 +10,7 @@ import { motion } from 'framer-motion';
 import About from '@/components/About';
 import Experience from '@/components/Experience';
 import ServicesAndFAQ from '@/components/ServicesAndFAQ';
+import Testimonials from '@/components/Testimonials';
 import { getToolIcon } from '@/utils/toolIcons';
 
 const fadeUp = {
@@ -107,6 +108,9 @@ export default function HomePage() {
 
         {/* --- Services & Client FAQ (AEO & Conversion Optimization) --- */}
         <ServicesAndFAQ />
+
+        {/* --- Client Testimonials & Social Proof (Phase 1 Trust Wall) --- */}
+        <Testimonials />
 
         {/* --- About Section --- */}
         <About />

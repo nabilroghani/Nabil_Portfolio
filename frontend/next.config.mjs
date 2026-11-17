@@ -9,6 +9,32 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'nabilahmad.site',
+          },
+        ],
+        destination: 'https://www.nabilahmad.site/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'nabil-tech.vercel.app',
+          },
+        ],
+        destination: 'https://www.nabilahmad.site/:path*',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
