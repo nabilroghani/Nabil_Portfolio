@@ -4,7 +4,7 @@ import SmoothScroll from '@/components/SmoothScroll';
 import { Toaster } from 'react-hot-toast';
 
 export const metadata = {
-  metadataBase: new URL('https://nabil-tech.vercel.app'),
+  metadataBase: new URL('https://www.nabilahmad.site'),
   title: {
     default: 'Nabil Ahmad | MERN Stack & AWS Cloud Developer | Full Stack Engineer',
     template: '%s | Nabil Ahmad'
@@ -23,7 +23,7 @@ export const metadata = {
     'Cloud Deployment AWS',
     'Freelance Full Stack Web Developer'
   ],
-  authors: [{ name: 'Nabil Ahmad', url: 'https://nabil-tech.vercel.app' }],
+  authors: [{ name: 'Nabil Ahmad', url: 'https://www.nabilahmad.site' }],
   creator: 'Nabil Ahmad',
   publisher: 'Nabil Ahmad',
   robots: {
@@ -38,12 +38,12 @@ export const metadata = {
     },
   },
   alternates: {
-    canonical: 'https://nabil-tech.vercel.app',
+    canonical: 'https://www.nabilahmad.site',
   },
   openGraph: {
     type: 'profile',
     locale: 'en_US',
-    url: 'https://nabil-tech.vercel.app',
+    url: 'https://www.nabilahmad.site',
     title: 'Nabil Ahmad | MERN Stack & AWS Cloud Developer',
     description: 'Helping businesses scale with custom MERN Web Apps, Next.js platforms, and AWS Cloud Deployments. 3+ years experience.',
     siteName: 'Nabil Ahmad Portfolio',
@@ -89,14 +89,14 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://nabil-tech.vercel.app/#person",
+      "@id": "https://www.nabilahmad.site/#person",
       "name": "Nabil Ahmad",
       "givenName": "Nabil",
       "familyName": "Ahmad",
       "jobTitle": "MERN Stack & AWS Cloud Developer",
       "description": "Full Stack Web Developer with 3+ years experience building scalable web applications, SaaS MVPs, and robust cloud infrastructure using MongoDB, Express.js, React, Node.js, Next.js, and AWS.",
-      "url": "https://nabil-tech.vercel.app/",
-      "image": "https://nabil-tech.vercel.app/og-image.png",
+      "url": "https://www.nabilahmad.site/",
+      "image": "https://www.nabilahmad.site/og-image.png",
       "email": "mailto:nabiltechlogic.dev@gmail.com",
       "telephone": "+923041237882",
       "nationality": "Pakistani",
@@ -179,25 +179,25 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://nabil-tech.vercel.app/#website",
-      "url": "https://nabil-tech.vercel.app/",
+      "@id": "https://www.nabilahmad.site/#website",
+      "url": "https://www.nabilahmad.site/",
       "name": "Nabil Ahmad Portfolio",
       "description": "Official portfolio of Nabil Ahmad - MERN Stack & AWS Cloud Developer",
       "publisher": {
-        "@id": "https://nabil-tech.vercel.app/#person"
+        "@id": "https://www.nabilahmad.site/#person"
       },
       "inLanguage": "en"
     },
     {
       "@type": "ProfilePage",
-      "@id": "https://nabil-tech.vercel.app/#profilepage",
-      "url": "https://nabil-tech.vercel.app/",
+      "@id": "https://www.nabilahmad.site/#profilepage",
+      "url": "https://www.nabilahmad.site/",
       "name": "Nabil Ahmad - Profile",
       "isPartOf": {
-        "@id": "https://nabil-tech.vercel.app/#website"
+        "@id": "https://www.nabilahmad.site/#website"
       },
       "mainEntity": {
-        "@id": "https://nabil-tech.vercel.app/#person"
+        "@id": "https://www.nabilahmad.site/#person"
       }
     }
   ]

@@ -1,7 +1,7 @@
 # 🚀 Nabil Ahmad — Full Stack Portfolio
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-nabil--tech.vercel.app-00c7b7?style=for-the-badge&logo=vercel&logoColor=white)](https://nabil-tech.vercel.app)
-[![Tech Stack](https://img.shields.io/badge/Stack-Next.js_16_%7C_React_%7C_MongoDB_%7C_Tailwind-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nabil-tech.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-www.nabilahmad.site-00c7b7?style=for-the-badge&logo=vercel&logoColor=white)](https://www.nabilahmad.site)
+[![Tech Stack](https://img.shields.io/badge/Stack-Next.js_16_%7C_React_%7C_MongoDB_%7C_Tailwind-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://www.nabilahmad.site)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 > **Modern, high-performance developer portfolio built with Next.js 16 (App Router), React, Tailwind CSS, MongoDB, and AWS Cloud architecture.**
@@ -10,7 +10,7 @@
 
 ## 🌟 Live Preview
 
-Experience the live portfolio at: **[https://nabil-tech.vercel.app](https://nabil-tech.vercel.app)**
+Experience the live portfolio at: **[https://www.nabilahmad.site](https://www.nabilahmad.site)**
 
 ---
 
@@ -37,7 +37,7 @@ Experience the live portfolio at: **[https://nabil-tech.vercel.app](https://nabi
 
 ## 📬 Connect with Me
 
-- 🌐 **Portfolio:** [nabil-tech.vercel.app](https://nabil-tech.vercel.app)
+- 🌐 **Portfolio:** [www.nabilahmad.site](https://www.nabilahmad.site)
 - 💼 **LinkedIn:** [linkedin.com/in/nabilroghani](https://www.linkedin.com/in/nabilroghani)
 - 🐙 **GitHub:** [github.com/nabilroghani](https://github.com/nabilroghani)
 - ✉️ **Email:** [nabiltechlogic.dev@gmail.com](mailto:nabiltechlogic.dev@gmail.com)

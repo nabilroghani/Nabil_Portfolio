@@ -76,7 +76,7 @@ export async function sendContactNotification({ name, email, service, budget, ti
         </div>
 
         <div style="background: #f1f5f9; padding: 12px; text-align: center; font-size: 11px; color: #94a3b8;">
-          Sent automatically from <a href="https://nabil-tech.vercel.app" style="color: #64748b; text-decoration: none;">nabil-tech.vercel.app</a>
+          Sent automatically from <a href="https://www.nabilahmad.site" style="color: #64748b; text-decoration: none;">www.nabilahmad.site</a>
         </div>
       </div>
     `,

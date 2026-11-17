@@ -24,4 +24,4 @@ User-agent: Applebot
 Allow: /
 
 # Sitemap
-Sitemap: https://nabil-tech.vercel.app/sitemap.xml
+Sitemap: https://www.nabilahmad.site/sitemap.xml

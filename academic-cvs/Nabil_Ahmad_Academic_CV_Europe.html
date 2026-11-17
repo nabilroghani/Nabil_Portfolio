@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nabil Ahmad — Academic CV (European Universities & Research Groups)</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 10mm 14mm 10mm 14mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Cambria', 'Georgia', 'Times New Roman', serif;
+      font-size: 9.3pt;
+      line-height: 1.34;
+      color: #111827;
+      background: #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
+    a {
+      color: #1e3a8a;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 8px;
+      padding-bottom: 5px;
+      border-bottom: 1.5px solid #1e293b;
+    }
+    .name {
+      font-size: 20pt;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #0f172a;
+      margin-bottom: 3px;
+    }
+    .header-subtitle {
+      font-size: 9.8pt;
+      font-weight: 600;
+      color: #1e3a8a;
+      letter-spacing: 0.3px;
+      margin-bottom: 4px;
+    }
+    .contact-info {
+      font-size: 8.6pt;
+      color: #374151;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5px 9px;
+    }
+    .contact-info span {
+      display: inline-flex;
+      align-items: center;
+    }
+    .contact-info .sep {
+      color: #9ca3af;
+    }
+    .section {
+      margin-bottom: 9px;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+    .section-title {
+      font-size: 10.4pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: #0f2744;
+      border-bottom: 1px solid #94a3b8;
+      padding-bottom: 1.5px;
+      margin-bottom: 5px;
+    }
+    .profile-box {
+      font-size: 9.1pt;
+      background: #f8fafc;
+      padding: 6px 10px;
+      border-left: 3px solid #1e3a8a;
+      border-radius: 2px;
+      margin-bottom: 4px;
+      line-height: 1.38;
+      color: #1e293b;
+    }
+    .interests-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 12px;
+      font-size: 8.9pt;
+      background: #f8fafc;
+      padding: 6px 10px;
+      border-left: 3px solid #1e3a8a;
+      border-radius: 2px;
+      margin-bottom: 3px;
+    }
+    .interests-item strong {
+      color: #0f172a;
+    }
+    .item {
+      margin-bottom: 6px;
+      page-break-inside: avoid;
+    }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+    .item-title {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .item-subtitle {
+      font-size: 9pt;
+      font-style: italic;
+      color: #334155;
+    }
+    .item-date, .item-location {
+      font-size: 8.6pt;
+      color: #4b5563;
+      font-weight: 500;
+    }
+    .item-meta {
+      font-size: 8.5pt;
+      color: #1e3a8a;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    ul.bullet-list {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 1.5px;
+    }
+    ul.bullet-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 2px;
+      font-size: 8.9pt;
+      color: #1f2937;
+    }
+    ul.bullet-list li::before {
+      content: "•";
+      position: absolute;
+      left: 1px;
+      color: #1e3a8a;
+      font-size: 9.5pt;
+    }
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8.9pt;
+    }
+    .skills-table tr {
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .skills-table td {
+      padding: 2.5px 0;
+      vertical-align: top;
+    }
+    .skills-cat {
+      width: 26%;
+      font-weight: 700;
+      color: #0f2744;
+      white-space: nowrap;
+    }
+    .skills-val {
+      width: 74%;
+      color: #1f2937;
+    }
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .ects-tag {
+      display: inline-block;
+      background: #e0e7ff;
+      color: #3730a3;
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 8.8pt;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h1 class="name">NABIL AHMAD</h1>
+    <div class="header-subtitle">Curriculum Vitae &bull; Candidate for Master’s (MSc) &amp; Research Positions in Computer Science</div>
+    <div class="contact-info">
+      <span>Peshawar, Pakistan</span>
+      <span class="sep">|</span>
+      <span>+92 304 1237882</span>
+      <span class="sep">|</span>
+      <span><a href="mailto:nabilroghani96@gmail.com">nabilroghani96@gmail.com</a></span>
+      <span class="sep">|</span>
+      <span>Portfolio: <a href="https://www.nabilahmad.site">www.nabilahmad.site</a></span>
+      <span class="sep">|</span>
+      <span>GitHub: <a href="https://github.com/nabilroghani">github.com/nabilroghani</a></span>
+      <span class="sep">|</span>
+      <span>LinkedIn: <a href="https://linkedin.com/in/nabil-ahmad-0750002b1">linkedin.com/in/nabil-ahmad</a></span>
+    </div>
+  </header>
+
+  <!-- SECTION 1: SCIENTIFIC PROFILE & RESEARCH INTERESTS -->
+  <section class="section">
+    <h2 class="section-title">Scientific Profile &amp; Research Focus</h2>
+    <div class="profile-box">
+      Computer Science graduate researcher with extensive hands-on experience designing and deploying production software architectures for <strong>European commercial clients (Malta &amp; UK)</strong>. Research interests lie at the intersection of <strong>Human-Computer Interaction (HCI)</strong>, <strong>Domain-Grounded Retrieval-Augmented Generation (RAG)</strong>, and <strong>Accessible Distributed Web Systems (WCAG 2.2 Level AA)</strong>. Proven capacity for rigorous software verification through automated End-to-End testing (Playwright), unit testing (Vitest), and latency-critical API engineering.
+    </div>
+    <div class="interests-grid">
+      <div class="interests-item">
+        <strong>Human-Computer Interaction:</strong> Human-AI interaction paradigms, adaptive user interfaces, digital accessibility.
+      </div>
+      <div class="interests-item">
+        <strong>Applied AI &amp; Knowledge Retrieval:</strong> Domain-grounded RAG architectures, bilingual healthcare NLP interfaces.
+      </div>
+      <div class="interests-item">
+        <strong>Software Quality &amp; Accessibility:</strong> Automated WCAG 2.2 compliance via axe-core, cross-browser Playwright testing.
+      </div>
+      <div class="interests-item">
+        <strong>Distributed Systems:</strong> Real-time WebSocket synchronization, optimistic UI state updates, sub-200ms API optimization.
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: ACADEMIC EDUCATION -->
+  <section class="section">
+    <h2 class="section-title">Academic Education</h2>
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Bachelor of Science in Computer Science (BS CS)</span>
+        <span class="item-date">2022 &ndash; 2026 (Expected)</span>
+      </div>
+      <div class="item-header">
+        <span class="item-subtitle">University of Peshawar &mdash; Sheikh Zayed Islamic Centre, Pakistan</span>
+        <span class="ects-tag">CGPA: 3.32 / 4.00 (ECTS Equivalent: First-Class)</span>
+      </div>
+      <ul class="bullet-list" style="margin-top: 3px;">
+        <li><strong>Relevant Curriculum:</strong> Human-Computer Interaction, Artificial Intelligence, Database Management Systems, Data Structures &amp; Algorithms, Software Quality Assurance, Web Engineering, Operating Systems, Computer Networks.</li>
+        <li><strong>Language of Instruction:</strong> Entire four-year degree program instructed, examined, and documented in English.</li>
+      </ul>
+    </div>
+    <div class="item" style="margin-bottom: 2px;">
+      <div class="item-header">
+        <span class="item-title">Higher Secondary School Certificate (FSc Pre-Engineering)</span>
+        <span class="item-date">2020 &ndash; 2022</span>
+      </div>
+      <div class="item-header">
+        <span class="item-subtitle">Board of Intermediate and Secondary Education (BISE) Malakand, Pakistan</span>
+        <span class="item-date">Grade: A (First Division &bull; Mathematics, Physics, Chemistry)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: KEY TECHNICAL & AI RESEARCH PROJECTS -->
+  <section class="section">
+    <h2 class="section-title">Selected Technical &amp; AI Systems Projects</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">MedPulse AI &mdash; Bilingual Clinical RAG &amp; Human-AI Triage System</span>
+        <span class="item-date"><a href="https://github.com/nabilroghani/AI-Powered-Clinic-Management-SaaS">Code Repository</a></span>
+      </div>
+      <div class="item-meta">Tech: Google Gemini 2.0 API, Retrieval-Augmented Generation (RAG), MongoDB Vector/DB, Node.js, React.js</div>
+      <ul class="bullet-list">
+        <li>Engineered a clinical workflow platform supporting multi-role collaboration among Clinicians, Receptionists, and Patients.</li>
+        <li>Implemented a domain-specific RAG pipeline integrating Google Gemini 2.0 with MongoDB data structures, generating automated bilingual (English/Urdu) prescription explanations to enhance patient health literacy.</li>
+        <li>Constructed real-time symptom triage workflows and auto-generated medical audit documentation to minimize clinician cognitive load while safeguarding clinical integrity.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Penitans &mdash; Distributed Real-Time Tele-Consultation Platform</span>
+        <span class="item-date"><a href="https://penitans.com">Live System</a></span>
+      </div>
+      <div class="item-meta">Tech: WebSockets (Socket.io), WebRTC (ZegoCloud / Jitsi), TanStack React Query, Node.js, Express, Stripe</div>
+      <ul class="bullet-list">
+        <li>Built resilient low-latency communication channels enabling concurrent multi-party video/audio tele-consultation and live messaging.</li>
+        <li>Integrated TanStack Query for optimistic client caching and server-state reconciliation, maintaining fluid interactions across constrained or unstable networks.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">BeanVerse &mdash; Event-Driven Multi-Tier Marketplace Architecture</span>
+        <span class="item-date"><a href="https://github.com/nabilroghani/bean-verse">Code Repository</a></span>
+      </div>
+      <div class="item-meta">Tech: Node.js, Express.js, MongoDB Atlas, Socket.io, Redis-style Caching, React.js, Stripe</div>
+      <ul class="bullet-list">
+        <li>Architected an event-driven distributed state machine synchronizing consumers, merchants, and courier agents in real time.</li>
+        <li>Profiled MongoDB query execution paths to eliminate relation population overhead, achieving sub-200ms end-to-end API response times.</li>
+        <li>Implemented a cryptographic OTP handshake verification protocol for secure physical transaction settlements.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">PAK Learners &mdash; Scalable Academic Examination Portal</span>
+        <span class="item-date"><a href="https://paklearners.com">paklearners.com</a></span>
+      </div>
+      <div class="item-meta">Tech: MERN Stack (MongoDB, Express.js, React, Node.js), Linux VPS (Ubuntu/Hostinger), PM2, Nginx</div>
+      <ul class="bullet-list">
+        <li>Deployed a high-availability online MCQ examination portal on an Ubuntu Linux VPS with PM2 process clusters and Nginx reverse proxy.</li>
+        <li>Engineered automated grading logic, timed exam sessions, and anti-cheating state tracking serving thousands of student test sessions.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECTION 4: INTERNATIONAL INDUSTRY EXPERIENCE (EUROPEAN CLIENTS) -->
+  <section class="section page-break">
+    <h2 class="section-title">International Industry Experience &bull; European (Malta &amp; UK) Clients</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Web Developer &mdash; Apptex Software Solutions</span>
+        <span class="item-date">Jun 2026 &ndash; Present</span>
+      </div>
+      <div class="item-subtitle">Peshawar, Pakistan &bull; Engineering for European Commercial Clients</div>
+      <ul class="bullet-list">
+        <li>Architect and deploy production web systems for European (Malta &amp; UK) commercial clients using Next.js 16 (App Router, Server Actions), React 19, TypeScript, and modern CSS architectures.</li>
+        <li><strong>Accurit Accountancy (accuritaccountancy.com):</strong> Built an accessible corporate portal for a Malta-based accounting firm; implemented automated E2E tests with Playwright across Chromium, WebKit, and Firefox, unit tests with Vitest, and verified strict <strong>WCAG 2.2 Level AA accessibility compliance via axe-core</strong>.</li>
+        <li><strong>Galea's Kitchen (galeaskitchen.com):</strong> Developed a restaurant web application for the Malta market with live table reservations via CeleryHQ API, Zod schema validation, and Zustand client-state management.</li>
+        <li><strong>Verbalisers (verbalisers.com):</strong> Engineered the frontend of a multilingual European translation agency platform with a Supabase-backed multi-service quote system.</li>
+        <li>Enforce strict code quality through modular component design, ESLint/Prettier standards, and automated Vercel/Netlify CI/CD pipelines.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Freelance Full-Stack Systems Engineer &mdash; Self-Employed</span>
+        <span class="item-date">2025 &ndash; Present</span>
+      </div>
+      <div class="item-subtitle">Remote International Client Engagements</div>
+      <ul class="bullet-list">
+        <li>Delivered 10+ custom web platforms end-to-end, managing requirements, database schema design, and cloud deployments.</li>
+        <li><strong>Baratie Stays:</strong> Developed a vacation rental platform for the Malta hospitality market featuring Next.js Server Actions, MongoDB Atlas, and structured Schema.org JSON-LD metadata for search engine indexing.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Web Engineering Intern &mdash; Prosoft Empowering Innovation</span>
+        <span class="item-date">Aug 2024</span>
+      </div>
+      <div class="item-subtitle">Peshawar, Pakistan</div>
+      <ul class="bullet-list">
+        <li>Developed responsive interface components and practiced team-oriented version control, agile sprint planning, and component refactoring.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECTION 5: TECHNICAL PROFICIENCIES -->
+  <section class="section">
+    <h2 class="section-title">Technical Skills &amp; Proficiencies</h2>
+    <table class="skills-table">
+      <tr>
+        <td class="skills-cat">AI &amp; Data Systems:</td>
+        <td class="skills-val">Google Gemini 2.0 API, Retrieval-Augmented Generation (RAG), Vector Embeddings, MongoDB Atlas, PostgreSQL, Supabase, Firebase Firestore.</td>
+      </tr>
+      <tr>
+        <td class="skills-cat">Frontend &amp; Accessibility:</td>
+        <td class="skills-val">React.js, Next.js 16 (App Router, Server Actions), TypeScript, JavaScript (ES6+), Tailwind CSS v4, Zustand, TanStack Query, Framer Motion, WCAG 2.2 Level AA.</td>
+      </tr>
+      <tr>
+        <td class="skills-cat">Backend &amp; Distributed APIs:</td>
+        <td class="skills-val">Node.js, Express.js, RESTful Architecture, WebSockets (Socket.io), JWT, Role-Based Access Control (RBAC), bcrypt, Nodemailer, Resend, Stripe Payments.</td>
+      </tr>
+      <tr>
+        <td class="skills-cat">Quality, Testing &amp; DevOps:</td>
+        <td class="skills-val">Playwright (Cross-Browser E2E), Vitest (Unit Testing), axe-core (Accessibility), Git/GitHub, Docker (basic), Linux VPS (Ubuntu/Nginx/PM2), Vercel, AWS (EC2, S3), Postman.</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- SECTION 6: HACKATHONS, TRAINING & CEFR LANGUAGES -->
+  <section class="section">
+    <div class="two-col-grid">
+      <div>
+        <h2 class="section-title">Hackathons &amp; Certifications</h2>
+        <ul class="bullet-list">
+          <li><strong>UET Webathon (2026):</strong> Speed coding competition participant.</li>
+          <li><strong>SMIT Coding Night Hackathon (2025):</strong> Timed team software prototyping.</li>
+          <li><strong>Saylani Mass IT Training (SMIT, 2025):</strong> Full-Stack Web &amp; App Development (1 Year).</li>
+          <li><strong>NAVTTC (2025):</strong> 3-Month Advanced Web Development Certification.</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="section-title">Language Proficiency (CEFR Framework)</h2>
+        <ul class="bullet-list">
+          <li><strong>English:</strong> C1 Level &bull; Professional &amp; Academic Working Proficiency (Degree medium of instruction in English).</li>
+          <li><strong>Urdu:</strong> C2 Level &bull; Native / Bilingual Proficiency.</li>
+          <li><strong>Pashto:</strong> C2 Level &bull; Native Proficiency.</li>
+          <li><strong>Availability:</strong> Available for fully-funded Master’s (MSc) &amp; Research Assistant positions starting Autumn 2026.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
+

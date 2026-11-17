@@ -1,0 +1,172 @@
+%----------------------------------------------------------------------------------------
+%   Nabil Ahmad - Academic CV (South Korea / HCI & AI Focus)
+%   Tailored for KAIST (KIXLAB), SNU, POSTECH, UNIST
+%----------------------------------------------------------------------------------------
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    urlcolor=blue!70!black
+}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{10pt}{6pt}
+
+\setlist[itemize]{leftmargin=1.2em, itemsep=2pt, topsep=2pt}
+
+\begin{document}
+\pagestyle{empty}
+
+%----------------------------------------------------------------------------------------
+%   HEADER
+%----------------------------------------------------------------------------------------
+\begin{center}
+    {\Huge \textbf{NABIL AHMAD}} \\[4pt]
+    \textbf{Prospective Graduate Researcher $\cdot$ Human-Computer Interaction $\cdot$ Applied AI Systems} \\[3pt]
+    Peshawar, Pakistan \quad$|$\quad +92 304 1237882 \quad$|$\quad \href{mailto:nabilroghani96@gmail.com}{nabilroghani96@gmail.com} \\[2pt]
+    Portfolio: \href{https://www.nabilahmad.site}{www.nabilahmad.site} \quad$|$\quad
+    GitHub: \href{https://github.com/nabilroghani}{github.com/nabilroghani} \quad$|$\quad
+    LinkedIn: \href{https://linkedin.com/in/nabil-ahmad-0750002b1}{linkedin.com/in/nabil-ahmad}
+\end{center}
+
+%----------------------------------------------------------------------------------------
+%   RESEARCH INTERESTS
+%----------------------------------------------------------------------------------------
+\section{Research Interests}
+\begin{itemize}
+    \item \textbf{Human-Computer Interaction (HCI) \& Human-AI Collaboration:} Generative and adaptive user interfaces, AI-assisted decision making, intelligent interaction paradigms, and accessible interface engineering.
+    \item \textbf{Applied AI \& RAG Systems:} Retrieval-Augmented Generation (RAG), bilingual/cross-lingual LLM applications, domain-grounded knowledge retrieval, and clinical cognitive support.
+    \item \textbf{Interactive Real-Time Distributed Systems:} Low-latency WebSocket architectures, multi-user synchronous collaboration, client-side optimistic caching, and resilient state reconciliation.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%   EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\textbf{Bachelor of Science in Computer Science (BS CS)} \hfill 2022 -- 2026 (Expected) \\
+University of Peshawar -- Sheikh Zayed Islamic Centre, Pakistan \hfill \textbf{CGPA: 3.32 / 4.00}
+\begin{itemize}
+    \item \textbf{Core Coursework:} Human-Computer Interaction, Artificial Intelligence, Data Structures \& Algorithms, Database Systems, Web Engineering, Software Engineering, Object-Oriented Analysis \& Design, Operating Systems, Computer Networks.
+    \item \textbf{Academic Focus:} Interactive intelligent systems, user experience optimization, full-stack software architecture, and practical AI system integration.
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Higher Secondary School Certificate (FSc Pre-Engineering)} \hfill 2020 -- 2022 \\
+Board of Intermediate and Secondary Education (BISE) Malakand, Pakistan
+
+%----------------------------------------------------------------------------------------
+%   RESEARCH-ORIENTED & AI SYSTEMS PROJECTS
+%----------------------------------------------------------------------------------------
+\section{Research-Oriented \& AI Engineering Projects}
+
+\textbf{MedPulse AI -- Bilingual Clinical RAG \& Human-AI Triage System} \hfill \href{https://github.com/nabilroghani/AI-Powered-Clinic-Management-SaaS}{[Code Repository]} \\
+\textit{Technologies: Google Gemini 2.0 API, Retrieval-Augmented Generation (RAG), MongoDB Vector/DB, Node.js, React.js}
+\begin{itemize}
+    \item Architected an AI-augmented healthcare workflow platform facilitating multi-role interaction between Clinicians, Patients, and Staff.
+    \item Integrated Google Gemini 2.0 with a domain-grounded MongoDB RAG pipeline, providing contextual symptom triage suggestions and one-click bilingual (English/Urdu) medical prescription explanations to bridge patient health literacy gaps.
+    \item Implemented structured clinical audit trails and auto-generated medical report documents, designing interaction flows that reduce clinician cognitive load while upholding patient safety.
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Penitans -- Distributed Real-Time Tele-Consultation \& Collaborative Platform} \hfill \href{https://penitans.com}{[Live System]} \\
+\textit{Technologies: WebSockets (Socket.io), WebRTC (ZegoCloud/Jitsi), TanStack React Query, Node.js, Express, Stripe}
+\begin{itemize}
+    \item Engineered low-latency bidirectional communication pipelines supporting concurrent multi-user video/audio tele-consultation and live messaging.
+    \item Implemented client-side optimistic UI updates and server-state reconciliation using TanStack Query, eliminating perceived UI latency over constrained network conditions.
+    \item Structured event-driven state synchronization and automated appointment push notification pipelines.
+\end{itemize}
+
+\vspace{4pt}
+\textbf{BeanVerse -- Event-Driven Multi-Role Distributed Marketplace Engine} \hfill \href{https://github.com/nabilroghani/bean-verse}{[Code Repository]} \\
+\textit{Technologies: Node.js, Express.js, MongoDB Atlas, Socket.io, Redis-style Caching, React.js, Stripe}
+\begin{itemize}
+    \item Designed a real-time event-driven state machine coordinating three concurrent user personas: Consumers, Merchants, and Delivery Couriers.
+    \item Optimized MongoDB schema indexing and aggregation queries, eliminating relationship population overhead and achieving sub-200ms API response latency under concurrent traffic.
+    \item Implemented a cryptographic OTP handshake verification protocol for secure transactional state transitions.
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Accurit Accountancy \& Enterprise Platforms -- Accessibility \& Quality Engineering} \hfill \href{https://accuritaccountancy.com}{[Live System]} \\
+\textit{Technologies: Next.js 16 (App Router), TypeScript, Playwright (E2E), Vitest, axe-core (WCAG 2.2), Tailwind CSS}
+\begin{itemize}
+    \item Engineered accessibility-first corporate web architecture compliant with strict WCAG 2.2 Level AA guidelines, verified via automated axe-core accessibility auditing suites.
+    \item Implemented end-to-end (E2E) automated cross-browser test suites (Chromium, Firefox, WebKit) via Playwright and unit test suites via Vitest, ensuring zero regression across responsive viewport breakpoints.
+\end{itemize}
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%   INDUSTRY & PRACTICAL SYSTEMS EXPERIENCE
+%----------------------------------------------------------------------------------------
+\section{Industry \& Practical Systems Experience}
+
+\textbf{Web Developer} -- Apptex Software Solutions \hfill Jun 2026 -- Present \\
+\textit{Peshawar, Pakistan (Engineering for European \& International Clients)}
+\begin{itemize}
+    \item Architect and deploy production web systems for European (Malta \& UK) commercial clients using Next.js 16 (Server Components, Server Actions), React 19, TypeScript, and modern CSS architectures.
+    \item Constructed scalable web systems including Galea's Kitchen (live table reservation engine with CeleryHQ API) and Verbalisers (translation service platform with Supabase backend).
+    \item Collaborate in agile Git/GitHub workflows, maintaining strict modular architecture, code reviews, ESLint/Prettier standards, and automated deployment pipelines on Vercel and Netlify.
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Freelance Full-Stack Systems Engineer} -- Self-Employed \hfill 2025 -- Present \\
+\textit{Remote Client Deployments}
+\begin{itemize}
+    \item Delivered 10+ end-to-end full-stack web applications, including \textit{PAK Learners} (a scalable educational MCQ \& exam-preparation portal hosted on a Linux VPS with PM2 process manager and Nginx reverse proxy).
+    \item Built \textit{Baratie Stays} (vacation rental portal for the Malta market) featuring dynamic server-rendered property search and structured Schema.org JSON-LD metadata for search engine indexing.
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Web Engineering Intern} -- Prosoft Empowering Innovation \hfill Aug 2024 \\
+\textit{Peshawar, Pakistan}
+\begin{itemize}
+    \item Developed responsive interface components and practiced team-oriented version control, agile sprint planning, and component refactoring.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%   TECHNICAL SKILLS
+%----------------------------------------------------------------------------------------
+\section{Technical Skills \& Proficiencies}
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+    \textbf{AI \& Data Systems:} & Google Gemini 2.0 API, Retrieval-Augmented Generation (RAG), Prompt Engineering, MongoDB Atlas, PostgreSQL, Supabase, Firebase Firestore. \\
+    \textbf{Frontend \& HCI:} & React.js, Next.js 16 (App Router, Server Actions), TypeScript, JavaScript (ES6+), Tailwind CSS v4, Zustand, TanStack Query, Framer Motion, GSAP, Responsive Design, WCAG 2.2 Accessibility. \\
+    \textbf{Backend \& Real-Time:} & Node.js, Express.js, RESTful Architecture, WebSockets (Socket.io), JWT, Role-Based Access Control (RBAC), bcrypt, Nodemailer, Resend, Stripe Payments, ZegoCloud / Jitsi (WebRTC). \\
+    \textbf{Testing \& DevOps:} & Playwright (E2E Testing), Vitest, axe-core, Git/GitHub, Docker (basic), Linux VPS (Ubuntu, Nginx, PM2), Vercel, Netlify, AWS (EC2, S3), Sentry, Postman.
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%   HACKATHONS, TRAINING & LANGUAGES
+%----------------------------------------------------------------------------------------
+\section{Hackathons, Training \& Research Readiness}
+\begin{minipage}[t]{0.48\textwidth}
+    \textbf{Hackathons \& Training:}
+    \begin{itemize}
+        \item \textbf{UET Webathon (2026):} Speed coding competition.
+        \item \textbf{SMIT Coding Night Hackathon (2025):} Timed software prototyping.
+        \item \textbf{Saylani Mass IT Training (SMIT, 2025):} Web \& App Dev certification.
+        \item \textbf{NAVTTC (2025):} 3-Month Advanced Web Development Certification.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \textbf{Languages \& Availability:}
+    \begin{itemize}
+        \item \textbf{English:} Full Professional \& Academic Proficiency.
+        \item \textbf{Urdu:} Native / Bilingual Proficiency.
+        \item \textbf{Pashto:} Native Proficiency.
+        \item \textbf{Research Commitment:} Ready to dedicate 50+ hours/week to lab research, systems prototyping, and writing scientific publications.
+    \end{itemize}
+\end{minipage}
+
+\end{document}
+
