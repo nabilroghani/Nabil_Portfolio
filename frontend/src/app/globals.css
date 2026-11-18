@@ -6,12 +6,24 @@
 
   /* Editorial palette — deep indigo/ink dark mode, warm ivory light mode */
   --color-ink: #0b0a1a;
-  --color-gold: #c9a15f;
-  --color-gold-soft: #e3c48a;
+  --color-gold: var(--theme-gold, #8f5c12);
+  --color-gold-soft: var(--theme-gold-soft, #a87322);
   --color-violet: #8f7fe8;
 
   --font-display: "Playfair Display", "Georgia", serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  /* High contrast rich bronze gold in light mode (5.7:1 WCAG AA compliant on white) */
+  --theme-gold: #8f5c12;
+  --theme-gold-soft: #a87322;
+}
+
+.dark {
+  /* Luminous champagne gold in dark mode (10.5:1 WCAG AA compliant on dark bg) */
+  --theme-gold: #e5c388;
+  --theme-gold-soft: #f2dab2;
 }
 
 @layer base {

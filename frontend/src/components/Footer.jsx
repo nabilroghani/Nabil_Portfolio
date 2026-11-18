@@ -39,7 +39,7 @@ const Footer = () => (
         ))}
       </div>
 
-      <p className="text-xs text-slate-500 dark:text-[#8a83ab]">
+      <p className="text-xs text-slate-600 dark:text-[#a79fc9]">
         &copy; {new Date().getFullYear()} Nabil Ahmad. All rights reserved.
       </p>
     </div>

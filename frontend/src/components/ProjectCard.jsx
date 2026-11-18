@@ -128,7 +128,7 @@ const ProjectCard = ({ project }) => {
             </div>
           </div>
 
-          <p className={`text-slate-500 dark:text-[#a79fc9] text-sm leading-relaxed mb-2 ${expanded ? '' : 'line-clamp-2'}`}>
+          <p className={`text-slate-600 dark:text-[#a79fc9] text-sm leading-relaxed mb-2 ${expanded ? '' : 'line-clamp-2'}`}>
             {desc}
           </p>
           {isLong && (
@@ -157,7 +157,7 @@ const ProjectCard = ({ project }) => {
             {project.stack && project.stack.map((tech, i) => (
               <span
                 key={i}
-                className="text-[11px] font-semibold text-[#9c7a3a] dark:text-gold-soft bg-gold/5 dark:bg-gold/10 border border-gold/20 px-2.5 py-0.5 rounded-full"
+                className="text-[11px] font-semibold text-[#825916] dark:text-gold-soft bg-gold/10 dark:bg-gold/10 border border-gold/25 px-2.5 py-0.5 rounded-full"
               >
                 {tech}
               </span>

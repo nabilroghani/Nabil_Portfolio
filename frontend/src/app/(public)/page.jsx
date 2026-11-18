@@ -96,7 +96,7 @@ export default function HomePage() {
                     <Icon size={22} className="text-slate-600 dark:text-[#a79fc9] group-hover:text-gold" />
                   </div>
                   <span className="text-slate-800 dark:text-[#e5e1f2] font-semibold text-xs text-center mb-1">{tool.name}</span>
-                  <span className="text-[9px] text-slate-400 dark:text-[#8a83ab] uppercase tracking-widest">{tool.category}</span>
+                  <span className="text-[9px] text-slate-600 dark:text-[#8a83ab] uppercase tracking-widest font-semibold">{tool.category}</span>
                 </motion.div>
               );
             })}

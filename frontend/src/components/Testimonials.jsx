@@ -78,7 +78,7 @@ const Testimonials = () => {
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-ink dark:text-[#f3efe4] leading-tight">
           What Clients <span className="italic text-gold">Say</span>
         </h2>
-        <p className="mt-3 text-xs sm:text-sm text-slate-500 dark:text-[#8a83ab] max-w-xl mx-auto">
+        <p className="mt-3 text-xs sm:text-sm text-slate-600 dark:text-[#8a83ab] max-w-xl mx-auto">
           Verified endorsements and measurable outcomes delivered for commercial European and international production systems.
         </p>
       </div>
@@ -194,19 +194,19 @@ const Testimonials = () => {
         <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
           <div className="p-3 rounded-xl bg-slate-50/50 dark:bg-[#100e21]/60 border border-slate-200/50 dark:border-[#241f42]">
             <span className="block text-lg font-black text-slate-800 dark:text-white">100%</span>
-            <span className="text-[10px] text-slate-500 uppercase tracking-wider">Client Satisfaction</span>
+            <span className="text-[10px] text-slate-600 dark:text-[#a79fc9] uppercase tracking-wider font-semibold">Client Satisfaction</span>
           </div>
           <div className="p-3 rounded-xl bg-slate-50/50 dark:bg-[#100e21]/60 border border-slate-200/50 dark:border-[#241f42]">
             <span className="block text-lg font-black text-slate-800 dark:text-white">10+</span>
-            <span className="text-[10px] text-slate-500 uppercase tracking-wider">Production Apps</span>
+            <span className="text-[10px] text-slate-600 dark:text-[#a79fc9] uppercase tracking-wider font-semibold">Production Apps</span>
           </div>
           <div className="p-3 rounded-xl bg-slate-50/50 dark:bg-[#100e21]/60 border border-slate-200/50 dark:border-[#241f42]">
             <span className="block text-lg font-black text-slate-800 dark:text-white">WCAG 2.2</span>
-            <span className="text-[10px] text-slate-500 uppercase tracking-wider">EU Accessibility</span>
+            <span className="text-[10px] text-slate-600 dark:text-[#a79fc9] uppercase tracking-wider font-semibold">EU Accessibility</span>
           </div>
           <div className="p-3 rounded-xl bg-slate-50/50 dark:bg-[#100e21]/60 border border-slate-200/50 dark:border-[#241f42]">
             <span className="block text-lg font-black text-slate-800 dark:text-white">&lt;200ms</span>
-            <span className="text-[10px] text-slate-500 uppercase tracking-wider">API Latency Target</span>
+            <span className="text-[10px] text-slate-600 dark:text-[#a79fc9] uppercase tracking-wider font-semibold">API Latency Target</span>
           </div>
         </div>
       </div>

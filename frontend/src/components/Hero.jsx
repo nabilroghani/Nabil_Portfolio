@@ -18,13 +18,13 @@ const uopLogo = '/images/uop_logo.png';
 
 // ── Lightweight Tech SVGs for Banner ──
 const NextIcon = () => (
-  <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-current text-white shrink-0">
+  <svg aria-hidden="true" viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-current text-white shrink-0">
     <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.82 17.587l-6.86-9.84v9.84H9.4V6.413h1.56l7.02 10.08v-10.08h1.56v11.174h-1.72z" />
   </svg>
 );
 
 const MongoIcon = () => (
-  <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-current text-emerald-400 shrink-0">
+  <svg aria-hidden="true" viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-current text-emerald-400 shrink-0">
     <path d="M17.193 9.555c-1.264-4.499-4.577-6.84-4.832-7.013a.684.684 0 0 0-.722 0C11.384 2.715 8.07 5.056 6.806 9.555c-1.393 4.954.215 9.07 3.99 11.871a3.78 3.78 0 0 0 .848.513v-3.79c-.067-.034-.135-.067-.202-.103-2.115-1.127-3.003-3.23-2.274-5.368.513-1.503 1.776-3.14 3.037-4.148.067-.054.168-.088.253-.088.085 0 .186.034.253.088 1.261 1.008 2.524 2.645 3.037 4.148.729 2.138-.159 4.241-2.274 5.368-.067.036-.135.069-.202.103v3.79a3.78 3.78 0 0 0 .848-.513c3.775-2.801 5.383-6.917 3.99-11.871z" />
   </svg>
 );
@@ -36,7 +36,7 @@ const ExpressIcon = () => (
 );
 
 const ReactIcon = () => (
-  <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-current text-cyan-400 shrink-0">
+  <svg aria-hidden="true" viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-current text-cyan-400 shrink-0">
     <ellipse cx="12" cy="12" rx="4" ry="10" transform="rotate(30 12 12)" fill="none" stroke="currentColor" strokeWidth="1.5" />
     <ellipse cx="12" cy="12" rx="4" ry="10" transform="rotate(90 12 12)" fill="none" stroke="currentColor" strokeWidth="1.5" />
     <ellipse cx="12" cy="12" rx="4" ry="10" transform="rotate(150 12 12)" fill="none" stroke="currentColor" strokeWidth="1.5" />
@@ -45,13 +45,13 @@ const ReactIcon = () => (
 );
 
 const NodeIcon = () => (
-  <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-current text-green-400 shrink-0">
+  <svg aria-hidden="true" viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-current text-green-400 shrink-0">
     <path d="M12 2l9 5.2v10.4L12 22.8 3 17.6V7.2L12 2zm0 2.3L5 8.3v7.4l7 4 7-4V8.3l-7-4z" />
   </svg>
 );
 
 const AwsIcon = () => (
-  <svg viewBox="0 0 24 24" className="w-3.5 sm:w-4 h-3.5 sm:h-4 fill-current text-[#ff9900] shrink-0">
+  <svg aria-hidden="true" viewBox="0 0 24 24" className="w-3.5 sm:w-4 h-3.5 sm:h-4 fill-current text-[#ff9900] shrink-0">
     <path d="M18.75 14.5c-.3 0-.6.1-.8.3-.5.5-.3 1.2.2 1.6 2.3 1.6 3.6 2.8 3.6 4.6 0 1.2-.7 2.1-1.9 2.1-1.6 0-3.5-1.5-5.2-3.2-.3-.3-.8-.3-1.1 0-1.7 1.7-3.6 3.2-5.2 3.2-1.2 0-1.9-.9-1.9-2.1 0-1.8 1.3-3 3.6-4.6.5-.4.7-1.1.2-1.6-.2-.2-.5-.3-.8-.3-.5 0-.9.2-1.2.5C3.7 16.5 2 18.3 2 20.9 2 23.2 3.6 25 5.9 25c2.4 0 4.7-1.7 6.1-3.3 1.4 1.6 3.7 3.3 6.1 3.3 2.3 0 3.9-1.8 3.9-4.1 0-2.6-1.7-4.4-4.4-6.4-.3-.3-.7-.5-1.2-.5z" transform="translate(0, -3) scale(0.9)" />
     <text x="3" y="12" fontSize="9" fontWeight="900" fill="currentColor" fontFamily="sans-serif">AWS</text>
   </svg>
@@ -177,6 +177,7 @@ const Hero = () => {
 
               {/* LinkedIn #OPENTOWORK Green Ribbon Curved Badge (bottom-left arc matching reference) */}
               <svg
+                aria-hidden="true"
                 viewBox="0 0 200 200"
                 className="absolute inset-0 w-full h-full pointer-events-none select-none drop-shadow-sm"
               >
@@ -238,6 +239,7 @@ const Hero = () => {
                 className="inline-flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#0a66c2] text-white shadow-sm shrink-0"
               >
                 <svg
+                  aria-hidden="true"
                   className="w-3 sm:w-3.5 h-3 sm:h-3.5 stroke-[3]"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -263,9 +265,9 @@ const Hero = () => {
             </p>
 
             {/* 3. Location & Contact info Link */}
-            <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-slate-500 dark:text-[#a79fc9] pt-0.5">
+            <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-slate-600 dark:text-[#a79fc9] pt-0.5">
               <span className="inline-flex items-center gap-1">
-                <MapPin size={13} className="text-slate-400 dark:text-slate-500 shrink-0" />
+                <MapPin size={13} className="text-slate-500 dark:text-slate-400 shrink-0" />
                 Peshawar, KP, Pakistan
               </span>
               <span>·</span>
@@ -365,17 +367,17 @@ const Hero = () => {
             <div className="flex items-center justify-between sm:justify-start gap-3 sm:gap-5 border-t sm:border-t-0 sm:border-l border-slate-200 dark:border-[#241f42] pt-2 sm:pt-0 sm:pl-5 shrink-0 text-center sm:text-left">
               <div>
                 <p className="font-bold text-sm sm:text-base text-slate-900 dark:text-[#f3efe4]">3+ Years</p>
-                <p className="text-[10px] text-slate-500 dark:text-[#8a83ab] uppercase tracking-wider">Experience</p>
+                <p className="text-[10px] text-slate-600 dark:text-[#8a83ab] uppercase tracking-wider font-semibold">Experience</p>
               </div>
               <div className="h-6 w-px bg-slate-200 dark:bg-[#241f42] sm:hidden" />
               <div>
                 <p className="font-bold text-sm sm:text-base text-slate-900 dark:text-[#f3efe4]">10+ Apps</p>
-                <p className="text-[10px] text-slate-500 dark:text-[#8a83ab] uppercase tracking-wider">Shipped</p>
+                <p className="text-[10px] text-slate-600 dark:text-[#8a83ab] uppercase tracking-wider font-semibold">Shipped</p>
               </div>
               <div className="h-6 w-px bg-slate-200 dark:bg-[#241f42] sm:hidden" />
               <div>
                 <p className="font-bold text-sm sm:text-base text-[#0a66c2] dark:text-[#70b5f9]">AWS</p>
-                <p className="text-[10px] text-slate-500 dark:text-[#8a83ab] uppercase tracking-wider">Cloud</p>
+                <p className="text-[10px] text-slate-600 dark:text-[#8a83ab] uppercase tracking-wider font-semibold">Cloud</p>
               </div>
             </div>
           </div>

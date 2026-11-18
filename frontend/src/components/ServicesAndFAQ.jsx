@@ -82,7 +82,7 @@ const ServicesAndFAQ = () => {
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-ink dark:text-[#f3efe4] leading-tight">
           How I Can Help <span className="italic text-gold">Your Business Scale</span>
         </h2>
-        <p className="mt-3 text-sm sm:text-base text-slate-500 dark:text-[#a79fc9] max-w-xl mx-auto">
+        <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-[#a79fc9] max-w-xl mx-auto">
           High-performance engineering tailored for founders, startups, and growing companies.
         </p>
       </div>
@@ -150,7 +150,7 @@ const ServicesAndFAQ = () => {
           <h3 className="font-display text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-[#f3efe4]">
             Everything You Need <span className="italic text-gold">To Know</span>
           </h3>
-          <p className="mt-2 text-xs sm:text-sm text-slate-500 dark:text-[#a79fc9]">
+          <p className="mt-2 text-xs sm:text-sm text-slate-600 dark:text-[#a79fc9]">
             Common questions clients ask before hiring me.
           </p>
         </div>

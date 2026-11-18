@@ -155,7 +155,7 @@ const Experience = () => {
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-ink dark:text-[#f3efe4] leading-tight">
             What I <span className="italic text-gold">Bring</span> to the Table
           </h2>
-          <p className="mt-4 text-slate-500 dark:text-[#a79fc9] max-w-lg mx-auto text-base leading-relaxed">
+          <p className="mt-4 text-slate-600 dark:text-[#a79fc9] max-w-lg mx-auto text-base leading-relaxed">
             Hands on experience building and shipping real world web applications from idea to deployment.
           </p>
         </motion.div>
@@ -190,7 +190,7 @@ const Experience = () => {
                     {role.status}
                   </span>
                 </div>
-                <p className="text-slate-500 dark:text-[#a79fc9] text-sm leading-relaxed max-w-2xl">
+                <p className="text-slate-600 dark:text-[#a79fc9] text-sm leading-relaxed max-w-2xl">
                   {role.desc}
                 </p>
               </div>
@@ -238,7 +238,7 @@ const Experience = () => {
                   </div>
                   <div>
                     <h4 className={`font-display text-base ${c.heading}`}>{group.label}</h4>
-                    <p className="text-xs text-slate-400 dark:text-[#8a83ab]">{group.skills.length} skills</p>
+                    <p className="text-xs text-slate-600 dark:text-[#8a83ab] font-medium">{group.skills.length} skills</p>
                   </div>
                 </div>
 

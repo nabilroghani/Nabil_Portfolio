@@ -138,7 +138,7 @@ const About = () => {
                 </h4>
 
                 {/* Body */}
-                <p className="text-slate-500 dark:text-[#a79fc9] text-sm leading-relaxed">
+                <p className="text-slate-600 dark:text-[#a79fc9] text-sm leading-relaxed">
                   {body}
                 </p>
               </motion.div>

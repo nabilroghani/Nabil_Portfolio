@@ -99,7 +99,7 @@ const GithubCard = ({ username = "nabilahmad" }) => {
           </p>
 
           {data.bio && (
-            <p className="text-slate-500 dark:text-[#a79fc9] text-xs leading-relaxed mb-4 max-w-sm mx-auto md:mx-0">
+            <p className="text-slate-600 dark:text-[#a79fc9] text-xs leading-relaxed mb-4 max-w-sm mx-auto md:mx-0">
               {data.bio}
             </p>
           )}
@@ -117,7 +117,7 @@ const GithubCard = ({ username = "nabilahmad" }) => {
               >
                 <Icon size={13} className={color} />
                 <span className="text-slate-800 dark:text-[#f3efe4] font-bold text-sm">{value}</span>
-                <span className="text-[10px] text-slate-400 dark:text-[#8a83ab] uppercase font-semibold tracking-wider">
+                <span className="text-[10px] text-slate-600 dark:text-[#8a83ab] uppercase font-semibold tracking-wider">
                   {label}
                 </span>
               </div>
