@@ -12,9 +12,14 @@ export const metadata = {
   description: 'Nabil Ahmad is a MERN Stack Developer & AWS Cloud Engineer with 3+ years experience building scalable web applications, SaaS MVPs, and robust cloud infrastructure using React, Next.js, Node.js, MongoDB, and AWS.',
   keywords: [
     'Nabil Ahmad',
+    'Nabil Tech Logic',
     'Best Developer in Peshawar',
     'Best MERN Stack Developer in Peshawar',
     'Top Full Stack Developer in Pakistan',
+    'School Management Software Pakistan',
+    'Pharmacy Management Software Peshawar',
+    'Pharmacy POS System',
+    'Student Management System SaaS',
     'Best Web Developer Peshawar',
     'Software Engineer Peshawar',
     'MERN Stack Developer',
@@ -115,10 +120,18 @@ const jsonLd = {
         "@type": "EducationalOrganization",
         "name": "University of Peshawar"
       },
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Apptex Software Solutions"
-      },
+      "worksFor": [
+        {
+          "@type": "Organization",
+          "name": "Nabil Tech Logic",
+          "url": "https://www.nabilahmad.site",
+          "description": "Software Engineering Agency & SaaS Product Studio"
+        },
+        {
+          "@type": "Organization",
+          "name": "Apptex Software Solutions"
+        }
+      ],
       "sameAs": [
         "https://github.com/nabilroghani",
         "https://www.linkedin.com/in/nabil-ahmad-0750002b1",
@@ -177,6 +190,26 @@ const jsonLd = {
               "@type": "Service",
               "name": "REST API Design & Integration",
               "description": "Secure, fast, and documented RESTful APIs with JWT authentication, role-based access, and third-party integrations."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "SoftwareApplication",
+              "name": "EduPulse SMS - School & Student Management System",
+              "applicationCategory": "EducationalApplication",
+              "operatingSystem": "Web, Cloud SaaS",
+              "description": "Multi-tenant institutional ERP automating student admissions, monthly fee vouchers, biometric attendance, and report cards."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "SoftwareApplication",
+              "name": "PharmaLogic ERP - Pharmacy POS & Healthcare Inventory System",
+              "applicationCategory": "BusinessApplication",
+              "operatingSystem": "Web, Cloud, Offline-POS",
+              "description": "High-speed pharmacy POS billing system with FEFO batch expiry date alerts, barcode scanning, and distributor ledger accounting."
             }
           }
         ]

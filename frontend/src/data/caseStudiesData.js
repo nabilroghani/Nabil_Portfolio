@@ -192,6 +192,92 @@ export const CASE_STUDIES = {
       { label: 'Concurrent Students Handled', value: '1,000+' },
       { label: 'Grading Calculation Time', value: '<50ms' }
     ]
+  },
+
+  edupulse: {
+    title: 'EduPulse SMS — Enterprise School & Student Management SaaS',
+    category: 'EdTech Enterprise SaaS (By Nabil Tech Logic)',
+    client: 'K-12 Schools, Colleges & Academies',
+    timeline: 'Proprietary Product',
+    role: 'Founder & Lead Systems Architect (Nabil Tech Logic)',
+    overview:
+      'A multi-tenant institutional operations platform unifying student admissions, automated fee voucher generation, biometric/manual attendance, exam grading policies, parent SMS alerts, and staff scheduling into a single cloud dashboard.',
+    challenge:
+      'Educational institutions suffered from chaotic paper-based fee reconciliation, delayed parent communication, manual grade sheet calculations prone to arithmetic errors, and scattered student historical records.',
+    solution:
+      'Engineered a scalable multi-tenant SaaS architecture. Built an automated PDF fee billing engine generating barcoded fee challans in under 3 seconds, a dynamic grade calculation engine adhering to institutional custom grading schemes, and automated WhatsApp/SMS integration for instant attendance alerts.',
+    architecture: [
+      {
+        layer: 'Frontend & Role Portals',
+        details: 'React 19 & Next.js dashboard with granular Role-Based Access Control (Super Admin, Principal, Accountant, Teacher, Student, Parent).'
+      },
+      {
+        layer: 'Billing & PDF Engine',
+        details: 'High-throughput microservice generating customized institutional monthly fee vouchers, fee concessions, and payment ledger audits.'
+      },
+      {
+        layer: 'Data Architecture',
+        details: 'MongoDB multi-tenant schema with compound indexes on student academic IDs, class sections, and term financial records.'
+      },
+      {
+        layer: 'Communication Gateway',
+        details: 'Webhook-driven SMS and WhatsApp alert gateway for daily absent notifications and fee payment confirmations.'
+      }
+    ],
+    highlights: [
+      'Automated batch generation of monthly student fee vouchers with custom fee heads & scholarships.',
+      'Comprehensive exam grading engine computing GPA, positions, and automated PDF report cards.',
+      'Biometric and manual daily attendance tracking with instant automated parent notifications.',
+      'Multi-campus support with consolidated executive financial revenue reports.'
+    ],
+    metrics: [
+      { label: 'Fee Voucher Speed', value: '<3s / Batch' },
+      { label: 'Admin Hours Saved', value: '80% Monthly' },
+      { label: 'Report Card Accuracy', value: '100% Automated' }
+    ]
+  },
+
+  pharmalogic: {
+    title: 'PharmaLogic ERP — Intelligent Pharmacy POS & Inventory System',
+    category: 'Healthcare & Retail Inventory ERP (By Nabil Tech Logic)',
+    client: 'Pharmacies, Medical Stores & Healthcare Retailers',
+    timeline: 'Proprietary Product',
+    role: 'Founder & Lead Systems Architect (Nabil Tech Logic)',
+    overview:
+      'An enterprise pharmacy management and high-speed Point of Sale (POS) system engineered for batch-level inventory tracking, First-Expiry-First-Out (FEFO) dispensing, barcode billing, and distributor credit/debit accounting.',
+    challenge:
+      'Pharmacies were losing significant revenue annually due to expired medicine write-offs, stockouts of essential life-saving drugs, slow checkout queues during peak rush hours, and un-reconciled supplier credit ledgers.',
+    solution:
+      'Architected an ultra-fast offline-resilient POS system with sub-500ms barcode scanning, automated 30/60/90-day expiry warning triggers, FEFO inventory allocation algorithms, and distributor purchase order ledger reconciliation.',
+    architecture: [
+      {
+        layer: 'High-Speed POS Checkout',
+        details: 'Keyboard-first and barcode scanner-integrated POS interface with thermal receipt printing, split payment modes, and instant customer search.'
+      },
+      {
+        layer: 'FEFO Inventory Engine',
+        details: 'Batch-wise medicine allocation algorithm ensuring earliest-expiring inventory is dispensed first, preventing stale stock write-offs.'
+      },
+      {
+        layer: 'Supplier & Purchase Ledger',
+        details: 'Double-entry accounting subsystem tracking distributor deliveries, returns, credit limits, and purchase tax compliance.'
+      },
+      {
+        layer: 'Financial Analytics Dashboard',
+        details: 'Real-time profit margin analytics, high-margin medicine insights, dead-stock warnings, and daily cash drawer reconciliation.'
+      }
+    ],
+    highlights: [
+      'Sub-500ms barcode scanning and thermal receipt printing for rapid checkout queues.',
+      'Proactive 30, 60, and 90-day medicine expiration warning alarms and return management.',
+      'Comprehensive supplier credit/debit ledger with automated purchase order reconciliation.',
+      'Salt/Formula generic substitute lookup assisting pharmacists in finding alternative brands instantly.'
+    ],
+    metrics: [
+      { label: 'POS Checkout Latency', value: '<500ms' },
+      { label: 'Expired Stock Waste', value: 'Zero Losses' },
+      { label: 'Stock Audit Accuracy', value: '99.9%' }
+    ]
   }
 };
 
@@ -200,6 +286,12 @@ export const getCaseStudyForProject = (project) => {
   if (!project) return null;
   const title = (project.title || '').toLowerCase();
   
+  if (title.includes('edupulse') || title.includes('school') || title.includes('student')) {
+    return { ...CASE_STUDIES.edupulse, ...project };
+  }
+  if (title.includes('pharma') || title.includes('medicine') || title.includes('pharmacy')) {
+    return { ...CASE_STUDIES.pharmalogic, ...project };
+  }
   if (title.includes('medpulse') || title.includes('clinic')) {
     return { ...CASE_STUDIES.medpulse, ...project };
   }

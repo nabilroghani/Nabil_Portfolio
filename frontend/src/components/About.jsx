@@ -21,8 +21,8 @@ const cards = [
   {
     icon: Briefcase,
     color: 'sky',
-    title: 'Working as a Developer',
-    body: 'Actively working as a MERN Stack Developer with 3+ years of experience building real-world dashboards, auth systems, admin panels, and full-stack web apps.',
+    title: 'Founder @ Nabil Tech Logic',
+    body: 'Founder and Lead Architect at Nabil Tech Logic. Building specialized enterprise SaaS products including School Management Systems and Pharmacy POS/ERP solutions.',
   },
   {
     icon: Users,

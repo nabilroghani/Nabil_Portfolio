@@ -8,6 +8,8 @@ import toast from 'react-hot-toast';
 
 const SERVICES_OPTIONS = [
   'Custom MERN Web App',
+  'School Management System (EduPulse SMS)',
+  'Pharmacy POS & ERP System (PharmaLogic)',
   'SaaS MVP Development',
   'AWS Cloud Deployment',
   'Next.js / Frontend UI',

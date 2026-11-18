@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import API from '@/api/axios';
 import Hero from '@/components/Hero';
+import ProductsShowcase from '@/components/ProductsShowcase';
 import ProjectsGrid from '@/components/ProjectsGrid';
 import Contact from '@/components/Contact';
 import GithubCard from '@/components/GithubCard';
@@ -61,6 +62,9 @@ export default function HomePage() {
       <div className="max-w-5xl mx-auto bg-white dark:bg-[#151228] border border-slate-200 dark:border-[#2a2450] rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-black/50 overflow-hidden divide-y divide-slate-200/70 dark:divide-[#241f42]">
         {/* --- Hero Section at top of the card --- */}
         <Hero />
+
+        {/* --- Flagship Proprietary Products by Nabil Tech Logic --- */}
+        <ProductsShowcase />
 
         {/* --- Projects Section --- */}
         <section id="projects" className="py-12 sm:py-16 px-4 sm:px-8 md:px-10">

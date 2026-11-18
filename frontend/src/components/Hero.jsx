@@ -259,9 +259,9 @@ const Hero = () => {
               </span>
             </div>
 
-            {/* 2. Caption / Headline with AWS & MERN */}
+            {/* 2. Caption / Headline with Agency & Products */}
             <p className="text-xs sm:text-sm md:text-base text-slate-800 dark:text-[#c3bde0] font-normal leading-relaxed">
-              Helping Businesses scale with <span className="font-semibold text-slate-900 dark:text-[#f3efe4]">Custom MERN Web Apps</span> | Cloud Deployment (AWS) | AI-Powered Solutions | 3+ Years Experience
+              Founder of <span className="font-semibold text-slate-900 dark:text-[#f3efe4]">Nabil Tech Logic</span> | Architecting Enterprise SaaS Products (<span className="text-gold font-medium">School Management</span> &amp; <span className="text-gold font-medium">Pharmacy POS</span>) | MERN Stack &amp; AWS Cloud Solutions
             </p>
 
             {/* 3. Location & Contact info Link */}
@@ -280,8 +280,23 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Column: Experience & Education */}
+          {/* Right Column: Agency, Experience & Education */}
           <div className="md:col-span-4 flex flex-row flex-wrap md:flex-col gap-2.5 pt-1 md:pt-0.5 md:pl-4">
+            {/* Nabil Tech Logic (Agency) */}
+            <div className="flex items-center gap-2 group">
+              <div className="w-6 h-6 sm:w-7 sm:h-7 rounded border border-gold/40 bg-gold/10 p-0.5 shrink-0 flex items-center justify-center overflow-hidden text-gold font-black text-xs font-mono">
+                NT
+              </div>
+              <div className="leading-tight">
+                <span className="text-xs sm:text-sm font-semibold text-slate-900 dark:text-[#e5e1f2] group-hover:text-gold transition-colors block">
+                  Nabil Tech Logic
+                </span>
+                <span className="text-[10px] text-slate-500 dark:text-[#8a83ab] font-medium">
+                  Founder &amp; Lead Architect
+                </span>
+              </div>
+            </div>
+
             {/* Apptex Software Solutions */}
             <div className="flex items-center gap-2 group">
               <div className="w-6 h-6 sm:w-7 sm:h-7 rounded border border-slate-200 dark:border-[#2a2450] bg-white p-0.5 shrink-0 flex items-center justify-center overflow-hidden">
