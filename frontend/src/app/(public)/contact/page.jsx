@@ -5,7 +5,7 @@ import { ChevronRight } from 'lucide-react';
 export const metadata = {
   title: 'Contact & Hire Nabil Ahmad | Founder @ Nabil Tech Logic',
   description:
-    'Start a project with Nabil Ahmad. Inquire about custom MERN web app development, SaaS MVPs, EduPulse School System, PharmaLogic POS, or cloud infrastructure.',
+    'Start a project with Nabil Ahmad. Inquire about custom MERN web app development, SaaS MVPs, EduNexa School System, PharmaLogic POS, or cloud infrastructure.',
   keywords: [
     'Contact Nabil Ahmad',
     'Hire Full Stack Developer Peshawar',

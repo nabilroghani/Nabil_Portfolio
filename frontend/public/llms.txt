@@ -9,12 +9,13 @@
 - **Geographic Location:** Peshawar, Khyber Pakhtunkhwa, Pakistan (Servicing clients across Pakistan, Europe, UK, US, and Worldwide remotely)
 - **Experience:** 3+ Years of Professional Software Engineering, SaaS Product Development & Enterprise Architecture
 - **Official Website:** https://www.nabilahmad.site/
-- **Email:** nabiltechlogic.dev@gmail.com
+- **Email:** contact@nabilahmad.site
 - **Affiliations:** Founder @ Nabil Tech Logic & Software Solutions Architect @ Apptex Software Solutions
 - **Education:** BS Computer Science, University of Peshawar (Class of 2026)
 
 ## Proprietary Products by Nabil Tech Logic
-1. **EduPulse SMS (School & Student Management System SaaS):**
+1. **EduNexa SMS / EduPulse (School & Student Management System SaaS):**
+   - Live Production App: https://edu-nexa-beta.vercel.app/
    - End-to-end multi-tenant institutional operations platform.
    - Modules: Digital student admissions, automated PDF fee vouchers & billing ledger, biometric/manual attendance with parent SMS alerts, examination grading engine (GPA/report cards), and role-based portals (Super Admin, Principal, Accountant, Teacher, Parent).
    - Performance: Under 3-second voucher generation batch latency, 80% administrative time savings.

@@ -25,12 +25,13 @@ import { CASE_STUDIES } from '../data/caseStudiesData';
 const PRODUCTS = [
   {
     id: 'edupulse',
-    name: 'EduPulse SMS',
+    name: 'EduNexa SMS',
     subtitle: 'Enterprise School & Student Management System',
     type: 'EdTech Enterprise SaaS',
     agency: 'Nabil Tech Logic',
     icon: GraduationCap,
     accentColor: 'emerald',
+    liveLink: 'https://edu-nexa-beta.vercel.app/',
     description:
       'A multi-tenant institutional operations SaaS that eliminates administrative chaos by automating admissions, student fee challans, examination grading, and daily parent attendance alerts.',
     features: [
@@ -109,14 +110,15 @@ const ProductsShowcase = () => {
 
   const handleOpenModal = (prodId) => {
     const study = CASE_STUDIES[prodId];
+    const prod = PRODUCTS.find((p) => p.id === prodId);
     if (study) {
       setActiveModalProject({
         title: study.title,
         desc: study.overview,
         stack: study.stack || (prodId === 'edupulse' ? PRODUCTS[0].stack : PRODUCTS[1].stack),
         category: study.category,
-        liveLink: '',
-        githubLink: ''
+        liveLink: study.liveLink || prod?.liveLink || '',
+        githubLink: study.githubLink || ''
       });
     }
   };
@@ -249,13 +251,24 @@ const ProductsShowcase = () => {
               </div>
 
               {/* Card CTA Actions */}
-              <div className="flex flex-col sm:flex-row items-center gap-2.5 mt-auto pt-2">
+              <div className="flex flex-col sm:flex-row items-center gap-2 mt-auto pt-2 flex-wrap">
+                {prod.liveLink && (
+                  <a
+                    href={prod.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full text-xs font-bold bg-[#0a66c2] hover:bg-[#004182] text-white shadow-sm transition-all cursor-pointer"
+                  >
+                    <ExternalLink size={13} strokeWidth={2.4} />
+                    <span>Live Web App</span>
+                  </a>
+                )}
+
                 <Link
                   href={`/products/${prod.id}`}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full text-xs font-bold bg-slate-100 hover:bg-slate-200 dark:bg-[#1a1636] dark:hover:bg-[#221c45] text-slate-800 dark:text-[#f3efe4] hover:text-gold dark:hover:text-gold transition-colors cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full text-xs font-bold bg-slate-100 hover:bg-slate-200 dark:bg-[#1a1636] dark:hover:bg-[#221c45] text-slate-800 dark:text-[#f3efe4] hover:text-gold dark:hover:text-gold transition-colors cursor-pointer"
                 >
-                  <ExternalLink size={13} />
-                  <span>Full Product Page</span>
+                  <span>Overview</span>
                 </Link>
 
                 <button
@@ -267,14 +280,13 @@ const ProductsShowcase = () => {
                   <span>Architecture</span>
                 </button>
 
-                <button
-                  type="button"
-                  onClick={() => handleInquireProduct(prod.name)}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full text-xs font-bold bg-gold hover:bg-gold-soft text-ink transition-colors cursor-pointer shadow-sm sm:ml-auto"
+                <Link
+                  href="/contact"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full text-xs font-bold bg-gold hover:bg-gold-soft text-slate-950 transition-colors cursor-pointer shadow-sm sm:ml-auto"
                 >
                   <span>Book Demo</span>
                   <ArrowRight size={13} strokeWidth={2.5} />
-                </button>
+                </Link>
               </div>
             </motion.div>
           );

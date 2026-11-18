@@ -107,7 +107,7 @@ const jsonLd = {
       "description": "Full Stack Web Developer with 3+ years experience building scalable web applications, SaaS MVPs, and robust cloud infrastructure using MongoDB, Express.js, React, Node.js, Next.js, and AWS.",
       "url": "https://www.nabilahmad.site/",
       "image": "https://www.nabilahmad.site/og-image.png",
-      "email": "mailto:nabiltechlogic.dev@gmail.com",
+      "email": "mailto:contact@nabilahmad.site",
       "telephone": "+923041237882",
       "nationality": "Pakistani",
       "address": {
@@ -196,7 +196,8 @@ const jsonLd = {
             "@type": "Offer",
             "itemOffered": {
               "@type": "SoftwareApplication",
-              "name": "EduPulse SMS - School & Student Management System",
+              "name": "EduNexa SMS - School & Student Management System",
+              "url": "https://edu-nexa-beta.vercel.app/",
               "applicationCategory": "EducationalApplication",
               "operatingSystem": "Web, Cloud SaaS",
               "description": "Multi-tenant institutional ERP automating student admissions, monthly fee vouchers, biometric attendance, and report cards."
@@ -223,7 +224,7 @@ const jsonLd = {
       "image": "https://www.nabilahmad.site/og-image.png",
       "url": "https://www.nabilahmad.site/",
       "telephone": "+923041237882",
-      "email": "nabiltechlogic.dev@gmail.com",
+      "email": "contact@nabilahmad.site",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
@@ -322,7 +323,7 @@ const jsonLd = {
           "name": "How do we get started on my project?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Simply scroll down to the Contact form or email me at nabiltechlogic.dev@gmail.com with a short summary of your requirements. I respond within 24 hours to set up a free 15-minute discovery call to discuss scope, timeline, and budget."
+            "text": "Simply head over to the Contact page or email me at contact@nabilahmad.site with a short summary of your requirements. I respond within 24 hours to set up a free 15-minute discovery call to discuss scope, timeline, and budget."
           }
         }
       ]

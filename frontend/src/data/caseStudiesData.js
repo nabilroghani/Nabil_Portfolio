@@ -195,8 +195,9 @@ export const CASE_STUDIES = {
   },
 
   edupulse: {
-    title: 'EduPulse SMS — Enterprise School & Student Management SaaS',
+    title: 'EduNexa SMS — Enterprise School & Student Management SaaS',
     category: 'EdTech Enterprise SaaS (By Nabil Tech Logic)',
+    liveLink: 'https://edu-nexa-beta.vercel.app/',
     client: 'K-12 Schools, Colleges & Academies',
     timeline: 'Proprietary Product',
     role: 'Founder & Lead Systems Architect (Nabil Tech Logic)',

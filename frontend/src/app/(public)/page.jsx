@@ -180,7 +180,7 @@ export default function HomePage() {
               Ready to Scale Your Next <span className="italic text-gold">Web Project?</span>
             </h2>
             <p className="text-slate-600 dark:text-[#a79fc9] text-xs sm:text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-              Whether you need a custom MERN web application, proprietary enterprise SaaS platform (like EduPulse SMS or PharmaLogic ERP), or scalable AWS cloud infrastructure, I am ready to help you launch.
+              Whether you need a custom MERN web application, proprietary enterprise SaaS platform (like EduNexa SMS or PharmaLogic ERP), or scalable AWS cloud infrastructure, I am ready to help you launch.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 pt-3">
               <Link

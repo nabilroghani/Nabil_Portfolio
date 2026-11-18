@@ -18,17 +18,20 @@ import {
   ChevronRight,
   Layers,
   BarChart3,
-  MessageSquare
+  MessageSquare,
+  ExternalLink
 } from 'lucide-react';
 
 export const metadata = {
-  title: 'EduPulse SMS | Enterprise School & Student Management System | Nabil Tech Logic',
+  title: 'EduNexa SMS | Enterprise School & Student Management System | Nabil Tech Logic',
   description:
-    'EduPulse SMS by Nabil Tech Logic is a multi-tenant cloud school management system automating student admissions, monthly fee vouchers, biometric attendance, exams, and parent SMS alerts.',
+    'EduNexa SMS (formerly EduPulse) by Nabil Tech Logic is a multi-tenant cloud school management system automating student admissions, monthly fee vouchers, biometric attendance, exams, and parent SMS alerts.',
   keywords: [
+    'EduNexa',
+    'EduNexa SMS',
+    'EduPulse SMS',
     'School Management System Pakistan',
     'Student Management System SaaS',
-    'EduPulse SMS',
     'Nabil Tech Logic',
     'School Fee Voucher Generator Software',
     'School Attendance SMS Alert Software',
@@ -39,7 +42,7 @@ export const metadata = {
     canonical: 'https://www.nabilahmad.site/products/edupulse',
   },
   openGraph: {
-    title: 'EduPulse SMS — Enterprise School & Student Management System',
+    title: 'EduNexa SMS — Enterprise School & Student Management System',
     description:
       'Multi-tenant campus ERP automating student fee vouchers in under 3 seconds, attendance alerts, and exam grading report cards.',
     url: 'https://www.nabilahmad.site/products/edupulse',
@@ -50,9 +53,10 @@ export const metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "EduPulse SMS",
+  "name": "EduNexa SMS (School & Student Management System)",
   "operatingSystem": "Web, Cloud SaaS, All Browsers",
   "applicationCategory": "EducationalApplication",
+  "url": "https://edu-nexa-beta.vercel.app/",
   "offers": {
     "@type": "Offer",
     "price": "Custom",
@@ -180,14 +184,14 @@ export default function EduPulseProductPage() {
             </div>
 
             <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-[#f3efe4] leading-tight">
-              EduPulse <span className="italic text-gold">SMS</span>
+              EduNexa <span className="italic text-gold">SMS</span>
             </h1>
             <p className="mt-2 text-base sm:text-xl font-medium text-slate-700 dark:text-[#c3bde0]">
-              The Modern Enterprise School &amp; Student Management SaaS
+              The Modern Enterprise School &amp; Student Management SaaS (EduPulse)
             </p>
 
             <p className="mt-4 text-sm sm:text-base text-slate-600 dark:text-[#a79fc9] leading-relaxed">
-              Designed from the ground up for K-12 private schools, colleges, and academies. EduPulse SMS centralizes admissions, automates barcoded monthly fee voucher generation, triggers instant parent attendance alerts, and computes term report cards with 100% mathematical accuracy.
+              Designed from the ground up for K-12 private schools, colleges, and academies. EduNexa SMS centralizes admissions, automates barcoded monthly fee voucher generation, triggers instant parent attendance alerts, and computes term report cards with 100% mathematical accuracy.
             </p>
 
             {/* Metrics Pills */}
@@ -219,20 +223,30 @@ export default function EduPulseProductPage() {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-center gap-3 mt-8">
+            <div className="flex flex-col sm:flex-row items-center gap-3 mt-8 flex-wrap">
               <a
-                href="https://wa.me/923041237882?text=Hi%20Nabil,%20I%20am%20interested%20in%20a%20live%20demo%20and%20pricing%20for%20EduPulse%20School%20Management%20System."
+                href="https://edu-nexa-beta.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-bold text-xs sm:text-sm bg-[#0a66c2] hover:bg-[#004182] text-white shadow-lg shadow-blue-500/25 transition-all cursor-pointer"
+              >
+                <ExternalLink size={16} strokeWidth={2.4} />
+                <span>Open Live Web App (EduNexa)</span>
+              </a>
+
+              <a
+                href="https://wa.me/923041237882?text=Hi%20Nabil,%20I%20am%20interested%20in%20a%20live%20demo%20and%20pricing%20for%20EduNexa%20School%20Management%20System."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-bold text-xs sm:text-sm bg-[#25D366] hover:bg-[#1ebd5a] text-white shadow-lg shadow-green-500/20 transition-all cursor-pointer"
               >
                 <MessageSquare size={16} />
-                <span>Request Live Demo on WhatsApp</span>
+                <span>WhatsApp Demo</span>
               </a>
 
               <Link
-                href="/#contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-bold text-xs sm:text-sm bg-gold hover:bg-gold-soft text-ink transition-colors cursor-pointer shadow-sm"
+                href="/contact"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-bold text-xs sm:text-sm bg-gold hover:bg-gold-soft text-slate-950 transition-colors cursor-pointer shadow-sm"
               >
                 <span>Submit Inquiry Form</span>
                 <ArrowRight size={15} />
@@ -369,13 +383,23 @@ export default function EduPulseProductPage() {
               Transform Your School Operations Today
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-[#a79fc9]">
-              Schedule a personalized 15-minute live demo with <strong>Nabil Ahmad</strong> (Founder @ Nabil Tech Logic) to see EduPulse SMS in action.
+              Schedule a personalized 15-minute live demo with <strong>Nabil Ahmad</strong> (Founder @ Nabil Tech Logic) to see EduNexa SMS in action.
             </p>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-3">
             <a
-              href="https://wa.me/923041237882?text=Hi%20Nabil,%20I%20would%20like%20to%20schedule%20a%2015-minute%20demo%20for%20EduPulse%20SMS."
+              href="https://edu-nexa-beta.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-xs sm:text-sm bg-[#0a66c2] hover:bg-[#004182] text-white shadow-md transition-all cursor-pointer"
+            >
+              <ExternalLink size={15} strokeWidth={2.4} />
+              <span>Launch Live App</span>
+            </a>
+
+            <a
+              href="https://wa.me/923041237882?text=Hi%20Nabil,%20I%20would%20like%20to%20schedule%20a%2015-minute%20demo%20for%20EduNexa%20SMS."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-xs sm:text-sm bg-[#25D366] hover:bg-[#1ebd5a] text-white shadow-md transition-all cursor-pointer"
@@ -385,10 +409,10 @@ export default function EduPulseProductPage() {
             </a>
 
             <Link
-              href="/#contact"
+              href="/"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-xs sm:text-sm bg-white dark:bg-[#1a1636] border border-slate-300 dark:border-[#383163] text-slate-800 dark:text-white hover:border-gold transition-colors cursor-pointer"
             >
-              <span>Back to Portfolio Home</span>
+              <span>Back to Home</span>
             </Link>
           </div>
         </div>

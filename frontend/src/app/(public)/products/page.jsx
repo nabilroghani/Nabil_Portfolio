@@ -5,9 +5,10 @@ import { Sparkles, ChevronRight, ArrowRight, ShieldCheck, CheckCircle2 } from 'l
 export const metadata = {
   title: 'Enterprise Software Products & SaaS Systems | Nabil Tech Logic',
   description:
-    'Explore proprietary enterprise SaaS solutions built by Nabil Tech Logic: EduPulse School Management System and PharmaLogic Pharmacy POS & Healthcare ERP.',
+    'Explore proprietary enterprise SaaS solutions built by Nabil Tech Logic: EduNexa School Management System and PharmaLogic Pharmacy POS & Healthcare ERP.',
   keywords: [
     'Nabil Tech Logic Products',
+    'EduNexa SMS',
     'EduPulse SMS',
     'PharmaLogic ERP',
     'School Management System Pakistan',

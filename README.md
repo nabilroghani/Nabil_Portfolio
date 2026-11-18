@@ -40,5 +40,5 @@ Experience the live portfolio at: **[https://www.nabilahmad.site](https://www.na
 - 🌐 **Portfolio:** [www.nabilahmad.site](https://www.nabilahmad.site)
 - 💼 **LinkedIn:** [linkedin.com/in/nabilroghani](https://www.linkedin.com/in/nabilroghani)
 - 🐙 **GitHub:** [github.com/nabilroghani](https://github.com/nabilroghani)
-- ✉️ **Email:** [nabiltechlogic.dev@gmail.com](mailto:nabiltechlogic.dev@gmail.com)
+- ✉️ **Email:** [contact@nabilahmad.site](mailto:contact@nabilahmad.site)
 

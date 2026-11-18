@@ -66,7 +66,7 @@ const FAQS = [
   },
   {
     q: 'How do we get started on my project?',
-    a: 'Simply scroll down to the Contact form or email me at nabiltechlogic.dev@gmail.com with a short summary of your requirements. I respond within 24 hours to set up a free 15-minute discovery call to discuss scope, timeline, and budget.'
+    a: 'Simply head over to the Contact page or email me directly at contact@nabilahmad.site with a short summary of your requirements. I respond within 24 hours to set up a free 15-minute discovery call to discuss scope, timeline, and budget.'
   }
 ];
 

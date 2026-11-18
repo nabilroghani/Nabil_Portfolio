@@ -8,7 +8,7 @@ import toast from 'react-hot-toast';
 
 const SERVICES_OPTIONS = [
   'Custom MERN Web App',
-  'School Management System (EduPulse SMS)',
+  'School Management System (EduNexa SMS)',
   'Pharmacy POS & ERP System (PharmaLogic)',
   'SaaS MVP Development',
   'AWS Cloud Deployment',
@@ -99,9 +99,9 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email Address',
-      value: 'nabiltechlogic.dev@gmail.com',
+      value: 'contact@nabilahmad.site',
       sub: 'For RFPs, detailed briefs & contracts',
-      link: 'mailto:nabiltechlogic.dev@gmail.com'
+      link: 'mailto:contact@nabilahmad.site'
     },
     {
       icon: MapPin,
