@@ -41,14 +41,13 @@ const Navbar = () => {
     setIsOpen(false);
   }, [pathname]);
 
+  // Compact 6-item primary navigation
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Products', href: '/products' },
     { name: 'Projects', href: '/projects' },
     { name: 'Experience', href: '/experience' },
     { name: 'Services', href: '/services' },
-    { name: 'Reviews', href: '/reviews' },
-    { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -66,8 +65,8 @@ const Navbar = () => {
     <>
       <nav className={`fixed w-full z-[100] transition-all duration-500 ${
         scrolled
-          ? 'py-3 bg-[#f3f2ef]/90 dark:bg-[#0b0a1a]/90 backdrop-blur-xl border-b border-slate-200 dark:border-[#241f42] shadow-sm shadow-slate-200/50 dark:shadow-black/30'
-          : 'py-5 bg-transparent'
+          ? 'py-2.5 bg-[#f3f2ef]/92 dark:bg-[#0b0a1a]/92 backdrop-blur-xl border-b border-slate-200 dark:border-[#241f42] shadow-sm shadow-slate-200/50 dark:shadow-black/30'
+          : 'py-4 bg-transparent'
       }`}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
 
@@ -77,17 +76,17 @@ const Navbar = () => {
             aria-label="Nabil Ahmad Portfolio Home"
             className="flex items-center gap-2.5 group cursor-pointer"
           >
-            <div className="w-10 h-10 rounded-full bg-gold/10 dark:bg-gold/15 flex items-center justify-center group-hover:bg-gold/20 transition-colors duration-200">
-              <Feather size={18} className="text-gold" strokeWidth={2.2} />
+            <div className="w-10 h-10 rounded-full bg-gold/15 dark:bg-gold/20 flex items-center justify-center group-hover:bg-gold/30 transition-colors duration-200">
+              <Feather size={18} className="text-gold" strokeWidth={2.4} />
             </div>
             <span className="font-display text-ink dark:text-[#f3efe4] text-lg tracking-tight">
               Nabil<span className="italic text-gold"> Ahmad</span>
             </span>
           </Link>
 
-          {/* ── Desktop links ── */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-8">
-            <ul className="flex items-center gap-1">
+          {/* ── Desktop links with High-Contrast Active Pill ── */}
+          <div className="hidden md:flex items-center gap-5 lg:gap-7">
+            <ul className="flex items-center gap-1 p-1 rounded-full bg-slate-200/60 dark:bg-[#151228] border border-slate-300/50 dark:border-[#2a2450] shadow-inner">
               {navLinks.map((link) => {
                 const isActive =
                   link.href === '/'
@@ -98,35 +97,30 @@ const Navbar = () => {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className={`relative px-3 py-2 text-[13px] font-medium tracking-wide transition-colors duration-200 group block ${
+                      className={`px-3.5 py-1.5 rounded-full text-xs lg:text-[13px] font-semibold transition-all duration-200 block ${
                         isActive
-                          ? 'text-gold dark:text-gold font-bold'
-                          : 'text-slate-700 dark:text-[#a79fc9] hover:text-ink dark:hover:text-[#f3efe4]'
+                          ? 'bg-gold text-slate-950 font-bold shadow-md shadow-gold/30 scale-105'
+                          : 'text-slate-700 dark:text-[#c3bde0] hover:text-slate-950 dark:hover:text-white hover:bg-slate-300/50 dark:hover:bg-white/10'
                       }`}
                     >
                       {link.name}
-                      <span
-                        className={`absolute bottom-0 left-3 right-3 h-[2px] bg-gold transition-transform duration-300 origin-left ${
-                          isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-                        }`}
-                      />
                     </Link>
                   </li>
                 );
               })}
             </ul>
 
-            <div className="flex items-center gap-3 pl-4 lg:pl-6 border-l border-slate-200 dark:border-[#2a2450]">
+            <div className="flex items-center gap-3 pl-3 border-l border-slate-300 dark:border-[#2a2450]">
               {/* Theme toggle */}
               <button
                 onClick={toggleTheme}
                 aria-label="Toggle theme"
                 className="w-10 h-10 rounded-full flex items-center justify-center
-                  bg-transparent
+                  bg-white/80 dark:bg-[#151228]
                   border border-slate-300 dark:border-[#3a3560]
                   text-slate-700 dark:text-[#c3bde0]
                   hover:border-gold hover:text-gold
-                  transition-all duration-200 cursor-pointer"
+                  transition-all duration-200 cursor-pointer shadow-sm"
               >
                 {!mounted ? <span className="w-4 h-4 inline-block" /> : isDark ? <Sun size={17} strokeWidth={2} /> : <Moon size={17} strokeWidth={2} />}
               </button>
@@ -134,31 +128,31 @@ const Navbar = () => {
               {/* Resume button */}
               <button
                 onClick={handleDownload}
-                className="group relative inline-flex items-center gap-2 px-5 py-2 rounded-full overflow-hidden
+                className="group relative inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full overflow-hidden
                   border border-gold
                   text-gold
-                  font-semibold text-sm
-                  hover:text-ink
+                  font-bold text-xs lg:text-sm
+                  hover:text-slate-950
                   transition-colors duration-300 cursor-pointer"
               >
                 <span className="absolute inset-0 w-0 bg-gold group-hover:w-full transition-all duration-300" />
-                <Download size={15} strokeWidth={2.5} className="relative z-10" />
+                <Download size={14} strokeWidth={2.5} className="relative z-10" />
                 <span className="relative z-10">Resume</span>
               </button>
             </div>
           </div>
 
-          {/* ── Mobile right controls (Optimized 44px+ tap targets) ── */}
+          {/* ── Mobile right controls (44px+ touch targets) ── */}
           <div className="flex items-center gap-2 md:hidden">
             <button
               onClick={toggleTheme}
               aria-label="Toggle theme"
               className="w-11 h-11 rounded-full flex items-center justify-center
-                bg-transparent
+                bg-white/80 dark:bg-[#151228]
                 border border-slate-300 dark:border-[#3a3560]
                 text-slate-700 dark:text-[#c3bde0]
                 hover:border-gold
-                transition-all duration-200 cursor-pointer"
+                transition-all duration-200 cursor-pointer shadow-sm"
             >
               {!mounted ? <span className="w-4 h-4 inline-block" /> : isDark ? <Sun size={18} strokeWidth={2} /> : <Moon size={18} strokeWidth={2} />}
             </button>
@@ -167,11 +161,11 @@ const Navbar = () => {
               onClick={() => setIsOpen(true)}
               aria-label="Open navigation menu"
               className="w-11 h-11 rounded-full flex items-center justify-center
-                bg-transparent
+                bg-white/80 dark:bg-[#151228]
                 border border-slate-300 dark:border-[#3a3560]
                 text-slate-800 dark:text-[#c3bde0]
                 hover:border-gold
-                transition-all duration-200 cursor-pointer"
+                transition-all duration-200 cursor-pointer shadow-sm"
             >
               <Menu size={20} strokeWidth={2.2} />
             </button>
@@ -232,7 +226,7 @@ const Navbar = () => {
               </div>
 
               {/* Drawer links */}
-              <nav className="flex flex-col gap-1 px-4 py-6 flex-1 overflow-y-auto">
+              <nav className="flex flex-col gap-1.5 px-4 py-5 flex-1 overflow-y-auto">
                 {navLinks.map((link) => {
                   const isActive =
                     link.href === '/'
@@ -244,19 +238,48 @@ const Navbar = () => {
                       key={link.name}
                       href={link.href}
                       onClick={() => setIsOpen(false)}
-                      className={`flex items-center gap-3 px-4 py-3.5 rounded-xl font-medium text-sm transition-all duration-200 min-h-[44px] ${
+                      className={`flex items-center justify-between px-4 py-3 rounded-xl font-medium text-sm transition-all duration-200 min-h-[44px] ${
                         isActive
-                          ? 'bg-gold/15 text-gold font-bold shadow-sm'
-                          : 'text-slate-700 dark:text-[#c3bde0] hover:bg-gold/5 hover:text-gold'
+                          ? 'bg-gold text-slate-950 font-bold shadow-md shadow-gold/25'
+                          : 'text-slate-700 dark:text-[#c3bde0] hover:bg-gold/10 hover:text-gold'
                       }`}
                     >
                       <span>{link.name}</span>
                       {isActive && (
-                        <span className="ml-auto w-2 h-2 rounded-full bg-gold" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-slate-950" />
                       )}
                     </Link>
                   );
                 })}
+
+                {/* Secondary navigation for Reviews & About */}
+                <div className="pt-3 mt-2 border-t border-slate-200/60 dark:border-[#241f42]/60 space-y-1">
+                  <p className="px-4 text-[10px] font-bold text-slate-600 dark:text-[#8a83ab] uppercase tracking-wider">
+                    More Pages
+                  </p>
+                  <Link
+                    href="/reviews"
+                    onClick={() => setIsOpen(false)}
+                    className={`flex items-center justify-between px-4 py-2.5 rounded-lg text-xs font-medium transition-all ${
+                      pathname === '/reviews'
+                        ? 'bg-gold text-slate-950 font-bold'
+                        : 'text-slate-600 dark:text-[#a79fc9] hover:text-gold hover:bg-gold/5'
+                    }`}
+                  >
+                    <span>Client Reviews &amp; Trust Wall</span>
+                  </Link>
+                  <Link
+                    href="/about"
+                    onClick={() => setIsOpen(false)}
+                    className={`flex items-center justify-between px-4 py-2.5 rounded-lg text-xs font-medium transition-all ${
+                      pathname === '/about'
+                        ? 'bg-gold text-slate-950 font-bold'
+                        : 'text-slate-600 dark:text-[#a79fc9] hover:text-gold hover:bg-gold/5'
+                    }`}
+                  >
+                    <span>About Nabil Tech Logic</span>
+                  </Link>
+                </div>
               </nav>
 
               {/* Drawer footer */}
@@ -265,7 +288,7 @@ const Navbar = () => {
                   onClick={() => { handleDownload(); setIsOpen(false); }}
                   className="w-full flex items-center justify-center gap-2 py-3.5 rounded-full
                     bg-gold hover:bg-gold-soft
-                    text-ink font-bold text-sm
+                    text-slate-950 font-bold text-sm
                     shadow-lg shadow-gold/20
                     transition-all duration-200 active:scale-95 cursor-pointer min-h-[48px]"
                 >
