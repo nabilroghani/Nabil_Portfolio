@@ -102,13 +102,13 @@ const ProjectCard = ({ project }) => {
             >
               {project.title}
             </h3>
-            <div className="flex gap-2.5 text-slate-400 dark:text-slate-500 flex-shrink-0 mt-0.5">
+            <div className="flex gap-1.5 text-slate-500 dark:text-slate-400 flex-shrink-0 -mt-1">
               {project.githubLink && (
                 <a
                   href={project.githubLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:text-slate-700 dark:hover:text-white transition-colors duration-200"
+                  className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 dark:hover:bg-[#1f1a3a] hover:text-slate-800 dark:hover:text-white transition-colors duration-200"
                   aria-label={`View ${project.title} source code on GitHub`}
                 >
                   <GithubMark size={16} />
@@ -119,10 +119,10 @@ const ProjectCard = ({ project }) => {
                   href={project.liveLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:text-gold dark:hover:text-gold transition-colors duration-200"
+                  className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-gold/10 hover:text-gold dark:hover:text-gold transition-colors duration-200"
                   aria-label={`View live demo of ${project.title}`}
                 >
-                  <ExternalLink size={15} strokeWidth={2} />
+                  <ExternalLink size={16} strokeWidth={2} />
                 </a>
               )}
             </div>

@@ -158,33 +158,37 @@ const Testimonials = () => {
 
           {/* Navigation Controls */}
           <div className="mt-8 pt-4 border-t border-slate-200/50 dark:border-[#1d1838] flex items-center justify-between">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5">
               {TESTIMONIALS.map((t, i) => (
                 <button
                   key={t.id}
                   onClick={() => setActiveIdx(i)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    i === activeIdx ? 'w-8 bg-gold' : 'w-2 bg-slate-300 dark:bg-[#342e58] hover:bg-gold/50'
-                  }`}
-                  aria-label={`Go to slide ${i + 1}`}
-                />
+                  className="h-10 px-1.5 py-3 flex items-center justify-center cursor-pointer"
+                  aria-label={`Go to slide ${i + 1} of ${TESTIMONIALS.length}`}
+                >
+                  <span
+                    className={`h-2 rounded-full transition-all duration-300 block ${
+                      i === activeIdx ? 'w-8 bg-gold' : 'w-2 bg-slate-300 dark:bg-[#342e58] hover:bg-gold/50'
+                    }`}
+                  />
+                </button>
               ))}
             </div>
 
             <div className="flex items-center gap-2">
               <button
                 onClick={prevTestimonial}
-                className="w-9 h-9 rounded-full border border-slate-300 dark:border-[#2a2450] flex items-center justify-center text-slate-600 dark:text-[#a79fc9] hover:border-gold hover:text-gold transition-colors"
+                className="w-10 h-10 rounded-full border border-slate-300 dark:border-[#2a2450] flex items-center justify-center text-slate-600 dark:text-[#a79fc9] hover:border-gold hover:text-gold transition-colors cursor-pointer"
                 aria-label="Previous Testimonial"
               >
-                <ChevronLeft size={17} />
+                <ChevronLeft size={18} />
               </button>
               <button
                 onClick={nextTestimonial}
-                className="w-9 h-9 rounded-full border border-slate-300 dark:border-[#2a2450] flex items-center justify-center text-slate-600 dark:text-[#a79fc9] hover:border-gold hover:text-gold transition-colors"
+                className="w-10 h-10 rounded-full border border-slate-300 dark:border-[#2a2450] flex items-center justify-center text-slate-600 dark:text-[#a79fc9] hover:border-gold hover:text-gold transition-colors cursor-pointer"
                 aria-label="Next Testimonial"
               >
-                <ChevronRight size={17} />
+                <ChevronRight size={18} />
               </button>
             </div>
           </div>
