@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
   GraduationCap,
@@ -248,22 +249,30 @@ const ProductsShowcase = () => {
               </div>
 
               {/* Card CTA Actions */}
-              <div className="flex flex-col sm:flex-row items-center gap-3 mt-auto">
+              <div className="flex flex-col sm:flex-row items-center gap-2.5 mt-auto pt-2">
+                <Link
+                  href={`/products/${prod.id}`}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full text-xs font-bold bg-slate-100 hover:bg-slate-200 dark:bg-[#1a1636] dark:hover:bg-[#221c45] text-slate-800 dark:text-[#f3efe4] hover:text-gold dark:hover:text-gold transition-colors cursor-pointer"
+                >
+                  <ExternalLink size={13} />
+                  <span>Full Product Page</span>
+                </Link>
+
                 <button
                   type="button"
                   onClick={() => handleOpenModal(prod.id)}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold bg-white dark:bg-[#1a1636] border border-slate-300 dark:border-[#383163] text-slate-800 dark:text-[#f3efe4] hover:border-gold hover:text-gold transition-colors cursor-pointer shadow-sm"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full text-xs font-bold bg-white dark:bg-[#15112e] border border-slate-300 dark:border-[#383163] text-slate-700 dark:text-[#c3bde0] hover:border-gold hover:text-gold transition-colors cursor-pointer"
                 >
-                  <Layers size={14} className="text-gold" />
-                  <span>Architecture &amp; Case Study</span>
+                  <Layers size={13} className="text-gold" />
+                  <span>Architecture</span>
                 </button>
 
                 <button
                   type="button"
                   onClick={() => handleInquireProduct(prod.name)}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold bg-gold hover:bg-gold-soft text-ink transition-colors cursor-pointer shadow-sm ml-auto"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full text-xs font-bold bg-gold hover:bg-gold-soft text-ink transition-colors cursor-pointer shadow-sm sm:ml-auto"
                 >
-                  <span>Request Demo &amp; Pricing</span>
+                  <span>Book Demo</span>
                   <ArrowRight size={13} strokeWidth={2.5} />
                 </button>
               </div>
