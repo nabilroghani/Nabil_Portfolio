@@ -314,7 +314,7 @@ const Contact = () => {
                       key={b}
                       onClick={() => setFormData({ ...formData, budget: b })}
                       aria-pressed={formData.budget === b}
-                      className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all text-center cursor-pointer ${
+                      className={`px-3 py-2.5 min-h-[42px] flex items-center justify-center rounded-lg text-xs font-semibold border transition-all text-center cursor-pointer ${
                         formData.budget === b
                           ? 'bg-gold text-ink border-gold shadow-sm font-bold'
                           : 'bg-white dark:bg-[#151228] border-slate-200 dark:border-[#3a3560] text-slate-600 dark:text-[#a79fc9] hover:border-gold'
@@ -339,7 +339,7 @@ const Contact = () => {
                       key={t}
                       onClick={() => setFormData({ ...formData, timeline: t })}
                       aria-pressed={formData.timeline === t}
-                      className={`px-2 py-1.5 rounded-lg text-xs font-semibold border transition-all text-center cursor-pointer ${
+                      className={`px-2.5 py-2.5 min-h-[42px] flex items-center justify-center rounded-lg text-xs font-semibold border transition-all text-center cursor-pointer ${
                         formData.timeline === t
                           ? 'bg-gold text-ink border-gold shadow-sm font-bold'
                           : 'bg-white dark:bg-[#151228] border-slate-200 dark:border-[#3a3560] text-slate-600 dark:text-[#a79fc9] hover:border-gold'

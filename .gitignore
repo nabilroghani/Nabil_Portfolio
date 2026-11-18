@@ -4,5 +4,11 @@ node_modules/
 .env
 .env.local
 .DS_Store
+academic-cvs/
+academic-cops/
+/*.pdf
+/*.png
+/*.jpeg
+/*.jpg
 
 brag-output/

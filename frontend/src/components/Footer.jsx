@@ -27,14 +27,14 @@ const Footer = () => (
             target={href.startsWith('mailto:') ? undefined : '_blank'}
             rel={href.startsWith('mailto:') ? undefined : 'noreferrer'}
             aria-label={label}
-            className="w-10 h-10 rounded-full flex items-center justify-center
+            className="w-11 h-11 min-w-[44px] min-h-[44px] sm:w-10 sm:h-10 rounded-full flex items-center justify-center
               border border-slate-300 dark:border-[#3a3560]
               bg-white dark:bg-[#151228]
               text-slate-600 dark:text-[#a79fc9]
               hover:border-gold hover:text-gold hover:-translate-y-0.5
-              transition-all duration-200 shadow-sm"
+              transition-all duration-200 shadow-sm cursor-pointer"
           >
-            <Icon size={16} />
+            <Icon size={17} />
           </a>
         ))}
       </div>

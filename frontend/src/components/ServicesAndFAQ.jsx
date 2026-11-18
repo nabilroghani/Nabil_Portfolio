@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Code2,
@@ -128,13 +129,13 @@ const ServicesAndFAQ = () => {
                   ))}
                 </div>
 
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0a66c2] dark:text-[#70b5f9] group-hover:gap-2.5 transition-all"
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0a66c2] dark:text-[#70b5f9] group-hover:gap-2.5 transition-all cursor-pointer min-h-[36px]"
                 >
                   <span>Discuss Your Project</span>
                   <ArrowRight size={13} strokeWidth={2.5} />
-                </a>
+                </Link>
               </div>
             </motion.div>
           );
@@ -220,12 +221,12 @@ const ServicesAndFAQ = () => {
               </p>
             </div>
           </div>
-          <a
-            href="#contact"
-            className="px-5 py-2.5 rounded-full bg-[#0a66c2] hover:bg-[#004182] text-white text-xs sm:text-sm font-semibold active:scale-95 transition-all shadow-sm shrink-0"
+          <Link
+            href="/contact"
+            className="px-5 py-3 rounded-full bg-[#0a66c2] hover:bg-[#004182] text-white text-xs sm:text-sm font-semibold active:scale-95 transition-all shadow-sm shrink-0 cursor-pointer min-h-[44px] inline-flex items-center justify-center"
           >
             Get a Free Quote
-          </a>
+          </Link>
         </div>
       </div>
     </section>

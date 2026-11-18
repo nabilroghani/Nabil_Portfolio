@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
   Download,
@@ -271,19 +272,19 @@ const Hero = () => {
                 Peshawar, KP, Pakistan
               </span>
               <span>·</span>
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 className="text-[#0a66c2] dark:text-[#70b5f9] font-bold hover:underline cursor-pointer"
               >
                 Contact info
-              </a>
+              </Link>
             </div>
           </div>
 
           {/* Right Column: Agency, Experience & Education */}
           <div className="md:col-span-4 flex flex-row flex-wrap md:flex-col gap-2.5 pt-1 md:pt-0.5 md:pl-4">
             {/* Nabil Tech Logic (Agency) */}
-            <div className="flex items-center gap-2 group">
+            <Link href="/products" className="flex items-center gap-2 group cursor-pointer">
               <div className="w-6 h-6 sm:w-7 sm:h-7 rounded border border-gold/40 bg-gold/10 p-0.5 shrink-0 flex items-center justify-center overflow-hidden text-gold font-black text-xs font-mono">
                 NT
               </div>
@@ -295,7 +296,7 @@ const Hero = () => {
                   Founder &amp; Lead Architect
                 </span>
               </div>
-            </div>
+            </Link>
 
             {/* Apptex Software Solutions */}
             <div className="flex items-center gap-2 group">
@@ -330,40 +331,40 @@ const Hero = () => {
         {/* ── 4 Action Buttons: View My Work, Contact Me, Download CV, Experience ── */}
         <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2 sm:gap-2.5 mt-4 sm:mt-5 pt-1 sm:pt-2">
           {/* Button 1: View My Work */}
-          <a
-            href="#projects"
-            className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-2.5 sm:py-2 rounded-full font-semibold text-xs sm:text-sm bg-[#0a66c2] hover:bg-[#004182] active:scale-95 text-white transition-all duration-200 shadow-sm text-center"
+          <Link
+            href="/projects"
+            className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-3 sm:py-2 min-h-[44px] rounded-full font-semibold text-xs sm:text-sm bg-[#0a66c2] hover:bg-[#004182] active:scale-95 text-white transition-all duration-200 shadow-sm text-center cursor-pointer"
           >
-            <Eye size={14} strokeWidth={2.4} />
+            <Eye size={15} strokeWidth={2.4} />
             <span>View Work</span>
-          </a>
+          </Link>
 
           {/* Button 2: Contact Me */}
-          <a
-            href="#contact"
-            className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-2.5 sm:py-2 rounded-full font-semibold text-xs sm:text-sm border-2 border-[#0a66c2] text-[#0a66c2] dark:text-[#70b5f9] dark:border-[#70b5f9] hover:bg-[#0a66c2]/10 active:scale-95 transition-all duration-200 text-center"
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-3 sm:py-2 min-h-[44px] rounded-full font-semibold text-xs sm:text-sm border-2 border-[#0a66c2] text-[#0a66c2] dark:text-[#70b5f9] dark:border-[#70b5f9] hover:bg-[#0a66c2]/10 active:scale-95 transition-all duration-200 text-center cursor-pointer"
           >
-            <Mail size={14} strokeWidth={2.2} />
+            <Mail size={15} strokeWidth={2.2} />
             <span>Contact Me</span>
-          </a>
+          </Link>
 
           {/* Button 3: Download CV */}
           <button
             onClick={handleDownload}
-            className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-2.5 sm:py-2 rounded-full font-semibold text-xs sm:text-sm border border-slate-400 dark:border-slate-500 hover:border-slate-700 dark:hover:border-slate-300 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/80 active:scale-95 transition-all duration-200 cursor-pointer text-center"
+            className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-3 sm:py-2 min-h-[44px] rounded-full font-semibold text-xs sm:text-sm border border-slate-400 dark:border-slate-500 hover:border-slate-700 dark:hover:border-slate-300 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/80 active:scale-95 transition-all duration-200 cursor-pointer text-center"
           >
-            <Download size={14} strokeWidth={2.2} />
+            <Download size={15} strokeWidth={2.2} />
             <span>Download CV</span>
           </button>
 
           {/* Button 4: Experience */}
-          <a
-            href="#experience"
-            className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-2.5 sm:py-2 rounded-full font-semibold text-xs sm:text-sm border border-slate-400 dark:border-slate-500 hover:border-slate-700 dark:hover:border-slate-300 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/80 active:scale-95 transition-all duration-200 text-center"
+          <Link
+            href="/experience"
+            className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-3 sm:py-2 min-h-[44px] rounded-full font-semibold text-xs sm:text-sm border border-slate-400 dark:border-slate-500 hover:border-slate-700 dark:hover:border-slate-300 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/80 active:scale-95 transition-all duration-200 text-center cursor-pointer"
           >
-            <Briefcase size={14} strokeWidth={2.2} />
+            <Briefcase size={15} strokeWidth={2.2} />
             <span>Experience</span>
-          </a>
+          </Link>
         </div>
 
         {/* ── Compact Highlights / Open to Work Box ── */}
