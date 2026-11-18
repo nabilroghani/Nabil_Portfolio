@@ -199,6 +199,52 @@ const jsonLd = {
       "mainEntity": {
         "@id": "https://www.nabilahmad.site/#person"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.nabilahmad.site/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does a typical project take from start to finish?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Small to medium MVPs typically take 2-4 weeks, while larger full-scale platforms take 6-10 weeks. Every project is broken into weekly milestones with live staging previews so you are always updated on progress."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you handle both the frontend, backend, and AWS cloud deployment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, 100%! As a full-stack MERN & AWS engineer, I handle the complete lifecycle: UI/UX implementation, database modeling, secure API design, and deploying live onto AWS EC2/S3 with custom domains and SSL."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is your pricing and engagement model?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "I work on both fixed-price milestone contracts (ideal for MVPs with defined scope) and dedicated monthly retainers (ideal for ongoing product development and scaling). Pricing is transparent with zero hidden costs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide post-launch support and maintenance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. Every project includes 30 days of free bug-fixing and warranty support after launch. I also offer monthly maintenance packages for cloud monitoring, feature updates, and performance tuning."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do we get started on my project?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Simply scroll down to the Contact form or email me at nabiltechlogic.dev@gmail.com with a short summary of your requirements. I respond within 24 hours to set up a free 15-minute discovery call to discuss scope, timeline, and budget."
+          }
+        }
+      ]
     }
   ]
 };
