@@ -234,6 +234,7 @@ const Hero = () => {
               {/* LinkedIn Verified Blue Tick Badge */}
               <span
                 title="Verified Profile"
+                aria-label="Verified Profile"
                 className="inline-flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#0a66c2] text-white shadow-sm shrink-0"
               >
                 <svg

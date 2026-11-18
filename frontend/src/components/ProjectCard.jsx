@@ -109,7 +109,7 @@ const ProjectCard = ({ project }) => {
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-slate-700 dark:hover:text-white transition-colors duration-200"
-                  aria-label="GitHub"
+                  aria-label={`View ${project.title} source code on GitHub`}
                 >
                   <GithubMark size={16} />
                 </a>
@@ -120,7 +120,7 @@ const ProjectCard = ({ project }) => {
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-gold dark:hover:text-gold transition-colors duration-200"
-                  aria-label="Live Demo"
+                  aria-label={`View live demo of ${project.title}`}
                 >
                   <ExternalLink size={15} strokeWidth={2} />
                 </a>

@@ -66,6 +66,7 @@ const Navbar = () => {
           <motion.a
             href="/"
             whileHover={{ scale: 1.04 }}
+            aria-label="Nabil Ahmad Portfolio Home"
             className="flex items-center gap-2.5 group"
           >
             <div className="w-9 h-9 rounded-full bg-gold/10 dark:bg-gold/15 flex items-center justify-center group-hover:bg-gold/20 transition-colors duration-200">
@@ -191,6 +192,7 @@ const Navbar = () => {
                 </span>
                 <button
                   onClick={() => setIsOpen(false)}
+                  aria-label="Close navigation menu"
                   className="w-9 h-9 rounded-full flex items-center justify-center
                     bg-transparent
                     border border-slate-300 dark:border-[#3a3560]

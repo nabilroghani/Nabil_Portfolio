@@ -235,10 +235,12 @@ const Contact = () => {
               {/* Name & Email Row */}
               <div className="grid sm:grid-cols-2 gap-3.5">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-[#d3cde8] mb-1.5">
+                  <label htmlFor="contact-name" className="block text-xs font-semibold text-slate-700 dark:text-[#d3cde8] mb-1.5">
                     Your Name *
                   </label>
                   <input
+                    id="contact-name"
+                    name="name"
                     type="text"
                     placeholder="e.g. John Doe"
                     required
@@ -255,10 +257,12 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-[#d3cde8] mb-1.5">
+                  <label htmlFor="contact-email" className="block text-xs font-semibold text-slate-700 dark:text-[#d3cde8] mb-1.5">
                     Email Address *
                   </label>
                   <input
+                    id="contact-email"
+                    name="email"
                     type="email"
                     placeholder="e.g. john@company.com"
                     required
@@ -277,10 +281,12 @@ const Contact = () => {
 
               {/* Service Required Dropdown */}
               <div>
-                <label className="block text-xs font-semibold text-slate-700 dark:text-[#d3cde8] mb-1.5">
+                <label htmlFor="contact-service" className="block text-xs font-semibold text-slate-700 dark:text-[#d3cde8] mb-1.5">
                   Service / Project Type
                 </label>
                 <select
+                  id="contact-service"
+                  name="service"
                   value={formData.service}
                   onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                   className={`${inputBase} border-slate-200 dark:border-[#3a3560] cursor-pointer`}
@@ -299,12 +305,13 @@ const Contact = () => {
                   <DollarSign size={13} className="text-gold" />
                   Estimated Budget (USD)
                 </label>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2" role="group" aria-label="Estimated budget options">
                   {BUDGET_OPTIONS.map((b) => (
                     <button
                       type="button"
                       key={b}
                       onClick={() => setFormData({ ...formData, budget: b })}
+                      aria-pressed={formData.budget === b}
                       className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all text-center cursor-pointer ${
                         formData.budget === b
                           ? 'bg-gold text-ink border-gold shadow-sm font-bold'
@@ -323,12 +330,13 @@ const Contact = () => {
                   <Calendar size={13} className="text-gold" />
                   Desired Timeline
                 </label>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2" role="group" aria-label="Desired timeline options">
                   {TIMELINE_OPTIONS.map((t) => (
                     <button
                       type="button"
                       key={t}
                       onClick={() => setFormData({ ...formData, timeline: t })}
+                      aria-pressed={formData.timeline === t}
                       className={`px-2 py-1.5 rounded-lg text-xs font-semibold border transition-all text-center cursor-pointer ${
                         formData.timeline === t
                           ? 'bg-gold text-ink border-gold shadow-sm font-bold'
@@ -343,10 +351,12 @@ const Contact = () => {
 
               {/* Message / Project Requirements Textarea */}
               <div>
-                <label className="block text-xs font-semibold text-slate-700 dark:text-[#d3cde8] mb-1.5">
+                <label htmlFor="contact-message" className="block text-xs font-semibold text-slate-700 dark:text-[#d3cde8] mb-1.5">
                   Project Details &amp; Requirements *
                 </label>
                 <textarea
+                  id="contact-message"
+                  name="message"
                   placeholder="Describe your project, key features, target audience, or any reference websites..."
                   required
                   rows={4}

@@ -109,6 +109,11 @@ const SkillBar = ({ name, level, color, index }) => {
       </div>
       <div className={`h-2 rounded-full ${c.track} overflow-hidden`}>
         <motion.div
+          role="progressbar"
+          aria-valuenow={level}
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-label={`${name} proficiency`}
           className={`h-full rounded-full ${c.bar}`}
           initial={{ width: 0 }}
           animate={inView ? { width: `${level}%` } : { width: 0 }}

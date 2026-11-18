@@ -145,7 +145,8 @@ const Testimonials = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-slate-400 hover:text-gold transition-colors p-1"
-                      title="Visit Client Website"
+                      title={`Visit ${current.company} website`}
+                      aria-label={`Visit ${current.company} website`}
                     >
                       <ExternalLink size={15} />
                     </a>

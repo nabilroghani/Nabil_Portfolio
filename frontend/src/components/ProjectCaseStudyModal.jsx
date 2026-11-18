@@ -61,6 +61,9 @@ const ProjectCaseStudyModal = ({ project, isOpen, onClose }) => {
 
         {/* Modal Window */}
         <motion.div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="case-study-title"
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -91,7 +94,7 @@ const ProjectCaseStudyModal = ({ project, isOpen, onClose }) => {
           <div className="overflow-y-auto p-5 sm:p-8 space-y-6">
             {/* Title & Metadata */}
             <div>
-              <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 dark:text-white leading-tight mb-3">
+              <h2 id="case-study-title" className="text-xl sm:text-2xl font-bold font-display text-slate-900 dark:text-white leading-tight mb-3">
                 {cs.title}
               </h2>
 

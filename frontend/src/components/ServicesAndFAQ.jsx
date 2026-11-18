@@ -158,6 +158,8 @@ const ServicesAndFAQ = () => {
         <div className="max-w-3xl mx-auto space-y-3">
           {FAQS.map((faq, idx) => {
             const isOpen = openFaq === idx;
+            const btnId = `faq-btn-${idx}`;
+            const panelId = `faq-panel-${idx}`;
             return (
               <div
                 key={faq.q}
@@ -165,6 +167,9 @@ const ServicesAndFAQ = () => {
               >
                 <button
                   type="button"
+                  id={btnId}
+                  aria-expanded={isOpen}
+                  aria-controls={panelId}
                   onClick={() => setOpenFaq(isOpen ? -1 : idx)}
                   className="w-full text-left p-4 sm:p-5 flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-100/60 dark:hover:bg-[#151228] transition-colors"
                 >
@@ -180,6 +185,9 @@ const ServicesAndFAQ = () => {
                 <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
+                      id={panelId}
+                      role="region"
+                      aria-labelledby={btnId}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
