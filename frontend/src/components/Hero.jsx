@@ -225,8 +225,8 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4 items-start mt-1">
           {/* Left Column: Name + Blue Verified Tick, Headline, Location & Contact */}
           <div className="md:col-span-8 space-y-1.5 sm:space-y-2">
-            {/* 1. Name & Blue Verified Tick ONLY */}
-            <div className="flex items-center gap-2">
+            {/* 1. Name & Blue Verified Tick + Live Availability Badge */}
+            <div className="flex items-center gap-2 flex-wrap">
               <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-[#f3efe4]">
                 Nabil Ahmad
               </h1>
@@ -244,6 +244,15 @@ const Hero = () => {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                 </svg>
+              </span>
+
+              {/* Live Client Project Availability Indicator */}
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-semibold bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                Available for Projects
               </span>
             </div>
 
