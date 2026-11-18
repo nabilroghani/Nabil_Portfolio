@@ -12,6 +12,11 @@ export const metadata = {
   description: 'Nabil Ahmad is a MERN Stack Developer & AWS Cloud Engineer with 3+ years experience building scalable web applications, SaaS MVPs, and robust cloud infrastructure using React, Next.js, Node.js, MongoDB, and AWS.',
   keywords: [
     'Nabil Ahmad',
+    'Best Developer in Peshawar',
+    'Best MERN Stack Developer in Peshawar',
+    'Top Full Stack Developer in Pakistan',
+    'Best Web Developer Peshawar',
+    'Software Engineer Peshawar',
     'MERN Stack Developer',
     'AWS Cloud Developer',
     'Full Stack Developer Pakistan',
@@ -176,6 +181,49 @@ const jsonLd = {
           }
         ]
       }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.nabilahmad.site/#service-biz",
+      "name": "Nabil Ahmad - Full Stack & Cloud Engineering Services",
+      "alternateName": "Best MERN Stack & Full Stack Developer in Peshawar",
+      "image": "https://www.nabilahmad.site/og-image.png",
+      "url": "https://www.nabilahmad.site/",
+      "telephone": "+923041237882",
+      "email": "nabiltechlogic.dev@gmail.com",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "University of Peshawar",
+        "addressLocality": "Peshawar",
+        "addressRegion": "Khyber Pakhtunkhwa",
+        "postalCode": "25000",
+        "addressCountry": "PK"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 34.0151,
+        "longitude": 71.5249
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Peshawar"
+        },
+        {
+          "@type": "Country",
+          "name": "Pakistan"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Worldwide (Remote)"
+        }
+      ],
+      "founder": {
+        "@id": "https://www.nabilahmad.site/#person"
+      },
+      "knowsLanguage": ["English", "Urdu", "Pashto"],
+      "openingHours": "Mo-Sa 09:00-21:00"
     },
     {
       "@type": "WebSite",
