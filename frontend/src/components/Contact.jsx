@@ -195,6 +195,12 @@ const Contact = () => {
                 <a
                   key={label}
                   href={link}
+                  onClick={() => {
+                    if (link.startsWith('mailto:')) {
+                      navigator.clipboard.writeText('contact@nabilahmad.site');
+                      toast.success('Email copied: contact@nabilahmad.site');
+                    }
+                  }}
                   target={link.startsWith('http') ? '_blank' : undefined}
                   rel={link.startsWith('http') ? 'noopener noreferrer' : undefined}
                   className="block cursor-pointer"

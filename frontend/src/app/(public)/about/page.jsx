@@ -3,13 +3,14 @@ import About from '@/components/About';
 import { ChevronRight } from 'lucide-react';
 
 export const metadata = {
-  title: 'About Nabil Ahmad | Founder @ Nabil Tech Logic | Software Developer',
+  title: 'About Nabil Ahmad | Full Stack MERN Developer & AWS Cloud Engineer',
   description:
-    'Learn about Nabil Ahmad, Full Stack MERN Developer, AWS Cloud Engineer, and Founder of Nabil Tech Logic based in Peshawar, Khyber Pakhtunkhwa, Pakistan.',
+    'Learn about Nabil Ahmad, Full Stack MERN Developer, AWS Cloud Engineer, and Enterprise SaaS Architect based in Peshawar, Khyber Pakhtunkhwa, Pakistan.',
   keywords: [
     'About Nabil Ahmad',
-    'Founder Nabil Tech Logic',
     'Full Stack Developer Peshawar',
+    'MERN Stack Engineer Pakistan',
+    'AWS Cloud Architect Peshawar',
     'University of Peshawar Computer Science',
     'Software Engineer Bio'
   ],
@@ -17,9 +18,9 @@ export const metadata = {
     canonical: 'https://www.nabilahmad.site/about',
   },
   openGraph: {
-    title: 'About Nabil Ahmad | Software Developer',
+    title: 'About Nabil Ahmad | Full Stack MERN Developer & Cloud Architect',
     description:
-      'The person behind the code — MERN Stack Developer, AWS Cloud Engineer, and Founder @ Nabil Tech Logic.',
+      'The person behind the code — MERN Stack Developer, AWS Cloud Engineer, and builder of enterprise SaaS platforms.',
     url: 'https://www.nabilahmad.site/about',
     type: 'website',
   },

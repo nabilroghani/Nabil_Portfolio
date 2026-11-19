@@ -71,7 +71,7 @@ export default function HomePage() {
         {/* --- 1. Hero Section at top of the card --- */}
         <Hero />
 
-        {/* --- 2. Flagship Proprietary Products by Nabil Tech Logic --- */}
+        {/* --- 2. Flagship Enterprise SaaS Systems Built by Nabil Ahmad --- */}
         <ProductsShowcase />
 
         {/* --- 3. Featured Projects (Best 4 Projects Only) --- */}

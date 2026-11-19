@@ -1,6 +1,7 @@
 'use client';
 
 import { Mail } from 'lucide-react';
+import toast from 'react-hot-toast';
 import GithubMark from './icons/GithubMark';
 import LinkedinMark from './icons/LinkedinMark';
 import FacebookMark from './icons/FacebookMark';
@@ -24,6 +25,12 @@ const Footer = () => (
           <a
             key={label}
             href={href}
+            onClick={(e) => {
+              if (label === 'Email') {
+                navigator.clipboard.writeText('contact@nabilahmad.site');
+                toast.success('Email copied: contact@nabilahmad.site');
+              }
+            }}
             target={href.startsWith('mailto:') ? undefined : '_blank'}
             rel={href.startsWith('mailto:') ? undefined : 'noreferrer'}
             aria-label={label}

@@ -23,16 +23,15 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: 'EduNexa SMS | Enterprise School & Student Management System | Nabil Tech Logic',
+  title: 'EduNexa SMS | Enterprise School & Student Management System | Nabil Ahmad',
   description:
-    'EduNexa SMS (formerly EduPulse) by Nabil Tech Logic is a multi-tenant cloud school management system automating student admissions, monthly fee vouchers, biometric attendance, exams, and parent SMS alerts.',
+    'EduNexa SMS engineered by Nabil Ahmad is a multi-tenant cloud school management system automating student admissions, monthly fee vouchers, biometric attendance, exams, and parent SMS alerts.',
   keywords: [
     'EduNexa',
     'EduNexa SMS',
     'EduPulse SMS',
     'School Management System Pakistan',
     'Student Management System SaaS',
-    'Nabil Tech Logic',
     'School Fee Voucher Generator Software',
     'School Attendance SMS Alert Software',
     'Exam Grading and Report Card Software',
@@ -63,8 +62,8 @@ const jsonLd = {
     "priceCurrency": "USD"
   },
   "author": {
-    "@type": "Organization",
-    "name": "Nabil Tech Logic",
+    "@type": "Person",
+    "name": "Nabil Ahmad",
     "url": "https://www.nabilahmad.site/"
   },
   "description": "Multi-tenant cloud school management system automating student admissions, fee voucher generation, attendance SMS alerts, and report cards."
@@ -180,7 +179,7 @@ export default function EduPulseProductPage() {
             {/* Top Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-xs font-bold uppercase tracking-wider mb-4">
               <Sparkles size={13} className="text-emerald-500" />
-              <span>Proprietary Product — Built by Nabil Tech Logic</span>
+              <span>Production SaaS — Engineered by Nabil Ahmad</span>
             </div>
 
             <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-[#f3efe4] leading-tight">
@@ -383,7 +382,7 @@ export default function EduPulseProductPage() {
               Transform Your School Operations Today
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-[#a79fc9]">
-              Schedule a personalized 15-minute live demo with <strong>Nabil Ahmad</strong> (Founder @ Nabil Tech Logic) to see EduNexa SMS in action.
+              Schedule a personalized 15-minute live demo with <strong>Nabil Ahmad</strong> to see EduNexa SMS in action.
             </p>
           </div>
 

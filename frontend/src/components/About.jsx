@@ -21,8 +21,8 @@ const cards = [
   {
     icon: Briefcase,
     color: 'sky',
-    title: 'Founder @ Nabil Tech Logic',
-    body: 'Founder and Lead Architect at Nabil Tech Logic. Building specialized enterprise SaaS products including School Management Systems and Pharmacy POS/ERP solutions.',
+    title: 'Enterprise SaaS Architect',
+    body: 'Full-stack builder architecting specialized enterprise SaaS platforms from scratch, including EduNexa (School Management System) and PharmaLogic (Pharmacy POS & ERP).',
   },
   {
     icon: Users,

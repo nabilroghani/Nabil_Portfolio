@@ -196,11 +196,11 @@ export const CASE_STUDIES = {
 
   edupulse: {
     title: 'EduNexa SMS — Enterprise School & Student Management SaaS',
-    category: 'EdTech Enterprise SaaS (By Nabil Tech Logic)',
+    category: 'EdTech Enterprise SaaS (Production System)',
     liveLink: 'https://edu-nexa-beta.vercel.app/',
     client: 'K-12 Schools, Colleges & Academies',
-    timeline: 'Proprietary Product',
-    role: 'Founder & Lead Systems Architect (Nabil Tech Logic)',
+    timeline: 'Production Product',
+    role: 'Lead Systems Architect & Full Stack Engineer',
     overview:
       'A multi-tenant institutional operations platform unifying student admissions, automated fee voucher generation, biometric/manual attendance, exam grading policies, parent SMS alerts, and staff scheduling into a single cloud dashboard.',
     challenge:
@@ -240,10 +240,10 @@ export const CASE_STUDIES = {
 
   pharmalogic: {
     title: 'PharmaLogic ERP — Intelligent Pharmacy POS & Inventory System',
-    category: 'Healthcare & Retail Inventory ERP (By Nabil Tech Logic)',
+    category: 'Healthcare & Retail Inventory ERP (Production System)',
     client: 'Pharmacies, Medical Stores & Healthcare Retailers',
-    timeline: 'Proprietary Product',
-    role: 'Founder & Lead Systems Architect (Nabil Tech Logic)',
+    timeline: 'Production Product',
+    role: 'Lead Systems Architect & Full Stack Engineer',
     overview:
       'An enterprise pharmacy management and high-speed Point of Sale (POS) system engineered for batch-level inventory tracking, First-Expiry-First-Out (FEFO) dispensing, barcode billing, and distributor credit/debit accounting.',
     challenge:

@@ -3,23 +3,23 @@ import Contact from '@/components/Contact';
 import { ChevronRight } from 'lucide-react';
 
 export const metadata = {
-  title: 'Contact & Hire Nabil Ahmad | Founder @ Nabil Tech Logic',
+  title: 'Contact & Hire Nabil Ahmad | Full Stack MERN Developer',
   description:
-    'Start a project with Nabil Ahmad. Inquire about custom MERN web app development, SaaS MVPs, EduNexa School System, PharmaLogic POS, or cloud infrastructure.',
+    'Get in touch with Nabil Ahmad for full-time engineering roles, high-impact software contracts, custom MERN web applications, or cloud infrastructure.',
   keywords: [
     'Contact Nabil Ahmad',
     'Hire Full Stack Developer Peshawar',
     'Hire MERN Developer Pakistan',
-    'Nabil Tech Logic Contact',
-    'Software Project Inquiry'
+    'Software Engineer Hiring',
+    'Full Stack Remote Developer'
   ],
   alternates: {
     canonical: 'https://www.nabilahmad.site/contact',
   },
   openGraph: {
-    title: 'Contact & Hire Nabil Ahmad | Nabil Tech Logic',
+    title: 'Contact & Hire Nabil Ahmad | Full Stack Developer',
     description:
-      'Start your project today — share your scope or connect via WhatsApp for an immediate response.',
+      'Available for full-time software engineering roles, technical contracts, and architectural consulting.',
     url: 'https://www.nabilahmad.site/contact',
     type: 'website',
   },

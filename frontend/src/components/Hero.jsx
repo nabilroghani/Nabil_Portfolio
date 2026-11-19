@@ -250,54 +250,51 @@ const Hero = () => {
                 </svg>
               </span>
 
-              {/* Live Client Project Availability Indicator */}
+              {/* Live Availability for Jobs & Contracts */}
               <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-semibold bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
-                Available for Projects
+                Open for Full-Time Roles &amp; Contracts
               </span>
             </div>
 
-            {/* 2. Caption / Headline with Agency & Products */}
+            {/* 2. Caption / Headline with Core Engineering Focus */}
             <p className="text-xs sm:text-sm md:text-base text-slate-800 dark:text-[#c3bde0] font-normal leading-relaxed">
-              Founder of <span className="font-semibold text-slate-900 dark:text-[#f3efe4]">Nabil Tech Logic</span> | Architecting Enterprise SaaS Products (<span className="text-gold font-medium">School Management</span> &amp; <span className="text-gold font-medium">Pharmacy POS</span>) | MERN Stack &amp; AWS Cloud Solutions
+              <span className="font-semibold text-slate-900 dark:text-[#f3efe4]">Full Stack MERN Developer &amp; AWS Cloud Solutions Architect</span> | Building High-Performance Web Applications &amp; Enterprise SaaS (<span className="text-gold font-medium">EduNexa SMS</span> &amp; <span className="text-gold font-medium">PharmaLogic ERP</span>)
             </p>
 
-            {/* 3. Location & Contact info Link */}
+            {/* 3. Location, Contact info & Quick Copy Email */}
             <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-slate-600 dark:text-[#a79fc9] pt-0.5">
               <span className="inline-flex items-center gap-1">
                 <MapPin size={13} className="text-slate-500 dark:text-slate-400 shrink-0" />
                 Peshawar, KP, Pakistan
               </span>
               <span>·</span>
+              <button
+                type="button"
+                onClick={() => {
+                  navigator.clipboard.writeText('contact@nabilahmad.site');
+                  toast.success('Email copied: contact@nabilahmad.site');
+                }}
+                className="text-[#0a66c2] dark:text-[#70b5f9] font-bold hover:underline cursor-pointer flex items-center gap-1"
+                title="Click to copy email address"
+              >
+                <span>contact@nabilahmad.site</span>
+              </button>
+              <span>·</span>
               <Link
                 href="/contact"
-                className="text-[#0a66c2] dark:text-[#70b5f9] font-bold hover:underline cursor-pointer"
+                className="text-slate-600 dark:text-[#c3bde0] hover:text-gold hover:underline cursor-pointer"
               >
-                Contact info
+                Get in touch
               </Link>
             </div>
           </div>
 
-          {/* Right Column: Agency, Experience & Education */}
+          {/* Right Column: Experience, Enterprise Products & Education */}
           <div className="md:col-span-4 flex flex-row flex-wrap md:flex-col gap-2.5 pt-1 md:pt-0.5 md:pl-4">
-            {/* Nabil Tech Logic (Agency) */}
-            <Link href="/products" className="flex items-center gap-2 group cursor-pointer">
-              <div className="w-6 h-6 sm:w-7 sm:h-7 rounded border border-gold/40 bg-gold/10 p-0.5 shrink-0 flex items-center justify-center overflow-hidden text-gold font-black text-xs font-mono">
-                NT
-              </div>
-              <div className="leading-tight">
-                <span className="text-xs sm:text-sm font-semibold text-slate-900 dark:text-[#e5e1f2] group-hover:text-gold transition-colors block">
-                  Nabil Tech Logic
-                </span>
-                <span className="text-[10px] text-slate-500 dark:text-[#8a83ab] font-medium">
-                  Founder &amp; Lead Architect
-                </span>
-              </div>
-            </Link>
-
             {/* Apptex Software Solutions */}
             <div className="flex items-center gap-2 group">
               <div className="w-6 h-6 sm:w-7 sm:h-7 rounded border border-slate-200 dark:border-[#2a2450] bg-white p-0.5 shrink-0 flex items-center justify-center overflow-hidden">
@@ -307,10 +304,30 @@ const Hero = () => {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-[#e5e1f2] group-hover:text-[#0a66c2] dark:group-hover:text-[#70b5f9] transition-colors leading-tight">
-                Apptex Software Solutions
-              </span>
+              <div className="leading-tight">
+                <span className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-[#e5e1f2] group-hover:text-[#0a66c2] dark:group-hover:text-[#70b5f9] transition-colors block">
+                  Apptex Software Solutions
+                </span>
+                <span className="text-[10px] text-slate-500 dark:text-[#8a83ab] font-medium">
+                  Software Solutions Architect
+                </span>
+              </div>
             </div>
+
+            {/* Flagship Enterprise SaaS Systems */}
+            <Link href="/products" className="flex items-center gap-2 group cursor-pointer">
+              <div className="w-6 h-6 sm:w-7 sm:h-7 rounded border border-gold/40 bg-gold/10 p-0.5 shrink-0 flex items-center justify-center overflow-hidden text-gold font-black text-xs font-mono">
+                SaaS
+              </div>
+              <div className="leading-tight">
+                <span className="text-xs sm:text-sm font-semibold text-slate-900 dark:text-[#e5e1f2] group-hover:text-gold transition-colors block">
+                  Enterprise SaaS Products
+                </span>
+                <span className="text-[10px] text-slate-500 dark:text-[#8a83ab] font-medium">
+                  EduNexa SMS &amp; PharmaLogic ERP
+                </span>
+              </div>
+            </Link>
 
             {/* University of Peshawar */}
             <div className="flex items-center gap-2 group">
@@ -321,9 +338,14 @@ const Hero = () => {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-[#e5e1f2] group-hover:text-[#0a66c2] dark:group-hover:text-[#70b5f9] transition-colors leading-tight">
-                University of Peshawar
-              </span>
+              <div className="leading-tight">
+                <span className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-[#e5e1f2] group-hover:text-[#0a66c2] dark:group-hover:text-[#70b5f9] transition-colors block">
+                  University of Peshawar
+                </span>
+                <span className="text-[10px] text-slate-500 dark:text-[#8a83ab] font-medium">
+                  BS Computer Science
+                </span>
+              </div>
             </div>
           </div>
         </div>

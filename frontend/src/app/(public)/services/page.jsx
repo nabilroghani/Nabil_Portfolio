@@ -3,7 +3,7 @@ import ServicesAndFAQ from '@/components/ServicesAndFAQ';
 import { ChevronRight } from 'lucide-react';
 
 export const metadata = {
-  title: 'Web Development & Cloud Services | Nabil Ahmad | Nabil Tech Logic',
+  title: 'Web Development & Cloud Services | Nabil Ahmad',
   description:
     'Custom MERN web application development, SaaS MVP rapid builds in 3-4 weeks, AWS cloud deployment, and performance optimization services by Nabil Ahmad.',
   keywords: [
@@ -11,7 +11,7 @@ export const metadata = {
     'SaaS MVP Development Pakistan',
     'AWS Cloud Architecture Services',
     'Custom Web App Development Peshawar',
-    'Full Stack Consulting Nabil Tech Logic',
+    'Full Stack Consulting Services',
     'API Performance Optimization'
   ],
   alternates: {

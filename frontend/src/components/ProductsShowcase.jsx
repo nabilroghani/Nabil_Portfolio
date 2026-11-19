@@ -28,7 +28,6 @@ const PRODUCTS = [
     name: 'EduNexa SMS',
     subtitle: 'Enterprise School & Student Management System',
     type: 'EdTech Enterprise SaaS',
-    agency: 'Nabil Tech Logic',
     icon: GraduationCap,
     accentColor: 'emerald',
     liveLink: 'https://edu-nexa-beta.vercel.app/',
@@ -69,7 +68,6 @@ const PRODUCTS = [
     name: 'PharmaLogic ERP',
     subtitle: 'Pharmacy POS & Healthcare Inventory System',
     type: 'Healthcare Retail ERP',
-    agency: 'Nabil Tech Logic',
     icon: Pill,
     accentColor: 'cyan',
     description:
@@ -136,13 +134,13 @@ const ProductsShowcase = () => {
       <div className="text-center mb-12 sm:mb-16">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/25 text-gold text-xs font-semibold uppercase tracking-wider mb-3.5">
           <Sparkles size={13} className="text-gold" />
-          <span>Proprietary Products — Nabil Tech Logic</span>
+          <span>Flagship Software Products — Engineered by Nabil</span>
         </div>
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-ink dark:text-[#f3efe4] leading-tight">
-          Flagship Enterprise <span className="italic text-gold">Software Systems</span>
+          Enterprise Software <span className="italic text-gold">Systems</span>
         </h2>
         <p className="mt-3 text-xs sm:text-sm md:text-base text-slate-600 dark:text-[#a79fc9] max-w-2xl mx-auto leading-relaxed">
-          Engineered and maintained in-house under <strong>Nabil Tech Logic</strong>. Built to solve mission-critical operational challenges for educational institutions and healthcare enterprises.
+          Engineered and architected end-to-end by <strong>Nabil Ahmad</strong> as production-ready SaaS systems solving real-world operational challenges for schools and healthcare businesses.
         </p>
       </div>
 
@@ -179,7 +177,7 @@ const ProductsShowcase = () => {
                         {prod.name}
                       </h3>
                       <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-gold/15 text-gold border border-gold/25 uppercase tracking-wide">
-                        By Nabil Tech Logic
+                        Production SaaS
                       </span>
                     </div>
                     <p className="text-xs sm:text-sm font-medium text-slate-600 dark:text-[#a79fc9]">

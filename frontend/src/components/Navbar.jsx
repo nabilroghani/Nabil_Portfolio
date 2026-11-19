@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Feather, Download, Sun, Moon } from 'lucide-react';
+import { Menu, X, Feather, Download, Sun, Moon, Search } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { downloadCv } from '../utils/cvDownload';
 import toast from 'react-hot-toast';
@@ -110,7 +110,26 @@ const Navbar = () => {
               })}
             </ul>
 
-            <div className="flex items-center gap-3 pl-3 border-l border-slate-300 dark:border-[#2a2450]">
+            <div className="flex items-center gap-2.5 pl-3 border-l border-slate-300 dark:border-[#2a2450]">
+              {/* Command Palette Trigger Button */}
+              <button
+                type="button"
+                onClick={() => {
+                  window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }));
+                }}
+                aria-label="Open command palette (Ctrl+K)"
+                title="Quick Search & Actions (Ctrl+K)"
+                className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-full
+                  bg-white/80 dark:bg-[#151228]
+                  border border-slate-300 dark:border-[#3a3560]
+                  text-slate-600 dark:text-[#a79fc9]
+                  hover:border-gold hover:text-gold
+                  transition-all duration-200 cursor-pointer shadow-sm text-xs font-medium"
+              >
+                <Search size={13} className="text-gold" />
+                <span className="font-mono text-[10px] px-1 py-0.5 rounded bg-slate-200/80 dark:bg-[#252044] text-slate-700 dark:text-slate-300 font-bold">⌘K</span>
+              </button>
+
               {/* Theme toggle */}
               <button
                 onClick={toggleTheme}
@@ -144,6 +163,21 @@ const Navbar = () => {
 
           {/* ── Mobile right controls (44px+ touch targets) ── */}
           <div className="flex items-center gap-2 md:hidden">
+            {/* Mobile Search Trigger */}
+            <button
+              onClick={() => {
+                window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }));
+              }}
+              aria-label="Quick search and actions"
+              className="w-11 h-11 rounded-full flex items-center justify-center
+                bg-white/80 dark:bg-[#151228]
+                border border-slate-300 dark:border-[#3a3560]
+                text-slate-700 dark:text-[#c3bde0]
+                hover:border-gold
+                transition-all duration-200 cursor-pointer shadow-sm"
+            >
+              <Search size={18} />
+            </button>
             <button
               onClick={toggleTheme}
               aria-label="Toggle theme"
@@ -277,7 +311,7 @@ const Navbar = () => {
                         : 'text-slate-600 dark:text-[#a79fc9] hover:text-gold hover:bg-gold/5'
                     }`}
                   >
-                    <span>About Nabil Tech Logic</span>
+                    <span>About Nabil Ahmad</span>
                   </Link>
                 </div>
               </nav>

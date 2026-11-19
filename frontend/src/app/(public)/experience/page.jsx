@@ -3,7 +3,7 @@ import ExperiencePageClient from './ExperiencePageClient';
 export const metadata = {
   title: 'Experience & Technical Skills | Nabil Ahmad | Full Stack MERN Developer',
   description:
-    '3+ years professional software engineering experience, AWS cloud deployments, and verified MERN stack competencies of Nabil Ahmad, Founder at Nabil Tech Logic.',
+    '3+ years professional software engineering experience, AWS cloud deployments, and verified MERN stack competencies of Nabil Ahmad, Full Stack Engineer & Cloud Solutions Architect.',
   keywords: [
     'Nabil Ahmad Experience',
     'MERN Stack Skills',

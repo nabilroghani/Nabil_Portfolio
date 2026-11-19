@@ -23,16 +23,15 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: 'PharmaLogic ERP | Pharmacy POS & Healthcare Inventory System | Nabil Tech Logic',
+  title: 'PharmaLogic ERP | Pharmacy POS & Healthcare Inventory System | Nabil Ahmad',
   description:
-    'PharmaLogic ERP by Nabil Tech Logic is a high-speed pharmacy management software featuring FEFO batch expiry date alarms, sub-500ms barcode checkout, distributor ledgers, and real-time profit analytics.',
+    'PharmaLogic ERP engineered by Nabil Ahmad is a high-speed pharmacy management software featuring FEFO batch expiry date alarms, sub-500ms barcode checkout, distributor ledgers, and real-time profit analytics.',
   keywords: [
     'Pharmacy Management Software Pakistan',
     'Pharmacy POS System Peshawar',
     'Medical Store Billing Software',
     'Medicine Expiry Tracking Software',
     'PharmaLogic ERP',
-    'Nabil Tech Logic',
     'Pharmacy Inventory Software with Barcode',
     'Pharmacy Software with Formula Search'
   ],
@@ -60,8 +59,8 @@ const jsonLd = {
     "priceCurrency": "USD"
   },
   "author": {
-    "@type": "Organization",
-    "name": "Nabil Tech Logic",
+    "@type": "Person",
+    "name": "Nabil Ahmad",
     "url": "https://www.nabilahmad.site/"
   },
   "description": "High-speed pharmacy POS billing system with FEFO batch expiry date alerts, barcode scanning, and distributor ledger accounting."
@@ -177,7 +176,7 @@ export default function PharmaLogicProductPage() {
             {/* Top Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-700 dark:text-cyan-300 text-xs font-bold uppercase tracking-wider mb-4">
               <Sparkles size={13} className="text-cyan-500" />
-              <span>Proprietary Product — Built by Nabil Tech Logic</span>
+              <span>Production SaaS — Engineered by Nabil Ahmad</span>
             </div>
 
             <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-[#f3efe4] leading-tight">
@@ -370,7 +369,7 @@ export default function PharmaLogicProductPage() {
               Ready to Upgrade Your Pharmacy Operations?
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-[#a79fc9]">
-              Schedule a personalized 15-minute live demo with <strong>Nabil Ahmad</strong> (Founder @ Nabil Tech Logic) to explore PharmaLogic ERP for your store.
+              Schedule a personalized 15-minute live demo with <strong>Nabil Ahmad</strong> to explore PharmaLogic ERP for your store.
             </p>
           </div>
 

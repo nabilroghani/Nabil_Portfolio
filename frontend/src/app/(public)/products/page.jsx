@@ -3,11 +3,10 @@ import ProductsShowcase from '@/components/ProductsShowcase';
 import { Sparkles, ChevronRight, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 
 export const metadata = {
-  title: 'Enterprise Software Products & SaaS Systems | Nabil Tech Logic',
+  title: 'Enterprise Software Products & SaaS Systems | Nabil Ahmad',
   description:
-    'Explore proprietary enterprise SaaS solutions built by Nabil Tech Logic: EduNexa School Management System and PharmaLogic Pharmacy POS & Healthcare ERP.',
+    'Explore production enterprise SaaS systems engineered by Nabil Ahmad: EduNexa School Management System and PharmaLogic Pharmacy POS & Healthcare ERP.',
   keywords: [
-    'Nabil Tech Logic Products',
     'EduNexa SMS',
     'EduPulse SMS',
     'PharmaLogic ERP',
@@ -19,9 +18,9 @@ export const metadata = {
     canonical: 'https://www.nabilahmad.site/products',
   },
   openGraph: {
-    title: 'Enterprise Software Products | Nabil Tech Logic',
+    title: 'Enterprise Software Products | Nabil Ahmad',
     description:
-      'Proprietary SaaS products built by Nabil Tech Logic: School Management System and Pharmacy POS ERP.',
+      'Production SaaS systems built by Nabil Ahmad: School Management System and Pharmacy POS ERP.',
     url: 'https://www.nabilahmad.site/products',
     type: 'website',
   },

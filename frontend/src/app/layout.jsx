@@ -12,10 +12,11 @@ export const metadata = {
   description: 'Nabil Ahmad is a MERN Stack Developer & AWS Cloud Engineer with 3+ years experience building scalable web applications, SaaS MVPs, and robust cloud infrastructure using React, Next.js, Node.js, MongoDB, and AWS.',
   keywords: [
     'Nabil Ahmad',
-    'Nabil Tech Logic',
     'Best Developer in Peshawar',
     'Best MERN Stack Developer in Peshawar',
     'Top Full Stack Developer in Pakistan',
+    'Full Stack Developer Peshawar',
+    'Software Engineer Peshawar',
     'School Management Software Pakistan',
     'Pharmacy Management Software Peshawar',
     'Pharmacy POS System',
@@ -120,18 +121,10 @@ const jsonLd = {
         "@type": "EducationalOrganization",
         "name": "University of Peshawar"
       },
-      "worksFor": [
-        {
-          "@type": "Organization",
-          "name": "Nabil Tech Logic",
-          "url": "https://www.nabilahmad.site",
-          "description": "Software Engineering Agency & SaaS Product Studio"
-        },
-        {
-          "@type": "Organization",
-          "name": "Apptex Software Solutions"
-        }
-      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Apptex Software Solutions"
+      },
       "sameAs": [
         "https://github.com/nabilroghani",
         "https://www.linkedin.com/in/nabil-ahmad-0750002b1",
